@@ -63,6 +63,9 @@ Feature: Sho Detail Page Scenarios
     Examples: 
       | ShoName |
       | Paytm   |
+   
+  Scenario Outline: Sho detail info verification
+    Given Search any <ShoName> and verfiy its redirected to correct page    
       
       
   

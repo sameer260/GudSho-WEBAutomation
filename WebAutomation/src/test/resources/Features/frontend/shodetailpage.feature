@@ -65,7 +65,8 @@ Feature: Sho Detail Page Scenarios
       | Paytm   |
    
   Scenario Outline: Sho detail info verification
-    Given Search any <ShoName> and verfiy its redirected to correct page    
+    Given Search any <ShoName> and verfiy its redirected to correct page 
+    When   
       
       
   

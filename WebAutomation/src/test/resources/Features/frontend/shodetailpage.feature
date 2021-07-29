@@ -66,6 +66,7 @@ Feature: Sho Detail Page Scenarios
    
    Scenario Outline: Validate all shodetailpage validation
     Given Search any <ShoName> and verfiy its redirected to correct page
+    When 
   
       
       

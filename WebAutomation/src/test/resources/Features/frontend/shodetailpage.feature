@@ -74,14 +74,7 @@ Feature: Sho Detail Page Scenarios
     |Narappa|Yes      |Yes         |   
     |Paytm  |No       |No          |
     
-  Scenario Outline: Sho Card functionality
-    Given Search any <ShoName> and verfiy its redirected to correct page
-    When Click on shareicon from shocard and verify share popup
-    Then Click on watchlist icon and on home page check watchlist row
-    
-    Examples:
-    |ShoName|
-    |narappa|
+
       
       
   

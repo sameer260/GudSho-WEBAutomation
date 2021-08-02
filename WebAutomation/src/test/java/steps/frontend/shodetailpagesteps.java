@@ -1,11 +1,17 @@
 package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.tigervnc.rdr.Exception;
+
 import Pageobjects.frontend.ShareFeature;
 import Pageobjects.frontend.ToastandErrormessages;
 import Pageobjects.frontend.commonlocatorsandmethods;
@@ -161,24 +167,127 @@ public class shodetailpagesteps extends BaseSetup{
         }
         assertEquals(ShonameInContinueWatching,shoname);
     }
+    
+    @When("^Check all sho detail info and check seemore popup if (.+)$")
+    public void check_all_sho_detail_info_and_check_seemore_popup_if(String available) throws Throwable {
+        for(int i=0;i<shodetailpage.ShoDetailsInfo.size();i++)
+        {
+        	assertTrue(shodetailpage.ShoDetailsInfo.get(i).isDisplayed());
+        }
+        assertTrue(shodetailpage.ShoDetailDescription.isDisplayed());
+        if(available.equalsIgnoreCase("Yes"))
+        {
+        shodetailpage.SeeMoreLink.click();
+        wait.until(ExpectedConditions.visibilityOf(shodetailpage.AboutPopup));
+        assertTrue(shodetailpage.AboutPopup.isDisplayed());
+        assertTrue(shodetailpage.DescriptionTextInpopup.isDisplayed());
+        log.info(shodetailpage.DescriptionTextInpopup.getText());
+        assertTrue(shodetailpage.AboutTextinAboutPopup.isDisplayed());
+        log.info(shodetailpage.AboutTextinAboutPopup.getText());
+        shodetailpage.AboutPopupCrossButton.click();
+        Thread.sleep(500);
+        }
+        else
+        {
+        	log.info("This sho doesnot have more description,so no See more link");
+        }
+       
+    }
+    @Then("^check About section if about tab (.+)$")
+    public void check_about_section_if_about_tab(String availability) throws Throwable {
+             if(availability.equalsIgnoreCase("Yes")) {
+            	shodetailpage.AboutTab.click();
+            	commonlocatorsandmethods.scrolldownm();
+         		assertTrue(shodetailpage.EntireAboutSection.isDisplayed());
+         		for(int j=0;j<shodetailpage.AboutSectionElements.size();j++)
+         		{
+         			assertTrue(shodetailpage.AboutSectionElements.get(j).isDisplayed());
+         		}
+            	 
+             }
+             else {
+            	log.info("This Sho doesnot any Audios and promos tab");
+        		commonlocatorsandmethods.scrolldownm();
+        		assertTrue(shodetailpage.EntireAboutSection.isDisplayed());
+        		for(int j=0;j<shodetailpage.AboutSectionElements.size();j++)
+        		{
+        			assertTrue(shodetailpage.AboutSectionElements.get(j).isDisplayed());
+        		}
+        	}
+        }
+    @Then("^Click on shareicon from shocard and verify share popup$")
+    public void click_on_shareicon_from_shocard_and_verify_share_popup() throws Throwable {
+    	WebDriverWait wait=new WebDriverWait(driver,20);
+    	 Actions a=new Actions(driver);
+    	 a.sendKeys(Keys.END).build().perform();
+    	 a.moveToElement(shodetailpage.ShoCards.get(0)).build().perform();
+         shodetailpage.ShareButtononShoCard.click();
+         wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
+         assertTrue(ShareFeature.SharePopup.isDisplayed());
+         ShareFeature.SharepopupClose.click();
+         shodetailpage.MoreLikeThisEle.click();
+         wait.until(ExpectedConditions.visibilityOf(commonlocatorsandmethods.MoreLikethistext));
+         assertTrue(commonlocatorsandmethods.MoreLikethistext.isDisplayed());
+         a.moveToElement(commonlocatorsandmethods.Shocards.get(0)).build().perform();
+         commonlocatorsandmethods.ShareButtononShoCard.click();
+         wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
+         assertTrue(ShareFeature.SharePopup.isDisplayed());
+        
+    }
 
-   
+    @Then("^Check redirection of card and watchlist functionality of sho card on home page$")
+    public void check_redirection_of_card_and_watchlist_functionality_of_sho_card_on_home_page() throws Throwable {
+    	commonlocatorsandmethods.scrolldownm();
+    	Actions a =new Actions(driver);
+        a.moveToElement(shodetailpage.ShoCards.get(0)).build().perform();
+        String shoname=shodetailpage.shonamefromShoCards.get(0).getAttribute("alt");
+        log.info(shoname);
+        shodetailpage.WatchLaterbuttononShoCard.click();
+        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+        String Toastmessage=ToastandErrormessages.ToastMessageText.getText();
+        log.info(Toastmessage);
+        assertEquals(Toastmessage,shoname+" has been added to watchlist");
+        ToastandErrormessages.ToastMessageClose.click();
+        wait.until(ExpectedConditions.elementToBeClickable(shodetailpage.ShoCards.get(0)));
+        a.moveToElement(shodetailpage.ShoCards.get(0)).click().build().perform();
+        wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
+        String str=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+        assertEquals(str,shoname);
+        homepage.HeaderLogo.click();
+        commonlocatorsandmethods.scrolldownm();
+        String str1=commonlocatorsandmethods.shocardwatchlistShoName(shoname);
+        assertEquals(str1, str);
+        assertEquals(str1, shoname);
+        
+    }
+    @Then("^click on more like this link and check watchlist toaster$")
+    public void click_on_see_more_link_check_share_popup_and_watchlist_toaster() throws Throwable {
+   	    Actions a=new Actions(driver);
+   	    a.sendKeys(Keys.END).build().perform();
+   	    shodetailpage.MoreLikeThisEle.click();
+   	    Thread.sleep(1500);
+        wait.until(ExpectedConditions.visibilityOf(commonlocatorsandmethods.MoreLikethistext));
+        assertTrue(commonlocatorsandmethods.MoreLikethistext.isDisplayed());
+        a.moveToElement(commonlocatorsandmethods.Shocards.get(1)).build().perform();
+        String shoname=commonlocatorsandmethods.ShoNames.get(1).getAttribute("alt");
+        log.info(shoname);
+        commonlocatorsandmethods.WatchLaterbuttononShoCard.click();
+        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+        String Toastmessage=ToastandErrormessages.ToastMessageText.getText();
+        log.info(Toastmessage);
+        assertEquals(Toastmessage,shoname+" has been added to watchlist");
+        ToastandErrormessages.ToastMessageClose.click();
+    }
 
-	 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
-	
-
-	
-
-
+    @And("^Check redirection of sho card$")
+    public void check_redirection_of_sho_card() throws Throwable {
+    	Actions a=new Actions(driver);
+    	wait.until(ExpectedConditions.elementToBeClickable(commonlocatorsandmethods.Shocards.get(1)));
+        String shoname=commonlocatorsandmethods.ShoNames.get(1).getAttribute("alt");
+        a.moveToElement(commonlocatorsandmethods.Shocards.get(1)).click().build().perform();
+        String str=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+        assertEquals(shoname,str);
+        
+    }
 
 }

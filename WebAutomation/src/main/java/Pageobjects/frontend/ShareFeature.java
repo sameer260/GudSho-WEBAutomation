@@ -58,6 +58,9 @@ public class ShareFeature extends BaseSetup {
 		@FindBy(xpath="//div[@class='cdk-overlay-pane delete-popup feeds-share']")
 		public static WebElement SharePopup;
 		
+		@FindBy(xpath="//div[@class='mat-ripple close flex align-items-center justify-content-center cursor']")
+		public static WebElement SharepopupClose;
+		
 		@FindBy(name="session[username_or_email]")
 		private static WebElement TwitterUserName;
 		

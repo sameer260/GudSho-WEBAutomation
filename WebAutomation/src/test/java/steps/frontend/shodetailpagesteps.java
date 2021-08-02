@@ -211,24 +211,7 @@ public class shodetailpagesteps extends BaseSetup{
         	}
         }
     
-    @When("^Click on shareicon from shocard and verify share popup$")
-    public void click_on_shareicon_from_shocard_and_verify_share_popup() throws Throwable {
-        commonlocatorsandmethods.scrolldownm();
-        Actions a =new Actions(driver);
-        a.moveToElement(shodetailpage.ShoCards.get(0)).build().perform();
-        shodetailpage.ShareButton.click();
-        wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
-        assertTrue(ShareFeature.SharePopup.isDisplayed());
-        ShareFeature.SharePopup.click();
-    }
-
-    @Then("^Click on watchlist icon and on home page check watchlist row$")
-    public void click_on_watchlist_icon_and_on_home_page_check_watchlist_row() throws Throwable {
-    	Actions a =new Actions(driver);
-        a.moveToElement(shodetailpage.ShoCards.get(0)).build().perform();
-        shodetailpage.WatchLaterbuttononShoCard.click();
-    }
-    
+  
     
     
     

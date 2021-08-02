@@ -74,7 +74,6 @@ Feature: Sho Detail Page Scenarios
     |Narappa|Yes      |Yes         |   
     |Paytm  |No       |No          |
     
-
       
       
   

@@ -284,7 +284,7 @@ public class ShareFeature extends BaseSetup {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
 		driver.get(linkinwhatsappfield);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 		String promonameonplayer=videoplayer.Promoname();
 		driver.close();
@@ -304,7 +304,7 @@ public class ShareFeature extends BaseSetup {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
 		driver.get(myText);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 		String promonameonplayer=videoplayer.Promoname();
 		driver.close();

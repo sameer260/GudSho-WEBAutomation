@@ -15,7 +15,7 @@ public class studiodetailpage extends BaseSetup {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//div[@class='studiodetail-left']/h4") 
+	@FindBy(xpath="//div[@class='studiodetail-left']/h1") 
 	public static WebElement StudioNameInStudioPage;
 	
 	@FindBy(xpath="//li[@class='follow']//app-follow-studios/button") 

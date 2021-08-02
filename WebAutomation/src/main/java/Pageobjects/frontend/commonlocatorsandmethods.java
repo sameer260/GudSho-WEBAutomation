@@ -1,14 +1,12 @@
 package Pageobjects.frontend;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Resources.BaseSetup;
 
 public class commonlocatorsandmethods extends BaseSetup {
@@ -17,7 +15,6 @@ public class commonlocatorsandmethods extends BaseSetup {
 	{
 		PageFactory.initElements(driver,this);
 	}
-	
 	
 	//Home Page- Watch List Elements and Methods-start
 	static By ShoCradShareButton=By.xpath("//div[@class='slider-content hovered']/swiper/div/app-gud-card/div/div/div[2]/div/div/div/div[2]"); 

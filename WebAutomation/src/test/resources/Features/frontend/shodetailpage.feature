@@ -63,7 +63,7 @@ Feature: Sho Detail Page Scenarios
     Examples: 
       | ShoName |
       | Paytm   |
-   @test
+  
   Scenario Outline: Sho detail info
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Check all sho detail info and check seemore popup if <available>
@@ -73,6 +73,16 @@ Feature: Sho Detail Page Scenarios
     |ShoName|available|availability|
     |Narappa|Yes      |Yes         |   
     |Paytm  |No       |No          |
+    
+  Scenario Outline: Sho Card functionality
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Click on shareicon from shocard and verify share popup
+    Then Click on watchlist icon and on home page check watchlist row
+    
+    Examples:
+    |ShoName|
+    |narappa|
+      
       
   
       

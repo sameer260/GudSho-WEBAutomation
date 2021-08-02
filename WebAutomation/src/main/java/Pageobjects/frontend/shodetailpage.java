@@ -189,6 +189,20 @@ public class shodetailpage extends BaseSetup
 	@FindBy(xpath="//div[@id='content']/div/div")
 	public static List<WebElement> AboutSectionElements;
 	
+	// MoreLike this Section
+	
+	@FindBy(xpath="//*[@class='swiper-container swiper-container-initialized swiper-container-horizontal']//following::a[1]//child::img")
+	public static WebElement shonamefromShoCards;
+	
+	@FindBy(xpath="//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal']/app-gud-card/div/div/div")
+	public static List<WebElement> ShoCards;
+	
+	@FindBy(xpath="//div[starts-with(@class,'follow-btn ng-tns-')]/app-watch-later/div")
+	public static WebElement WatchLaterbuttononShoCard;
+	
+	@FindBy(xpath="//div[starts-with(@class,'hover-share flex align-items-center justify-content-center ng-tns-')]")
+	public static WebElement ShareButtononShoCard;
+	
 	
 	
 }

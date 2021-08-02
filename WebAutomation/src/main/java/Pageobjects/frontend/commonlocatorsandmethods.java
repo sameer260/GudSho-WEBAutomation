@@ -1,11 +1,12 @@
 package Pageobjects.frontend;
 
+import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import Resources.BaseSetup;
 
 public class commonlocatorsandmethods extends BaseSetup {
@@ -61,7 +62,27 @@ public class commonlocatorsandmethods extends BaseSetup {
 	
 	//Home Page-Watch List Elements and Methods -End
 	
+	// All see All pages Elements for so cards
+		
+    @FindBy(xpath="//h3[@class='see-category']")
+    public static WebElement MoreLikethistext;
+    
+    @FindBy(xpath="//span[@class='back-icon cursor ng-star-inserted']")
+    public static WebElement SeeAllPageBackButton;
+    
+    @FindBy(xpath="//div[@class='see-all-content ng-star-inserted']/app-gud-card/div/div/div")
+    public static List<WebElement> Shocards;
+    
+    @FindBy(xpath="//div[@class='see-all-content ng-star-inserted']/app-gud-card//following::a[1]//child::img")
+    public static List<WebElement> ShoNames;
+    
+    @FindBy(xpath="//div[starts-with(@class,'follow-btn ng-tns-')]/app-watch-later/div")
+	public static WebElement WatchLaterbuttononShoCard;
 	
+	@FindBy(xpath="//div[starts-with(@class,'hover-share flex align-items-center justify-content-center ng-tns-')]")
+	public static WebElement ShareButtononShoCard;
+	
+    
   
 	
 	
@@ -83,6 +104,11 @@ public class commonlocatorsandmethods extends BaseSetup {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public static void scrollup()
+	{
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		 js.executeScript("window.scrollBy(0,-250)", "");
 	}
 	
 	

@@ -69,9 +69,9 @@ public class AutomatedEmail
 				message.setFrom(new InternetAddress("sameer.g@contus.in"));
 	 
 				// Set the recipient address
-				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("sameer.g@contus.in"));
+				message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("gracediana.s@contus.in"));
 				//message.setRecipients(Message.RecipientType.TO,InternetAddress.parse("gracediana.s@contus.in,rajagopal.n@contus.in,shankar.e@contus.in"));
-				//message.setRecipients(Message.RecipientType.CC,InternetAddress.parse("sameer.g@contus.in,santhosh.m@contus.in,naveen.l@contus.in,shanthini.b@contus.in"));
+				message.setRecipients(Message.RecipientType.CC,InternetAddress.parse("sameer.g@contus.in,santhosh.m@contus.in,naveen.l@contus.in,shanthini.b@contus.in"));
 				
 	            
 	            // Add the subject link

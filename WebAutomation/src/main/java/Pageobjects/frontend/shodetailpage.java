@@ -191,8 +191,11 @@ public class shodetailpage extends BaseSetup
 	
 	// MoreLike this Section
 	
+	@FindBy(xpath="//span[text()=' More Like This ']")
+	public static WebElement MoreLikeThisEle;
+	
 	@FindBy(xpath="//*[@class='swiper-container swiper-container-initialized swiper-container-horizontal']//following::a[1]//child::img")
-	public static WebElement shonamefromShoCards;
+	public static List<WebElement> shonamefromShoCards;
 	
 	@FindBy(xpath="//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal']/app-gud-card/div/div/div")
 	public static List<WebElement> ShoCards;

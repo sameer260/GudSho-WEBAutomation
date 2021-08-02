@@ -3,11 +3,11 @@ package steps;
 
 
 import java.io.IOException;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.SX.Log;
 import Pageobjects.frontend.SignUp;
 import Pageobjects.frontend.ToastandErrormessages;
 import Pageobjects.frontend.homepage;
@@ -57,7 +57,7 @@ public class Hooks extends BaseSetup {
 	{
 		if(scenario.isFailed())
 		{
-			Log.error(scenario.getName(), "Failed");
+			
 		  byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	       scenario.attach(screenshot, "image/png", "image");
 	       

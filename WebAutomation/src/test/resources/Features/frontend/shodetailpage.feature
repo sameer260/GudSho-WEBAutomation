@@ -63,7 +63,16 @@ Feature: Sho Detail Page Scenarios
     Examples: 
       | ShoName |
       | Paytm   |
-      
+   @test
+  Scenario Outline: Sho detail info
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Check all sho detail info and check seemore popup if <available>
+    Then check About section if about tab <availability>
+    
+    Examples:
+    |ShoName|available|availability|
+    |Narappa|Yes      |Yes         |   
+    |Paytm  |No       |No          |
       
   
       

@@ -157,7 +157,37 @@ public class shodetailpage extends BaseSetup
 	}
 	
 	
+	//Sho Detail Info
 	
+	@FindBy(xpath="//div[@class='sho-hints banner ng-star-inserted']/ul/li")
+	public static List<WebElement> ShoDetailsInfo;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]")
+	public static WebElement ShoDetailDescription;
+	
+	@FindBy(xpath="//span[starts-with(@class,'readmore ng-tns-c')]")
+	public static WebElement SeeMoreLink;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span")
+	public static WebElement AboutPopup;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[3]")
+	public static WebElement DescriptionTextInpopup;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[2]")
+	public static WebElement AboutTextinAboutPopup;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[1]")
+	public static WebElement AboutPopupCrossButton;
+	
+	@FindBy(xpath="//div[text()='About']")
+	public static WebElement AboutTab;
+	
+	@FindBy(id="layout-container-content")
+	public static WebElement EntireAboutSection;
+	
+	@FindBy(xpath="//div[@id='content']/div/div")
+	public static List<WebElement> AboutSectionElements;
 	
 	
 	

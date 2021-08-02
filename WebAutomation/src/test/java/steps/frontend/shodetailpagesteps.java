@@ -1,11 +1,15 @@
 package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import com.tigervnc.rdr.Exception;
+
 import Pageobjects.frontend.ShareFeature;
 import Pageobjects.frontend.ToastandErrormessages;
 import Pageobjects.frontend.commonlocatorsandmethods;
@@ -158,6 +162,55 @@ public class shodetailpagesteps extends BaseSetup{
         }
         assertEquals(ShonameInContinueWatching,shoname);
     }
+    
+    @When("^Check all sho detail info and check seemore popup if (.+)$")
+    public void check_all_sho_detail_info_and_check_seemore_popup_if(String available) throws Throwable {
+        for(int i=0;i<shodetailpage.ShoDetailsInfo.size();i++)
+        {
+        	assertTrue(shodetailpage.ShoDetailsInfo.get(i).isDisplayed());
+        }
+        assertTrue(shodetailpage.ShoDetailDescription.isDisplayed());
+        if(available.equalsIgnoreCase("Yes"))
+        {
+        shodetailpage.SeeMoreLink.click();
+        wait.until(ExpectedConditions.visibilityOf(shodetailpage.AboutPopup));
+        assertTrue(shodetailpage.AboutPopup.isDisplayed());
+        assertTrue(shodetailpage.DescriptionTextInpopup.isDisplayed());
+        log.info(shodetailpage.DescriptionTextInpopup.getText());
+        assertTrue(shodetailpage.AboutTextinAboutPopup.isDisplayed());
+        log.info(shodetailpage.AboutTextinAboutPopup.getText());
+        shodetailpage.AboutPopupCrossButton.click();
+        Thread.sleep(500);
+        }
+        else
+        {
+        	log.info("This sho doesnot have more description,so no See more link");
+        }
+       
+    }
+    @Then("^check About section if about tab (.+)$")
+    public void check_about_section_if_about_tab(String availability) throws Throwable {
+             if(availability.equalsIgnoreCase("Yes")) {
+            	shodetailpage.AboutTab.click();
+            	commonlocatorsandmethods.scrolldownm();
+         		assertTrue(shodetailpage.EntireAboutSection.isDisplayed());
+         		for(int j=0;j<shodetailpage.AboutSectionElements.size();j++)
+         		{
+         			assertTrue(shodetailpage.AboutSectionElements.get(j).isDisplayed());
+         		}
+            	 
+             }
+             else {
+            	log.info("This Sho doesnot any Audios and promos tab");
+        		commonlocatorsandmethods.scrolldownm();
+        		assertTrue(shodetailpage.EntireAboutSection.isDisplayed());
+        		for(int j=0;j<shodetailpage.AboutSectionElements.size();j++)
+        		{
+        			assertTrue(shodetailpage.AboutSectionElements.get(j).isDisplayed());
+        		}
+        	}
+        }
+    
 
    
 

@@ -63,6 +63,46 @@ Feature: Sho Detail Page Scenarios
     Examples: 
       | ShoName |
       | Paytm   |
+  
+  Scenario Outline: Sho detail info
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Check all sho detail info and check seemore popup if <available>
+    Then check About section if about tab <availability>
+    
+    Examples:
+    |ShoName|available|availability|
+    |Narappa|Yes      |Yes         |   
+    |Paytm  |No       |No          |
+    
+    
+    Scenario Outline: Sho Card Watchist and Redirection
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then Check redirection of card and watchlist functionality of sho card on home page
+    
+    Examples:
+    |ShoName|
+    |narappa|
+    
+   @paywall
+   Scenario Outline: More like this Share popup
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then Click on shareicon from shocard and verify share popup
+    
+    
+    Examples:
+    |ShoName|
+    |narappa|  
+    
+   
+   Scenario Outline: More like this sho card Functionality 
+    Given Search any <ShoName> and verfiy its redirected to correct page  
+    Then click on more like this link and check watchlist toaster
+    And Check redirection of sho card
+    
+     Examples:
+    |ShoName|
+    |narappa|
+    
       
       
   

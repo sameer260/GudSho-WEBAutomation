@@ -55,5 +55,25 @@ Feature: Studio Detail page Scenarios
     Examples: 
       | StudioName   |genere|
       | Trail Studio |Drama |    
+    @test  
+  Scenario Outline: UnFollow Studio
+    Given Search any studio <StudioName> and verify it should redirected to correct page
+    When Click on Follow button
+    Then From popup check unfollow studio and check toaster
+    And check studio info
+
+    Examples: 
+      | StudioName   |
+      | Trail Studio |
+      @test
+   Scenario Outline: WatchFree Tab Card functionality
+    Given Search any studio <StudioName> and verify it should redirected to correct page
+    When click on watch free tab
+    Then Check redirection of sho card from watch free tab
+
+    Examples: 
+      | StudioName   |
+      | Sameer       |    
+          
       
       

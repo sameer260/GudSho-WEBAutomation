@@ -55,7 +55,7 @@ public class studiodetailpage extends BaseSetup {
 	public static WebElement selectshonamefromstudiopage;
 	
 	@FindBy(xpath="//*[@class='genre-main ng-star-inserted']//following::a[1]//child::img")
-	public static WebElement ShonameofcardsonGeners;
+	public static List<WebElement> ShonameofcardsonGeners;
 	
 	
 	/*public static String BannerImageClick(String shoname) throws InterruptedException
@@ -72,7 +72,29 @@ public class studiodetailpage extends BaseSetup {
 		 
 	}*/
 	
+	@FindBy(xpath="//div[@class='cdk-overlay-pane delete-popup']")
+	public static WebElement UnfollowPopup;
 	
+	@FindBy(xpath="//div[@class='clearfix']")
+	public static WebElement ConfirmationHeading;
+	
+	@FindBy(xpath="//div[@class='clearfix']/mat-dialog-content")
+	public static WebElement ConfirmationTextPopup;
+	
+	@FindBy(xpath="//mat-dialog-actions[@class='mat-dialog-actions ng-star-inserted']/button[1]")
+	public static WebElement PopUpNoButton;
+	
+	@FindBy(xpath="//mat-dialog-actions[@class='mat-dialog-actions ng-star-inserted']/button[2]")
+	public static WebElement PopUpYesButton;
+	
+	@FindBy(xpath="//p[@class='description text-control-five mobile-content']")
+	public static WebElement StudioDescriptionText;
+	
+	@FindBy(xpath="//div[@class='swiper-slide lasts desk ng-star-inserted']")
+	public static WebElement WatchfreeButton;
+	
+	@FindBy(xpath="//div[@class='genre-main ng-star-inserted']/app-gud-card/div/div/div")
+	public static List<WebElement> WatchFreeShoCards;
 	
 	
 

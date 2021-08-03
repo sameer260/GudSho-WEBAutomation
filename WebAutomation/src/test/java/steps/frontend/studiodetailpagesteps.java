@@ -16,6 +16,7 @@ import Pageobjects.frontend.shodetailpage;
 import Pageobjects.frontend.studiodetailpage;
 import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -93,7 +94,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 				 }
 			 }
 			 WebElement shocard11=wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.selectshocardfromgenre));
-			String actualsho=studiodetailpage.ShonameofcardsonGeners.getAttribute("alt");
+			String actualsho=studiodetailpage.ShonameofcardsonGeners.get(0).getAttribute("alt");
 			log.info(actualsho);
 			studiodetailpage.selectshocardfromgenre.click();
 			String expectedsho=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
@@ -129,5 +130,40 @@ public class studiodetailpagesteps  extends BaseSetup{
 		assertTrue(actualsho.equalsIgnoreCase(expectedsho));
 
 		}
+		@Then("^From popup check unfollow studio and check toaster$")
+	    public void from_popup_check_unfollow_studio_and_check_toaster() throws Throwable {
+			wait.until(ExpectedConditions.visibilityOf(studiodetailpage.UnfollowPopup));
+			assertTrue(studiodetailpage.ConfirmationTextPopup.isDisplayed());
+			assertTrue(studiodetailpage.ConfirmationHeading.isDisplayed());
+	        studiodetailpage.PopUpNoButton.click();
+	        studiodetailpage.FollowButton.click();
+	        wait.until(ExpectedConditions.visibilityOf(studiodetailpage.UnfollowPopup));
+			assertTrue(studiodetailpage.ConfirmationTextPopup.isDisplayed());
+			assertTrue(studiodetailpage.ConfirmationHeading.isDisplayed());
+	        studiodetailpage.PopUpYesButton.click();
+	        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+	        String toastmessage=ToastandErrormessages.ToastMessageText.getText();
+	        log.info(toastmessage);
+	        assertEquals(toastmessage,"You have unfollowed this studio");
+	        
+	    }
+		@And("^check studio info$")
+	    public void check_studio_info() throws Throwable {
+			log.info(studiodetailpage.StudioDescriptionText.getText());
+	        assertTrue(studiodetailpage.StudioDescriptionText.isDisplayed());
+	    }
+		@When("^click on watch free tab$")
+	    public void click_on_watch_free_tab() throws Throwable {
+	        studiodetailpage.WatchfreeButton.click();
+	    }
+
+	    @Then("^Check redirection of sho card from watch free tab$")
+	    public void check_redirection_of_sho_card_from_watch_free_tab() throws Throwable {
+	    	String str=studiodetailpage.ShonameofcardsonGeners.get(0).getAttribute("alt");
+	        studiodetailpage.WatchFreeShoCards.get(0).click();
+	        wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
+	        String str1=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+	        assertEquals(str,str1);
+	    }
 
 }

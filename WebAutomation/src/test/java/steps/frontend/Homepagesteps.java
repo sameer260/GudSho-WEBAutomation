@@ -216,6 +216,7 @@ public class Homepagesteps extends BaseSetup {
 		driver.navigate().back();
 		commonlocatorsandmethods.scrolldownm();
 		commonlocatorsandmethods.shocardwatchlistShoName(masterShoName);
+		
 
 	}
 }

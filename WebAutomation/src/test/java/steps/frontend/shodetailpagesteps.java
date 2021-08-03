@@ -99,13 +99,16 @@ public class shodetailpagesteps extends BaseSetup{
         a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
         videoplayer.PlayerGudICon.click();
         wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
-        String promonameonplayer=videoplayer.Promoname();
-        log.info(promonameonplayer);
         String actual=ToastandErrormessages.ToastMessageText.getText();
         log.info(actual);
         assertEquals(actual,"You liked this promo");
+        ToastandErrormessages.ToastMessageClose.click();
+        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+        wait.until(ExpectedConditions.visibilityOf(videoplayer.PromoNameonPlayer));
+        String promonameonplayer=videoplayer.Promoname();
+        log.info(promonameonplayer);
         assertTrue(promonameonplayer.equalsIgnoreCase(promoname));
-        videoplayer.CloseButton.click();
+        a.moveToElement(videoplayer.CloseButton).click().build().perform();
     }
 
     @Then("^On home page check liked (.+) is showing in my gud promos$")

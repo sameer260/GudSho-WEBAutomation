@@ -147,9 +147,14 @@ public class ShareFeature extends BaseSetup {
 				FacebookPassword.clear();
 				FacebookPassword.sendKeys("sameer1234");
 				FacebookLoginButton.click();
-				Thread.sleep(2000);
+				try {
 				FacebookPostButton.click();
 				driver.close();
+				}
+				catch(Exception e)
+				{
+					driver.close();
+				}
 
 			}
 		}
@@ -245,8 +250,9 @@ public class ShareFeature extends BaseSetup {
 		assertEquals(parenturl, childurl);
 
 	}
-	public static void EmbedShare()
+	public static void EmbedShare() throws InterruptedException
 	{
+		Thread.sleep(2000);
 		assertTrue(EmbedSharetextArea.isDisplayed());
 		EmbedCopyLinkButton.click();
 		WebDriverWait wait = new WebDriverWait(driver, 20);

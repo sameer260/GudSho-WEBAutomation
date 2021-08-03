@@ -171,9 +171,6 @@ public class homepage extends BaseSetup {
 		
 	}
 
-
-
-
 	
 	@FindBy(xpath="//*[starts-with(@class,'mat-ripple card-img cursor auto-image')]//child::img")
     public static List<WebElement> allTitles;

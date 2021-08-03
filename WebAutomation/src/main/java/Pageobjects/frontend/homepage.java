@@ -173,6 +173,22 @@ public class homepage extends BaseSetup {
 
 
 
-		
+
+	
+	@FindBy(xpath="//*[starts-with(@class,'mat-ripple card-img cursor auto-image')]//child::img")
+    public static List<WebElement> allTitles;
+	
+	@FindBy(xpath="//*[@mattooltip='Add to watch list']")
+	public static WebElement addToWatchlistButton;
+	
+	@FindBy(xpath="//*[@mattooltip='Added to watch list']")
+	public static WebElement removeFromWatchlist;
+	
+	//see all
+	@FindBy(xpath="//*[text()=' My Watch List ']")
+	public static WebElement myWatchlistSeeAll;
+	
+	@FindBy(xpath="//*[@class='release-card card-slider ng-star-inserted']//child::span[@class='text']")
+	public static List<WebElement> shoTypeRowSeeAll;
 	
 }

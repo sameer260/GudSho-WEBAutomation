@@ -46,7 +46,7 @@ public class Homepagesteps extends BaseSetup {
 	    public void verify_notification_page_redirected_to_correct_page() throws Throwable {
 			homepage.notificationsettingbox.isDisplayed();
 			String actual=homepage.NotificationSettingText.getText();
-			assertEquals(actual,"Manage your Email, SMS, In-app and push notification");
+			assertEquals(actual,"Manage your Email, SMS, In-app and push notifications");
 			}
 
 	    @Given("^verify user profile icon$")

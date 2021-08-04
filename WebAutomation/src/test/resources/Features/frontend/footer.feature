@@ -1,15 +1,12 @@
-@Paywall
+@Footer @Paywall
 Feature: Footer  Scenarios
 
   
   Scenario: gudsho logo
-    Given verify gudsho logo
-
-  
-  Scenario: Footer text
-    Given verify footer paragraph text
-
-  
+    Then verify gudsho logo
+    And verify footer paragraph text
+    And  Verify Footer headings
+    
   Scenario: About us page redirection
     Given click about us link and verify it should redirected to correct page
 
@@ -22,17 +19,25 @@ Feature: Footer  Scenarios
     Given click Submit your film link and verify it should redirected to correct page
 
   
-  Scenario: blog  page redirection
+  Scenario: Blog  page redirection
     Given click blog link and verify it should redirected to correct page
 
   
-  Scenario: terms  page redirection
+  Scenario: Terms  page redirection
     Given click terms link and verify it should redirected to correct page
 
   
-  Scenario: privacy  page redirection
+  Scenario: Privacy  page redirection
     Given click privacy link and verify it should redirected to correct page
 
   
   Scenario: Sell your movies & series on gudsho  page redirection
     Given click Sell your movies & series on gudsho link and verify it should redirected to correct page
+    
+   @test 
+  Scenario: PlayStore App Redirection
+    Given Check Play store App redirection
+    
+   @test 
+  Scenario: App Store Redirection  
+    Given Check App store App redirection   

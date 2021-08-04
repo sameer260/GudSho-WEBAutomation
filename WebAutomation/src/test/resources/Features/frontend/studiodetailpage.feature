@@ -155,7 +155,42 @@ Feature: Studio Detail page Scenarios
     
     Examples:
     |StudioName  |
-    |Sameer      |    
+    |Sameer      |  
+   
+  Scenario Outline: Home Sho Card Watchlist
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  When Click on watchlist button on sho card and check toaster
+  Then On home page check this sho card on watchlist row
+  
+  Examples:
+  |StudioName|
+  |Sameer    |
+  
+    
+  Scenario Outline: Watch Free Sho Card Watchlist
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  And click on watch free tab
+  When Click on watchlist button on sho card and check toaster
+  Then On home page check this sho card on watchlist row
+  
+  
+  Examples:
+  |StudioName|
+  |Sameer    |
+  
+    
+  Scenario Outline: From genere Sho Card Watchlist
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  And Click on any <genere>
+  When Click on watchlist button on sho card and check toaster
+  Then On home page check this sho card on watchlist row
+  
+  
+  Examples:
+  |StudioName|genere|
+  |Sameer    |Drama |
+      
+      
     
          
           

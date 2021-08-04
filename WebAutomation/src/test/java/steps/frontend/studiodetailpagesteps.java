@@ -96,7 +96,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 				 }
 			 }
 			 WebElement shocard11=wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.selectshocardfromgenre));
-			String actualsho=studiodetailpage.ShonameofcardsonGeners.get(0).getAttribute("alt");
+			String actualsho=studiodetailpage.ShoNameattribtute.get(0).getAttribute("alt");
 			log.info(actualsho);
 			studiodetailpage.selectshocardfromgenre.click();
 			String expectedsho=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
@@ -122,11 +122,11 @@ public class studiodetailpagesteps  extends BaseSetup{
 		   public void click_sho_card_and_verify_its_redirected_sho_detail_page() throws Throwable {
 		//commonlocatorsandmethods.scrolldownm();
 		Actions a=new Actions(driver);
-		wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.shocard1));
-		a.moveToElement(studiodetailpage.shocard1).build().perform();
-		String actualsho=studiodetailpage.selectshonamefromstudiopage.getAttribute("alt");
+		wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.shocard.get(0)));
+		a.moveToElement(studiodetailpage.shocard.get(0)).build().perform();
+		String actualsho=studiodetailpage.selectshonamefromstudiopage.get(0).getAttribute("alt");
 		log.info(actualsho);
-		a.moveToElement(studiodetailpage.selectshonamefromstudiopage).click().build().perform();
+		a.moveToElement(studiodetailpage.selectshonamefromstudiopage.get(0)).click().build().perform();
 		String expectedsho=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
 		log.info(expectedsho);
 		assertTrue(actualsho.equalsIgnoreCase(expectedsho));
@@ -161,7 +161,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 
 	    @Then("^Check redirection of sho card from watch free tab$")
 	    public void check_redirection_of_sho_card_from_watch_free_tab() throws Throwable {
-	    	String str=studiodetailpage.ShonameofcardsonGeners.get(0).getAttribute("alt");
+	    	String str=studiodetailpage.ShoNameattribtute.get(0).getAttribute("alt");
 	        studiodetailpage.WatchFreeShoCards.get(0).click();
 	        wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
 	        String str1=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
@@ -193,7 +193,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    public void share_sho_card_from_home_and_verify_popup() throws Throwable {
 	    	Actions a =new Actions(driver);
 	    	//a.sendKeys(Keys.END).build().perform();
-	    	a.moveToElement(studiodetailpage.shocard1).build().perform();
+	    	a.moveToElement(studiodetailpage.shocard.get(0)).build().perform();
 	        commonlocatorsandmethods.ShareButtononShoCard.click();
 	        wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
 	        assertTrue(ShareFeature.SharePopup.isDisplayed());
@@ -339,7 +339,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    }
 	    @And("^On home page check the added watchlist$")
 	    public void on_home_page_check_the_added_watchlist() throws Throwable {
-	    	String shoname=commonlocatorsandmethods.ShoNames.get(0).getAttribute("alt");
+	    	String shoname=studiodetailpage.ShoNameattribtute.get(0).getAttribute("alt");
 	        log.info(shoname);
 	    	homepage.HeaderLogo.click();
 	        commonlocatorsandmethods.scrolldownm();
@@ -347,6 +347,43 @@ public class studiodetailpagesteps  extends BaseSetup{
 	        log.info(str);
 	        assertEquals(shoname,str);
 	    }
+	    @When("^Click on watchlist button on sho card and check toaster$")
+	    public void click_on_watchlist_button_on_sho_card_and_check_toaster() throws Throwable {
+	    	Actions a=new Actions(driver);
+	    	String shoname=studiodetailpage.ShoNameattribtute.get(1).getAttribute("alt");
+	        a.moveToElement(studiodetailpage.shocard.get(1)).build().perform();
+	        commonlocatorsandmethods.WatchLaterbuttononShoCard.click();
+	        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+	        String toast=ToastandErrormessages.ToastMessageText.getText();
+	        ToastandErrormessages.ToastMessageClose.click();
+	        assertTrue(toast.equalsIgnoreCase(shoname+" has been added to watchlist"));
+	    }
+
+	    @Then("^On home page check this sho card on watchlist row$")
+	    public void on_home_page_check_this_sho_card_on_watchlist_row() throws Throwable {
+	    	String shoname=studiodetailpage.ShoNameattribtute.get(1).getAttribute("alt");
+	    	homepage.HeaderLogo.click();
+	        commonlocatorsandmethods.scrolldownm();
+	        String str=commonlocatorsandmethods.shocardwatchlistShoName(shoname);
+	        log.info(str);
+	        assertEquals(shoname,str);
+	    	
+	    }
+	    @And("^Click on any (.+)$")
+	    public void click_on_any(String genere) throws Throwable {
+	    	for(int i=0;i<studiodetailpage.selectgenre.size();i++)
+			 {
+				 if(studiodetailpage.selectgenre.get(i).getText().equalsIgnoreCase(genere))
+				 {
+					 studiodetailpage.selectgenre.get(i).click();
+					 break;
+				 }
+			 }
+	    }
+	    
+
+	    
+
 
 	    
 

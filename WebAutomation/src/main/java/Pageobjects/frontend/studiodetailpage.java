@@ -41,7 +41,7 @@ public class studiodetailpage extends BaseSetup {
 	public static List<WebElement> clickpromo;
 	
 	@FindBy(xpath="//div[starts-with(@class,'card-main vertical-card ng-tns-')]")
-	public static WebElement shocard1;
+	public static List<WebElement> shocard;
 	
 	@FindBy(xpath="//div[@class='create-shos-series']/div/app-gud-card/div/div/div")
 	public static WebElement selectshocardfromgenre;
@@ -53,10 +53,10 @@ public class studiodetailpage extends BaseSetup {
 	public static List<WebElement> verifypromonameonstudiopage; 
 
 	@FindBy(xpath="//*[@class='swiper-container swiper-container-initialized swiper-container-horizontal']//following::a[1]//child::img")
-	public static WebElement selectshonamefromstudiopage;
+	public static List<WebElement> selectshonamefromstudiopage;
 	
-	@FindBy(xpath="//*[@class='genre-main ng-star-inserted']//following::a[1]//child::img")
-	public static List<WebElement> ShonameofcardsonGeners;
+	@FindBy(xpath="//a[starts-with(@class,'ng-tns-')]/app-gud-image/div/div/img")
+	public static List<WebElement> ShoNameattribtute;
 	
 	
 	/*public static String BannerImageClick(String shoname) throws InterruptedException

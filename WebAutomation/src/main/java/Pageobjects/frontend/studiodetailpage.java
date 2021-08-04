@@ -58,6 +58,9 @@ public class studiodetailpage extends BaseSetup {
 	@FindBy(xpath="//a[starts-with(@class,'ng-tns-')]/app-gud-image/div/div/img")
 	public static List<WebElement> ShoNameattribtute;
 	
+	@FindBy(xpath="//div[@class='home-slider promo flicks-promos ng-star-inserted']/app-gud-card")
+	public static WebElement SeeALLpromoelem;
+	
 	
 	/*public static String BannerImageClick(String shoname) throws InterruptedException
 	{

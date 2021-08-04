@@ -51,7 +51,7 @@ public class videoplayer extends BaseSetup{
 	@FindBy(xpath="//div[@id='inner-video']/button[2]")
 	public static WebElement CloseButtonforSho;
 	
-	@FindBy(xpath="/html[1]/body[1]/app-root[1]/div[1]/app-watch[1]/app-player[1]/div[1]/div[1]/div[1]/div[4]/div[1]/div[2]/h2[1]")
+	@FindBy(xpath="//div[starts-with(@class,'player-title-detail ng-tns-')]/h2")
 	public static WebElement ShoNameOnPlayer;
 	
 	@FindBy(xpath="//div[@id='inner-video']/div[1]/div[3]/span")

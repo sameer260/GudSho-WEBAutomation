@@ -95,7 +95,8 @@ public class studiodetailpagesteps  extends BaseSetup{
 					 break;
 				 }
 			 }
-			 WebElement shocard11=wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.selectshocardfromgenre));
+			 Thread.sleep(1000);
+			wait.until(ExpectedConditions.visibilityOfAllElements(studiodetailpage.selectshocardfromgenre));
 			String actualsho=studiodetailpage.ShoNameattribtute.get(0).getAttribute("alt");
 			log.info(actualsho);
 			studiodetailpage.selectshocardfromgenre.click();
@@ -272,6 +273,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    public void play_promo_from_see_all_page() throws Throwable {
 	        studiodetailpage.PromoSeeAllLink.get(0).click();
 	        Thread.sleep(2000);
+	        wait.until(ExpectedConditions.visibilityOf(studiodetailpage.SeeALLpromoelem));
 	        
 	    }
 
@@ -279,15 +281,18 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    public void check_redirection_of_promo_and_then_to_sho_detail_page() throws Throwable {
 	    	Actions a=new Actions(driver);
 	    	String promoname=studiodetailpage.verifypromonameonstudiopage.get(0).getText();
+	    	log.info(promoname);
 	    	a.moveToElement(studiodetailpage.SeeAllPromoCards.get(0)).click().build().perform();
 	    	Thread.sleep(5000);
 	    	a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 	    	String promonameonplayer=videoplayer.Promoname();
+	    	log.info(promonameonplayer);
 	    	assertEquals(promoname, promonameonplayer);
 	    	String shoname=videoplayer.ShoNameOnPlayer.getText();
 	    	videoplayer.CloseButton.click();
 	    	wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
 	    	String str=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+	    	log.info(str);
 	    	assertTrue(shoname.equalsIgnoreCase(str));
 	    	
 	    }

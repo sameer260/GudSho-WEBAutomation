@@ -160,7 +160,47 @@ public class footersteps extends BaseSetup {
 				}
 			}
 			driver.switchTo().window(parentWindowHandle);
-	}    
+	}   
+	 
+	    @Given("^Check Facebook redirection$")
+	    public void check_facebook_redirection() throws Throwable {
+	         String ChildUrl="https://www.facebook.com/GudSho.Digital/";
+			 String Childtitle="GudSho - Home | Facebook";	
+			 Footer.WindowhandleforSocialLinks(Footer.ConnectUsSocialLinks.get(0), ChildUrl, Childtitle);
+
+	    }
+
+	    @And("^Check Twitter redirection$")
+	    public void check_twitter_redirection() throws Throwable {
+	    	String ChildUrl="https://twitter.com/GudShoIN";
+			 String Childtitle="GudSho (@GudShoIN) / Twitter";	
+			 Footer.WindowhandleforSocialLinks(Footer.ConnectUsSocialLinks.get(1), ChildUrl, Childtitle);
+
+	    }
+
+	    @And("^Check Instagram redirection$")
+	    public void check_instagram_redirection() throws Throwable {
+	    	String ChildUrl="https://www.instagram.com/accounts/login/";
+			 String Childtitle="Login • Instagram";	
+			 Footer.WindowhandleforSocialLinks(Footer.ConnectUsSocialLinks.get(2), ChildUrl, Childtitle);
+
+	    }
+
+	    @And("^Check Linkedin redirection$")
+	    public void check_linkedin_redirection() throws Throwable {
+	    	String ChildUrl="https://www.linkedin.com/company/gudsho/";
+			 String Childtitle="GudSho | LinkedIn";	
+			 Footer.WindowhandleforSocialLinks(Footer.ConnectUsSocialLinks.get(3), ChildUrl, Childtitle);
+
+	    }
+
+	    @And("^Check Youtube redirection$")
+	    public void check_youtube_redirection() throws Throwable {
+	    	String ChildUrl="https://www.youtube.com/channel/UCtCPBufttxYK_kAY8HyMfSw";
+			 String Childtitle="GudSho-YouTube";	
+			 Footer.WindowhandleforSocialLinks(Footer.ConnectUsSocialLinks.get(4), ChildUrl, Childtitle);
+
+	    }
 	
 	
 	

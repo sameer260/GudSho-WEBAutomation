@@ -34,10 +34,17 @@ Feature: Footer  Scenarios
   Scenario: Sell your movies & series on gudsho  page redirection
     Given click Sell your movies & series on gudsho link and verify it should redirected to correct page
     
-   @test 
+  
   Scenario: PlayStore App Redirection
     Given Check Play store App redirection
     
-   @test 
+    
   Scenario: App Store Redirection  
     Given Check App store App redirection   
+  
+  Scenario: Social Links Redirection  
+    Given Check Facebook redirection
+    And Check Twitter redirection
+    And Check Instagram redirection
+    And Check Linkedin redirection
+    And Check Youtube redirection

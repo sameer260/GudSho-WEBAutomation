@@ -24,7 +24,7 @@ public class Footer extends BaseSetup {
 	
 	public static Logger log = Logger.getLogger(Footer.class.getName());
 	
-	static WebDriverWait wait=new WebDriverWait(driver,20);
+	
 	public Footer()
 	{
 		PageFactory.initElements(driver, this);
@@ -69,6 +69,9 @@ public class Footer extends BaseSetup {
 	@FindBy(xpath="//h4[@class='footer-title']")
 	public static List<WebElement> FooterHeaders;
 	
+	@FindBy(xpath="//div[@class='footer-connect footer-sec']/ul/li/a")
+	public static List<WebElement> ConnectUsSocialLinks;
+	
 	
 	public static void WindowhandleforLinks(WebElement element,String ChildUrl,String Childtitle) throws InterruptedException {
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
@@ -82,7 +85,6 @@ public class Footer extends BaseSetup {
 
 			if (!parentWindowHandle.equals(child_window)) {
 				driver.switchTo().window(child_window);
-				Thread.sleep(1000);
 				String title = driver.getTitle();
 				log.info(title);
 				assertTrue(title.equalsIgnoreCase(Childtitle));
@@ -94,6 +96,30 @@ public class Footer extends BaseSetup {
 		}
 		driver.switchTo().window(parentWindowHandle);
 	}
+	
+	public static void WindowhandleforSocialLinks(WebElement element,String ChildUrl,String Childtitle) throws InterruptedException {
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		String parentWindowHandle = driver.getWindowHandle();
+		executor.executeScript("arguments[0].click();", element);
+		Set<String> allWindowHandles = driver.getWindowHandles();
+		Iterator<String> I1 = allWindowHandles.iterator();
+		while (I1.hasNext()) {
+
+			String child_window = I1.next();
+
+			if (!parentWindowHandle.equals(child_window)) {
+				driver.switchTo().window(child_window);
+				String title = driver.getTitle();
+				log.info(title);
+				String Url = driver.getCurrentUrl();
+				log.info(Url);
+				assertTrue(Url.equalsIgnoreCase(ChildUrl));
+				driver.close();
+			}
+		}
+		driver.switchTo().window(parentWindowHandle);
+	}
+	
 
 
 	

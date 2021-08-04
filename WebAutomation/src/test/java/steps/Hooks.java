@@ -7,7 +7,6 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.sikuli.script.SX.Log;
 import Pageobjects.frontend.SignUp;
 import Pageobjects.frontend.ToastandErrormessages;
 import Pageobjects.frontend.homepage;
@@ -44,7 +43,7 @@ public class Hooks extends BaseSetup {
 		SignUp sl=new SignUp();
 		ToastandErrormessages ts=new ToastandErrormessages();
 		SignUp.HomePageSignInButton.click();
-		SignUp.GmailLogin("sameer.g@contus.in", "Ayesha@1996");
+		SignUp.GmailLogin("ramya.k@contus.in", "ra*my7a123");
 		WebDriverWait wait=new WebDriverWait(driver,20);
 	    wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		ToastandErrormessages.ToastMessageClose.click();
@@ -57,7 +56,7 @@ public class Hooks extends BaseSetup {
 	{
 		if(scenario.isFailed())
 		{
-			Log.error(scenario.getName(), "Failed");
+
 		  byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	       scenario.attach(screenshot, "image/png", "image");
 	       

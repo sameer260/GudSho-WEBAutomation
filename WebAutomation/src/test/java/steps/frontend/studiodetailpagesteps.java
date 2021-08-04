@@ -95,6 +95,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 			 WebElement shocard11=wait.until(ExpectedConditions.elementToBeClickable(studiodetailpage.selectshocardfromgenre));
 			String actualsho=studiodetailpage.ShonameofcardsonGeners.getAttribute("alt");
 			log.info(actualsho);
+			
 			studiodetailpage.selectshocardfromgenre.click();
 			String expectedsho=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
 			log.info(expectedsho);

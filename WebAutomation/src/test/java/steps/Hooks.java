@@ -43,7 +43,7 @@ public class Hooks extends BaseSetup {
 		SignUp sl=new SignUp();
 		ToastandErrormessages ts=new ToastandErrormessages();
 		SignUp.HomePageSignInButton.click();
-		SignUp.GmailLogin("ramya.k@contus.in", "ra*my7a123");
+		SignUp.GmailLogin("sameer.g.k@contus.in", "Ayesha@1996");
 		WebDriverWait wait=new WebDriverWait(driver,20);
 	    wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		ToastandErrormessages.ToastMessageClose.click();

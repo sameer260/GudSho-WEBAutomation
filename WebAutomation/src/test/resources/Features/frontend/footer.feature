@@ -1,5 +1,5 @@
 @Footer @Paywall
-Feature: Footer  Scenarios
+Feature: Footer Links & Profile Hover elements Redirection Scenarios
 
   
   Scenario: gudsho logo

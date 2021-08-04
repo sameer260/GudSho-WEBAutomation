@@ -58,6 +58,9 @@ public class ShareFeature extends BaseSetup {
 		@FindBy(xpath="//div[@class='cdk-overlay-pane delete-popup feeds-share']")
 		public static WebElement SharePopup;
 		
+		@FindBy(xpath="//div[@class='mat-ripple close flex align-items-center justify-content-center cursor']")
+		public static WebElement SharepopupClose;
+		
 		@FindBy(name="session[username_or_email]")
 		private static WebElement TwitterUserName;
 		
@@ -281,7 +284,7 @@ public class ShareFeature extends BaseSetup {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
 		driver.get(linkinwhatsappfield);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 		String promonameonplayer=videoplayer.Promoname();
 		driver.close();
@@ -301,7 +304,7 @@ public class ShareFeature extends BaseSetup {
 		ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(tabs.get(1));
 		driver.get(myText);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 		String promonameonplayer=videoplayer.Promoname();
 		driver.close();

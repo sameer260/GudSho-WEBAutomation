@@ -157,7 +157,54 @@ public class shodetailpage extends BaseSetup
 	}
 	
 	
+	//Sho Detail Info
 	
+	@FindBy(xpath="//div[@class='sho-hints banner ng-star-inserted']/ul/li")
+	public static List<WebElement> ShoDetailsInfo;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]")
+	public static WebElement ShoDetailDescription;
+	
+	@FindBy(xpath="//span[starts-with(@class,'readmore ng-tns-c')]")
+	public static WebElement SeeMoreLink;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span")
+	public static WebElement AboutPopup;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[3]")
+	public static WebElement DescriptionTextInpopup;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[2]")
+	public static WebElement AboutTextinAboutPopup;
+	
+	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[1]")
+	public static WebElement AboutPopupCrossButton;
+	
+	@FindBy(xpath="//div[text()='About']")
+	public static WebElement AboutTab;
+	
+	@FindBy(id="layout-container-content")
+	public static WebElement EntireAboutSection;
+	
+	@FindBy(xpath="//div[@id='content']/div/div")
+	public static List<WebElement> AboutSectionElements;
+	
+	// MoreLike this Section
+	
+	@FindBy(xpath="//span[text()=' More Like This ']")
+	public static WebElement MoreLikeThisEle;
+	
+	@FindBy(xpath="//*[@class='swiper-container swiper-container-initialized swiper-container-horizontal']//following::a[1]//child::img")
+	public static List<WebElement> shonamefromShoCards;
+	
+	@FindBy(xpath="//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal']/app-gud-card/div/div/div")
+	public static List<WebElement> ShoCards;
+	
+	@FindBy(xpath="//div[starts-with(@class,'follow-btn ng-tns-')]/app-watch-later/div")
+	public static WebElement WatchLaterbuttononShoCard;
+	
+	@FindBy(xpath="//div[starts-with(@class,'hover-share flex align-items-center justify-content-center ng-tns-')]")
+	public static WebElement ShareButtononShoCard;
 	
 	
 	

@@ -23,6 +23,11 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 	@RunWith(Cucumber.class)
 	@CucumberOptions(features= "src/test/resources/Features/frontend",
+	glue={"steps"}
+	
+	
+			)
+
 	glue={"steps"},
 	plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 			  "pretty","json:target/cucumber-reports/Cucumber.json", 
@@ -30,6 +35,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 			  "html:target/cucumber-reports/htmlreports.html",
 			  "rerun:target/rerun.txt"},
 			   monochrome=true)
+
 
 		
 	public class RunnerTest 
@@ -73,6 +79,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 			
 		}
 	}
+	
 	
 	
 	

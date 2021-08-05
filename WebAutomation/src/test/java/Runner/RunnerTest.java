@@ -57,7 +57,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 			configuration.setSortingMethod(SortingMethod.NATURAL);
 			ReportBuilder reportBuilder = new ReportBuilder(jsonFiles, configuration);
 			reportBuilder.generateReports();
-			Runtime r=Runtime.getRuntime();
+			/*Runtime r=Runtime.getRuntime();
 			r.addShutdownHook(new Thread(){
 				public void run() {
 					try {
@@ -67,7 +67,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 						e.printStackTrace();
 					}
 				}
-			});
+			});*/
 			
 			
 			

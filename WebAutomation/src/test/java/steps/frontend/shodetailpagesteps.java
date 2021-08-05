@@ -97,6 +97,7 @@ public class shodetailpagesteps extends BaseSetup{
         shodetailpage.PromoCardClick(promoname);
         Actions a=new Actions(driver);
         a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+        Thread.sleep(700);
         videoplayer.PlayerGudICon.click();
         wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
         String actual=ToastandErrormessages.ToastMessageText.getText();

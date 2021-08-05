@@ -11,6 +11,7 @@ import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
 import Resources.AutomatedEmail;
+import Resources.FailureAutomated;
 import io.cucumber.junit.Cucumber;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
@@ -55,7 +56,7 @@ public class rerunRunnerTest {
 		r.addShutdownHook(new Thread(){
 			public void run() {
 				try {
-					AutomatedEmail.sendemail();
+					FailureAutomated.sendemail();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

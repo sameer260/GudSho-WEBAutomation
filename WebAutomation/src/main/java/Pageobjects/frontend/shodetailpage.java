@@ -168,16 +168,16 @@ public class shodetailpage extends BaseSetup
 	@FindBy(xpath="//span[starts-with(@class,'readmore ng-tns-c')]")
 	public static WebElement SeeMoreLink;
 	
-	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span")
+	@FindBy(xpath="//span[starts-with(@class,'about-popup ng-tns-')]")
 	public static WebElement AboutPopup;
 	
-	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[3]")
+	@FindBy(xpath="//span[starts-with(@class,'about-desc ng-tns-')]")
 	public static WebElement DescriptionTextInpopup;
 	
-	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[2]")
+	@FindBy(xpath="//span[starts-with(@class,'about-title ng-tns-')]")
 	public static WebElement AboutTextinAboutPopup;
 	
-	@FindBy(xpath="//div[starts-with(@class,'content ng-tns-')]/h2/span/span/span[1]")
+	@FindBy(xpath="//span[starts-with(@class,'close ng-tns-')]")
 	public static WebElement AboutPopupCrossButton;
 	
 	@FindBy(xpath="//div[text()='About']")

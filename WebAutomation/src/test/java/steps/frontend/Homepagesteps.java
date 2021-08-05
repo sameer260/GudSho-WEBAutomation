@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.lowagie.text.List;
 
+import Pageobjects.frontend.Footer;
 import Pageobjects.frontend.ShareFeature;
 import Pageobjects.frontend.SignUp;
 import Pageobjects.frontend.ToastandErrormessages;
@@ -131,6 +132,9 @@ public class Homepagesteps extends BaseSetup {
 		assertTrue(accountandsettingspage.NotificationsTab.isDisplayed());
 		wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.NotificationElements));
 		assertTrue(accountandsettingspage.NotificationElements.isDisplayed());
+		String str=accountandsettingspage.NotificationsTab.getText();
+    	String areatstate=accountandsettingspage.TabSelection(str);
+    	assertEquals(areatstate,"true");
 	}
 
 	// phase 2 home

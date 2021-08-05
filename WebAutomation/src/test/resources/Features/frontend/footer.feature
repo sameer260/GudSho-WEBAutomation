@@ -1,4 +1,4 @@
-@Footer @Paywall
+@Footer
 Feature: Footer Links & Profile Hover elements Redirection Scenarios
 
   
@@ -48,3 +48,25 @@ Feature: Footer Links & Profile Hover elements Redirection Scenarios
     And Check Instagram redirection
     And Check Linkedin redirection
     And Check Youtube redirection
+    
+ 
+  Scenario: Check all profile hover elements redirections
+    Given Hover on profile
+    Then Click on support menu and verify redirection
+    Given Hover on profile
+    Then Click on Friends menu and verify redirection
+    Given Hover on profile
+    Then Click on Account and settings menu and verify redirection
+    Given Hover on profile
+    Then Click on Signout and check toaster
+    
+  
+  Scenario: Check profile hover and mobile number element
+    Given Hover on profile
+    Then Click on Account and settings menu and verify redirection
+    And capture name and profile and verify with name and number
+ 
+      
+    
+  
+    

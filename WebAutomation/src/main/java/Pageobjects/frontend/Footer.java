@@ -1,24 +1,19 @@
 package Pageobjects.frontend;
 
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
+
+import static org.junit.Assert.assertTrue;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import Resources.BaseSetup;
-import steps.frontend.footersteps;
+
 
 public class Footer extends BaseSetup {
 	
@@ -119,9 +114,6 @@ public class Footer extends BaseSetup {
 		}
 		driver.switchTo().window(parentWindowHandle);
 	}
-	
-
-
 	
 	
 	

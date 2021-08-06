@@ -61,6 +61,8 @@ public class shodetailpagesteps extends BaseSetup{
         String ShonameonPlayer=videoplayer.ShoNameOnPlayer.getText();
         assertEquals(ShonameonPlayer,shoname);
         videoplayer.CloseButtonforSho.click();
+        wait.until(ExpectedConditions.visibilityOf(videoplayer.RateCloseButton));
+        videoplayer.RateCloseButton.click();
     }
     @When("^Add (.+) in to watchlist and check the toaster message$")
     public void add_in_to_watchlist_and_check_the_toaster_message(String shoname) throws Throwable {
@@ -74,7 +76,7 @@ public class shodetailpagesteps extends BaseSetup{
     public void on_home_page_check_the_added_watchlist(String shoname) throws Throwable {
         homepage.HeaderLogo.click();
         commonlocatorsandmethods.scrolldownm();
-        String str=commonlocatorsandmethods.shocardwatchlistShoName(shoname);
+        String str=commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
         log.info(str);
         assertEquals(shoname,str);
         
@@ -144,6 +146,8 @@ public class shodetailpagesteps extends BaseSetup{
         a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
         wait.until(ExpectedConditions.visibilityOf(videoplayer.CloseButtonforSho));
         videoplayer.CloseButtonforSho.click();
+        wait.until(ExpectedConditions.visibilityOf(videoplayer.RateCloseButton));
+        videoplayer.RateCloseButton.click();
     }
     @And("^On sho detail page verify watch now button should change to resume$")
     public void on_sho_detail_page_verify_watch_now_button_should_change_to_resume() throws Throwable {

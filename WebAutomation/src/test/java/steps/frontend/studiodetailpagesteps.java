@@ -271,8 +271,10 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    }
 	    @When("^Play promo from see all page$")
 	    public void play_promo_from_see_all_page() throws Throwable {
-	        studiodetailpage.PromoSeeAllLink.get(0).click();
-	        Thread.sleep(2000);
+	        
+	    	Actions a=new Actions(driver);
+	    	a.moveToElement(studiodetailpage.PromoSeeAllLink.get(0)).click().build().perform();;
+	        Thread.sleep(3000);
 	        wait.until(ExpectedConditions.visibilityOf(studiodetailpage.SeeALLpromoelem));
 	        
 	    }
@@ -298,8 +300,9 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    }
 	    @When("^Click on sho see all link$")
 	    public void click_on_sho_see_all_link() throws Throwable {
-	        studiodetailpage.ShoSeeAllLink.get(0).click();
-	        Thread.sleep(2000);
+	    	Actions a =new Actions(driver);
+	    	a.moveToElement(studiodetailpage.ShoSeeAllLink.get(0)).click().build().perform();
+	        Thread.sleep(3000);
 	        wait.until(ExpectedConditions.visibilityOfAllElements(commonlocatorsandmethods.Shocards));
 	        
 	    }
@@ -348,7 +351,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 	        log.info(shoname);
 	    	homepage.HeaderLogo.click();
 	        commonlocatorsandmethods.scrolldownm();
-	        String str=commonlocatorsandmethods.shocardwatchlistShoName(shoname);
+	        String str=commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
 	        log.info(str);
 	        assertEquals(shoname,str);
 	    }
@@ -369,7 +372,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    	String shoname=studiodetailpage.ShoNameattribtute.get(1).getAttribute("alt");
 	    	homepage.HeaderLogo.click();
 	        commonlocatorsandmethods.scrolldownm();
-	        String str=commonlocatorsandmethods.shocardwatchlistShoName(shoname);
+	        String str=commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
 	        log.info(str);
 	        assertEquals(shoname,str);
 	    	

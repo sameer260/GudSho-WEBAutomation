@@ -23,18 +23,18 @@ Feature: GudSho Home Page
   Scenario: Studio Card Redirection
     Given Click on studio card from studio row and verify its redirected to correct studio detail page
 
-  @test
+  
   Scenario Outline: This test is to verify the added sho in addto watchlist
     Given From home page click on add to watchlist in <shoName> title card
     When check card availbility on my watchlist row
-    And check card availbility on my wacthlist row see all
-    Then Remove from watchlit
+    #And check card availbility on my wacthlist row see all
+    #Then Remove from watchlit
 
     Examples: 
       | shoName      |
       | vada chennai |
 
-  @test
+  
   Scenario Outline: This test is to verify the share button on sho card
     Given From home page click on share button in <shoName> title card
     When Click on share button from the card and verify share popup
@@ -43,7 +43,7 @@ Feature: GudSho Home Page
       | shoName      |
       | vada chennai |
 
-  @test
+  
   Scenario Outline: This test is to verify the sho detail page redirection from home continue watchling
     Given Search any <ShoName> and verfiy its redirected to correct page
     When Play watch free content and close the player
@@ -51,9 +51,9 @@ Feature: GudSho Home Page
 
     Examples: 
       | ShoName      |
-      | vada chennai |
+      | scedue       |
 
-  @test
+  
   Scenario Outline: This test is to verify the added sho in addto watchlist from see all
     Given From home page click on sho type row see all hyperlink
     When Hover and click on click on add to watchlist in <shoName> title card

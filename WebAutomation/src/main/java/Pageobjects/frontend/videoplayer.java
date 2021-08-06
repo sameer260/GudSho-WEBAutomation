@@ -48,7 +48,7 @@ public class videoplayer extends BaseSetup{
 	@FindBy(xpath="//div[@id='inner-video']/button")
 	public static WebElement CloseButton;
 	
-	@FindBy(xpath="//div[@id='inner-video']/button[2]")
+	@FindBy(xpath="//div[@id='inner-video']/button")
 	public static WebElement CloseButtonforSho;
 	
 	@FindBy(xpath="//div[starts-with(@class,'player-title-detail ng-tns-')]/h2")
@@ -94,6 +94,9 @@ public class videoplayer extends BaseSetup{
 	
 	@FindBy(xpath="//div[@class='center_control']/button[2]")
 	public static WebElement playerbackwordbutton;
+	
+	@FindBy(xpath="//div[@class='close add-coins-temp']")
+	public static WebElement RateCloseButton;
 	
 	
 	   

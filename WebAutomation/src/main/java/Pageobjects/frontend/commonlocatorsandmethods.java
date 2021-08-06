@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import Resources.BaseSetup;
 
 public class commonlocatorsandmethods extends BaseSetup {
@@ -78,6 +81,9 @@ public class commonlocatorsandmethods extends BaseSetup {
 	@FindBy(xpath = "//*[starts-with(@class, 'share ng-tns')]")
 	public static WebElement ShareButtononShoCard;
 
+	@FindBy(xpath = "//*[starts-with(@class,'mat-card-image ng-tns-')]")
+	public static List<WebElement> promocards;
+
 	public static void scrolldownm() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		try {
@@ -109,10 +115,9 @@ public class commonlocatorsandmethods extends BaseSetup {
 
 		for (int i = 0; i < alltitles; i++) {
 			String titleName = homepage.allTitles.get(i).getAttribute("alt");
-			System.out.println("Name of the title :" + titleName);
 
 			if (titleName.equalsIgnoreCase(shoName)) {
-				System.out.println("check" + shoName + "second" + titleName);
+
 				Actions actions = new Actions(driver);
 				actions.moveToElement(homepage.allTitles.get(i)).build().perform();
 				break;
@@ -120,5 +125,59 @@ public class commonlocatorsandmethods extends BaseSetup {
 			}
 
 		}
+	}
+
+	public static void clickTitleCardHome(String shoName) {
+		scrolldownm();
+
+		int alltitles = homepage.allTitles.size();
+		System.out.println("Size of element :" + alltitles);
+
+		for (int i = 0; i < alltitles; i++) {
+			String titleName = homepage.allTitles.get(i).getAttribute("alt");
+
+			if (titleName.equalsIgnoreCase(shoName)) {
+
+				Actions actions = new Actions(driver);
+				actions.moveToElement(homepage.allTitles.get(i)).click().build().perform();
+				break;
+
+			}
+
+		}
+	}
+
+	public static String PromoCardHover(String promoname) {
+		Actions a = new Actions(driver);
+		String promonameoncard = null;
+		for (int i = 0; i < shodetailpage.PromoNamesofPromoCards.size(); i++) {
+			if (shodetailpage.PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname)) {
+				promonameoncard = shodetailpage.PromoNamesofPromoCards.get(i).getText();
+				a.moveToElement(shodetailpage.PromoNamesofPromoCards.get(i)).build().perform();
+
+			}
+		}
+		return promonameoncard;
+	}
+
+	public static String PromoCardClick(String promoname) throws InterruptedException {
+		Actions a = new Actions(driver);
+		WebDriverWait wait = new WebDriverWait(driver, 30);
+		String promonameoncard = null;
+		int totalPromoCards = shodetailpage.PromoNamesofPromoCards.size();
+		Thread.sleep(2000);
+		for (int i = 0; i < totalPromoCards; i++) {
+
+			wait.until(ExpectedConditions.visibilityOfAllElements(shodetailpage.PromoNamesofPromoCards));
+			String promoCardsAllNames = shodetailpage.PromoNamesofPromoCards.get(i).getText();
+
+			if (promoCardsAllNames.equalsIgnoreCase(promoname)) {
+				promonameoncard = shodetailpage.PromoNamesofPromoCards.get(i).getText();
+				// a.moveToElement(shodetailpage.PromoNamesofPromoCards.get(i)).build().perform();
+				a.moveToElement(shodetailpage.PromoNamesofPromoCards.get(i)).click().build().perform();
+			}
+		}
+		return promonameoncard;
+
 	}
 }

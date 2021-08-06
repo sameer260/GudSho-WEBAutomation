@@ -171,7 +171,22 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//*[text()=' My Watch List ']")
 	public static WebElement myWatchlistSeeAll;
 
+	@FindBy(xpath = "//*[@class='promo-card card-slider ng-star-inserted']//child::div[@class='slider-header flex justify-content-between ng-star-inserted']//h3")
+	public static WebElement promoSeeAll;
+
 	@FindBy(xpath = "//*[@class='release-card card-slider ng-star-inserted']//child::span[@class='text']")
 	public static List<WebElement> shoTypeRowSeeAll;
+
+	@FindBy(xpath = "//*[text()='Follow ']")
+	public static List<WebElement> followButtons;
+
+	@FindBy(xpath = "//*[@class='button is-default following small mat-button mat-button-base ng-star-inserted']")
+	public static WebElement followingButton;
+
+	@FindBy(xpath = "//*[text()=' Yes ']")
+	public static WebElement yesButton;
+
+	@FindBy(xpath = "//img[@id='studio']")
+	public static List<WebElement> studioCards;
 
 }

@@ -24,7 +24,8 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 	@RunWith(Cucumber.class)
 	@CucumberOptions(features= "src/test/resources/Features/frontend",
-	glue={"steps"}
+	glue={"steps"},
+	plugin= {"timeline:test-output-thread/"}
 	
 	
 			)

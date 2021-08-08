@@ -15,17 +15,25 @@ import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.After;
 import Resources.BaseSetup;
+import Resources.Remoteclass;
 
 
 public class Hooks extends BaseSetup {
 	 
-	
+	/*@Before("@Remote")
+	public void abcd() throws InterruptedException, IOException
+	{
+		Remoteclass.remote();
+
+		
+	}	*/
 	
 	@Before(order=0)
 	public void launchdriverandapplication() throws InterruptedException, IOException
 	{
 		
 		BaseSetup.intiliazedriver();
+		//BaseSetup.remote();
 
 		
 	}	
@@ -62,7 +70,7 @@ public class Hooks extends BaseSetup {
 	       scenario.attach(screenshot, "image/png", "image");
 	       
 		}
-		driver.close();
+		driver.quit();
 	}
 
 }

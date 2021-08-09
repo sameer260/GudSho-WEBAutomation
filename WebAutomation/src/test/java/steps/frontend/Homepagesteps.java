@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.lowagie.text.List;
 
+import Pageobjects.frontend.Footer;
 import Pageobjects.frontend.ShareFeature;
 import Pageobjects.frontend.SignUp;
 import Pageobjects.frontend.ToastandErrormessages;
@@ -131,11 +132,14 @@ public class Homepagesteps extends BaseSetup {
 		assertTrue(accountandsettingspage.NotificationsTab.isDisplayed());
 		wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.NotificationElements));
 		assertTrue(accountandsettingspage.NotificationElements.isDisplayed());
+		String str=accountandsettingspage.NotificationsTab.getText();
+    	String areatstate=accountandsettingspage.TabSelection(str);
+    	assertEquals(areatstate,"true");
 	}
 
 	// phase 2 home
 
-	String mainShoName;
+	static String  mainShoName;
 
 	@Given("^From home page click on add to watchlist in (.+) title card$")
 	public void from_home_page_click_on_add_to_watchlist_in_title_card(String shoName) throws Throwable {
@@ -143,13 +147,15 @@ public class Homepagesteps extends BaseSetup {
 		commonlocatorsandmethods.hoverTitleCardHome(shoName);
 		homepage.addToWatchlistButton.click();
 		mainShoName = shoName;
+		log.info(mainShoName);
+		log.info(shoName);
 
 	}
 
 	@When("^check card availbility on my watchlist row$")
 	public void check_card_availbility_on_my_watchlist_row() throws Throwable {
 		commonlocatorsandmethods.scrolldownm();
-		String mywatchlistShoCardName = commonlocatorsandmethods.shocardwatchlistShoName(mainShoName);
+		String mywatchlistShoCardName = commonlocatorsandmethods.WatchlistRowonHomePage(mainShoName);
 		assertTrue(mywatchlistShoCardName.equalsIgnoreCase(mainShoName));
 
 	}
@@ -199,7 +205,7 @@ public class Homepagesteps extends BaseSetup {
 
 	@Given("^From home page click on sho type row see all hyperlink$")
 	public void from_home_page_click_on_sho_type_row_see_all_hyperlink() throws Throwable {
-		Thread.sleep(1000);
+		Thread.sleep(1500);
 		wait.until(ExpectedConditions.visibilityOfAllElements(homepage.shoTypeRowSeeAll));
 		Actions actions = new Actions(driver);
 		actions.moveToElement(homepage.shoTypeRowSeeAll.get(0)).click().build().perform();
@@ -219,6 +225,7 @@ public class Homepagesteps extends BaseSetup {
 	public void navigate_back_and_check_card_availbility_on_my_watchlist_row() throws Throwable {
 		driver.navigate().back();
 		commonlocatorsandmethods.scrolldownm();
+
 		String mywatchlistShoCardName = commonlocatorsandmethods.shocardwatchlistShoName(masterShoName);
 		assertTrue(mywatchlistShoCardName.equalsIgnoreCase(mainShoName));
 
@@ -270,6 +277,10 @@ public class Homepagesteps extends BaseSetup {
 		action.moveToElement(homepage.StudioCards.get(0)).click().build().perform();
 		homepage.followingButton.click();
 		homepage.yesButton.click();
+
+		commonlocatorsandmethods.WatchlistRowonHomePage(masterShoName);
+		
+
 
 	}
 }

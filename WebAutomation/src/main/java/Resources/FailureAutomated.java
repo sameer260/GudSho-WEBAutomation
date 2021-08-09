@@ -1,8 +1,10 @@
 package Resources;
+
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
+
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
@@ -17,14 +19,9 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
-import javax.swing.text.StyleConstants.FontConstants;
 
-import org.apache.pdfbox.pdmodel.font.PDFontFactory;
-
-
-
-public class AutomatedEmail
-{
+public class FailureAutomated {
+	
 	static SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");  
     static Date date = new Date();  
    
@@ -81,7 +78,7 @@ public class AutomatedEmail
 				BodyPart messageBodyPart1 = new MimeBodyPart();
 				String msg="Note: Download & open the attached reports using Firefox browser.";
 				// Set the body of email
-				messageBodyPart1.setText("Hi Team,\t\n\n\nPlease find the attached GudSho Web Automation Report for your kind reference.\t\n\n"
+				messageBodyPart1.setText("Hi Team,\t\n\n\nPlease find the attached Failed Scenarios results on previous run GudSho Web Automation Report.\t\n\n"
 						+ msg+".\t\n\n\nThanks");
 				
 	 

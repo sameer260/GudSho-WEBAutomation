@@ -77,12 +77,16 @@ Feature: Sho Detail Page Scenarios
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Check redirection of card and watchlist functionality of sho card on home page
 
+
     Examples: 
       | ShoName |
       | narappa |
 
-  @paywall
-  Scenario Outline: More like this Share popup
+
+    
+   @Paywall
+   Scenario Outline: More like this Share popup
+
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Click on shareicon from shocard and verify share popup
 

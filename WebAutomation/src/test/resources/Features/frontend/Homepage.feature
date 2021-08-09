@@ -51,7 +51,6 @@ Feature: GudSho Home Page
       | shoName      |
       | vada chennai |
 
-r
   Scenario Outline: This test is to verify the sho detail page redirection from home continue watchling
     Given Search any <Shoname> and verfiy its redirected to correct page
     When Play watch free content and close the player

@@ -116,7 +116,8 @@ public class Homepagesteps extends BaseSetup {
 	public void select_first_promo_card_from_promo_row() throws Throwable {
 		commonlocatorsandmethods.scrolldownm();
 		Actions a = new Actions(driver);
-		a.moveToElement(homepage.promoCard).click().build().perform();
+		a.moveToElement(
+				shodetailpage.PromoNamesofPromoCards.get(0)).click().build().perform();
 	}
 
 	@Then("^verify redirection of promo player$")

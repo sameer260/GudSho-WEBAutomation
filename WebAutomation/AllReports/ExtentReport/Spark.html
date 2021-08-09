@@ -11,7 +11,7 @@
 <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
-<style type="text/css"></style></head><body class="spa -report dark">
+<style type="text/css"></style></head><body class="spa bdd-report dark">
   <div class="app">
     <div class="layout">
 <div class="header navbar">
@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">QA-WEB Automtion Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Aug 9, 2021 03:46:42 PM</span></a>
+<a href="#"><span class="badge badge-primary">Aug 9, 2021 05:01:56 PM</span></a>
 </li>
 </ul>
 </div>
@@ -52,6 +52,16 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -61,33 +71,33 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Aug 9, 2021 03:46:42 PM</h3>
+<h3>Aug 9, 2021 05:01:56 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Aug 9, 2021 03:46:43 PM</h3>
+<h3>Aug 9, 2021 05:39:02 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
-<p class="m-b-0 text-pass">Tests Passed</p>
-<h3>0</h3>
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>3</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
-<p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>3</h3>
 </div></div>
 </div>
 </div>
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-4">
 <div class="card">
 <div class="card-header">
-<h6 class="card-title">Tests</h6>
+<h6 class="card-title">Features</h6>
 </div>
 <div class="card-body">
 <div class="">
@@ -95,13 +105,53 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> tests passed
+<div><small data-tooltip='50%'>
+<b>3</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='50%'><b>3</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='90%'><b>64</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='9%'><b>7</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='93%'><b>181</b> steps passed</small></div>
+<div>
+<small data-tooltip='3%'><b>7</b> steps failed,
+<b>5</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -117,36 +167,89 @@
 </div></div>
 <script>
 var timeline = {
+"GudSho Home Page":596.753,"Paywall Scenarios":509.186,"Footer Links & Profile Hover elements Redirection Scenarios":156.49,"Sho Detail Page Scenarios":473.759,"Studio Detail page Scenarios":848.033,"Video Player Scenarios":49.421
 };
 </script>
 <div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@ShodetailPage</td>
+<td>12</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@HomePage</td>
+<td>15</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>88.235%</td>
+</tr>
+<tr>
+<td>@Footer</td>
+<td>12</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>92.308%</td>
+</tr>
+<tr>
+<td>@Paywall</td>
+<td>25</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>96.154%</td>
+</tr>
+<tr>
+<td>@StudioPage</td>
+<td>17</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>80.952%</td>
+</tr>
+<tr>
+<td>@VideoPlayer</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 </div>
 </div>
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
-failParent: 0,
+passParent: 3,
+failParent: 3,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 0,
-failChild: 0,
+passChild: 64,
+failChild: 7,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 0,
-failGrandChild: 0,
+passGrandChild: 181,
+failGrandChild: 7,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 5,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 0,
-failEvents: 0,
-warningEvents: 0,
-skipEvents: 0,
-infoEvents: 0
 };
 </script><div class="test-wrapper row view test-view">
   <div class="test-list">
@@ -158,13 +261,2740 @@ infoEvents: 0
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@ShodetailPage</a><a class="dropdown-item" href="#">@HomePage</a><a class="dropdown-item" href="#">@Footer</a><a class="dropdown-item" href="#">@Paywall</a><a class="dropdown-item" href="#">@StudioPage</a><a class="dropdown-item" href="#">@VideoPlayer</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">GudSho Home Page</p>
+            <p class="text-sm">
+              <span>17:01:57 PM</span> / <span>39:56:753</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">GudSho Home Page</h5>
+<span class='badge badge-success'>08.09.2021 17:01:57</span>
+<span class='badge badge-danger'>08.09.2021 17:11:54</span>
+<span class='badge badge-default'>39:56:753</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Notification Page Redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.verify_notification_tab()">
+                <span>Given verify notification tab</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.verify_notification_page_redirected_to_correct_page()">
+                <span>When verify notification page redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.click_on_notifications_link_and_it_should_redirect_to_notifications_tab()">
+                <span>Then Click on notifications link and it should redirect to notifications tab</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>User Profile</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.verify_user_profile_icon()">
+                <span>Given verify user profile icon</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.verify_profile_icon_page()">
+                <span>Then verify profile icon page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="17"><span class="badge log pass-bg mr-2">Pass</span>Home page Banner Redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.Select_first_card_from_home_banner_and_check_sho_detail_page_redirection()">
+                <span>Given Select first card from home banner and check sho detail page redirection</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="23"><span class="badge log pass-bg mr-2">Pass</span>Promo Card Redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.select_first_promo_card_from_promo_row()">
+                <span>Given Select first promo card from promo row</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.verify_redirection_of_promo_player()">
+                <span>Then verify redirection of promo player</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="30"><span class="badge log fail-bg mr-2">Fail</span>Sho Card Redirection</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="steps.frontend.Homepagesteps.click_on_sho_card_from_any_row_and_verify_its_redirected_to_correct_sho_detail_page()">
+                <span>Given Click on sho card from any row and verify its redirected to correct sho detail page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/stale_element_reference.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:59617}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: a2527eb4de0ed1569587ec67e303ca59
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+	at steps.frontend.Homepagesteps.click_on_sho_card_from_any_row_and_verify_its_redirected_to_correct_sho_detail_page(Homepagesteps.java:82)
+	at ✽.Click on sho card from any row and verify its redirected to correct sho detail page(file:///C:/Users/user/git/GudSho-WEBAutomation/WebAutomation/src/test/resources/Features/frontend/Homepage.feature:21)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>steps.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded1.png' src="../Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="36"><span class="badge log pass-bg mr-2">Pass</span>Studio Card Redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.Homepagesteps.click_on_studio_card_from_studio_row_and_verify_its_redirected_to_correct_studio_detail_page()">
+                <span>Given Click on studio card from studio row and verify its redirected to correct studio detail page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="42"><span class="badge log fail-bg mr-2">Fail</span>This test is to verify the follow button from home</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step fail-bg" title="steps.frontend.Homepagesteps.from_home_page_click_onfollow_button_and_verify_the_button_changes()">
+                <span>Given From home page click onfollow button and verify the button changes</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button mat-button="" class="button is-icon blue-stroke small btn no-events mat-button mat-button-base ng-star-inserted">...</button> is not clickable at point (399, 391). Other element would receive the click: <app-follow-studios class="ng-tns-c85-131">...</app-follow-studios>
+  (Session info: chrome=92.0.4515.131)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:56724}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: f28c66abf033a0c8b9addeb875c25744
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at steps.frontend.Homepagesteps.from_home_page_click_onfollow_button_and_verify_the_button_changes(Homepagesteps.java:277)
+	at ✽.From home page click onfollow button and verify the button changes(file:///C:/Users/user/git/GudSho-WEBAutomation/WebAutomation/src/test/resources/Features/frontend/Homepage.feature:27)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>steps.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded2.png' src="../Screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="48"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the added sho in addto watchlist</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="49"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the added sho in addto watchlist</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page click on add to watchlist in vada chennai title card</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When check card availbility on my watchlist row</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="56"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on sho card</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="57"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on sho card</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page click on share button in kaithi title card</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on share button from the card and verify share popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="64"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on sho card from see all page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="65"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on sho card from see all page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page click on sho type row see all hyperlink</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When From home page click on share button in vada chennai title card</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on share button from the card and verify share popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="125"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on sho card from see all page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page click on promo type row see all hyperlink</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Close promo player Two Years Of Kaala - The Masterpiece _ Rajinikant and verify redirection</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="73"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the sho detail page redirection from home continue watching</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="74"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the sho detail page redirection from home continue watching</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any scedue and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Play watch free content and close the player</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Navigate to gudsho home and click on sho name hyperlink from continue watching and verify redirection</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="82"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the added sho in addto watchlist from see all</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="83"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the added sho in addto watchlist from see all</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page click on sho type row see all hyperlink</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Hover and click on click on add to watchlist in Transformer: The Age Of Extinction title card</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Navigate back and Transformer: The Age Of Extinction availbility on my watchlist row</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Remove from watchlit</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="92"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the sho redirection from see all page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="93"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the sho redirection from see all page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page click on sho type row see all hyperlink</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When From see all page click on sho card vada chennai and verif redirection</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="100"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on promo card</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="101"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on promo card</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page hover on Two Years Of Kaala - The Masterpiece _ Rajinikant promo card</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on share button from the card and verify share popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="108"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on promo card from see all page</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="109"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the share button on promo card from see all page</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page click on promo type row see all hyperlink</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When From home page hover on Two Years Of Kaala - The Masterpiece _ Rajinikant promo card</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on share button from the card and verify share popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="117"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the sho detail page redirection from promo player</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="118"><span class="badge log pass-bg mr-2">Pass</span>This test is to verify the sho detail page redirection from promo player</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given From home page hover on Two Years Of Kaala - The Masterpiece _ Rajinikant promo card and close the player</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then On home page check liked Two Years Of Kaala - The Masterpiece _ Rajinikant is showing in my gud promos</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="132"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Paywall Scenarios</p>
+            <p class="text-sm">
+              <span>17:11:54 PM</span> / <span>38:29:186</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Paywall Scenarios</h5>
+<span class='badge badge-success'>08.09.2021 17:11:54</span>
+<span class='badge badge-danger'>08.09.2021 17:20:23</span>
+<span class='badge badge-default'>38:29:186</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=132</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="133"><span class="badge log pass-bg mr-2">Pass</span>Watch List Popup</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="134"><span class="badge log pass-bg mr-2">Pass</span>Watch List Popup</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And From sho detail page click on add to watchlist</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Vaildate Signin Popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="141"><span class="badge log pass-bg mr-2">Pass</span>Promo icon Gud Popup</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="142"><span class="badge log pass-bg mr-2">Pass</span>Promo icon Gud Popup</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And From sho detail page click on any promo</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When while playing click on greate gud button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Vaildate Signin Popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="150"><span class="badge log pass-bg mr-2">Pass</span>Buy Button Popup</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="151"><span class="badge log pass-bg mr-2">Pass</span>Buy Button Popup</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And From sho detail page click on Buy button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Vaildate Signin Popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="158"><span class="badge log pass-bg mr-2">Pass</span>Sho Page Social Media Icons Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="159"><span class="badge log pass-bg mr-2">Pass</span>Sho Page Social Media Icons Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on Share button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Check share popup is displayed with social ions</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="300"><span class="badge log pass-bg mr-2">Pass</span>Sho Page Social Media Icons Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on Share button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Share the shoshare using all social icons</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="166"><span class="badge log pass-bg mr-2">Pass</span>Promo Player Social Media Icons Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="167"><span class="badge log pass-bg mr-2">Pass</span>Promo Player Social Media Icons Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Share Vakeel Sab Theatrical Trailer and verify share popup and share icons are displayed</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="308"><span class="badge log pass-bg mr-2">Pass</span>Promo Player Social Media Icons Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Hover on Vakeel Sab Theatrical Trailer card and share promo promoshare using all shares</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="173"><span class="badge log pass-bg mr-2">Pass</span>Follow Studio PopUp</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="174"><span class="badge log pass-bg mr-2">Pass</span>Follow Studio PopUp</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio santii's studio and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And From studio detail page click on follow button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Vaildate Signin Popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="181"><span class="badge log pass-bg mr-2">Pass</span>Studio Page Social Media Icons Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="182"><span class="badge log pass-bg mr-2">Pass</span>Studio Page Social Media Icons Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click studio share icon</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Check share popup is displayed with social ions</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="189"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Footer Links & Profile Hover elements Redirection Scenarios</p>
+            <p class="text-sm">
+              <span>17:13:35 PM</span> / <span>32:36:490</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Footer Links & Profile Hover elements Redirection Scenarios</h5>
+<span class='badge badge-success'>08.09.2021 17:13:35</span>
+<span class='badge badge-danger'>08.09.2021 17:16:11</span>
+<span class='badge badge-default'>32:36:490</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=189</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="190"><span class="badge log pass-bg mr-2">Pass</span>gudsho logo</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.verify_gudsho_logo()">
+                <span>Then verify gudsho logo</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.verify_footer_paragraph_text()">
+                <span>And verify footer paragraph text</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.verify_footer_headings()">
+                <span>And Verify Footer headings</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="197"><span class="badge log pass-bg mr-2">Pass</span>About us page redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_about_us_link_and_verify_it_should_redirected_to_correct_page()">
+                <span>Given click about us link and verify it should redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="202"><span class="badge log pass-bg mr-2">Pass</span>Help&support  page redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_helpsupport_link_and_verify_it_should_redirected_to_correct_page()">
+                <span>Given click help&support link and verify it should redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="207"><span class="badge log pass-bg mr-2">Pass</span>Submit your film  page redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_submit_your_film_link_and_verify_it_should_redirected_to_correct_page()">
+                <span>Given click Submit your film link and verify it should redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="212"><span class="badge log pass-bg mr-2">Pass</span>Blog  page redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_blog_link_and_verify_it_should_redirected_to_correct_page()">
+                <span>Given click blog link and verify it should redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="217"><span class="badge log pass-bg mr-2">Pass</span>Terms  page redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_terms_link_and_verify_it_should_redirected_to_correct_page()">
+                <span>Given click terms link and verify it should redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="222"><span class="badge log pass-bg mr-2">Pass</span>Privacy  page redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_privacy_link_and_verify_it_should_redirected_to_correct_page()">
+                <span>Given click privacy link and verify it should redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="227"><span class="badge log pass-bg mr-2">Pass</span>Sell your movies & series on gudsho  page redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_sell_your_movies_series_on_gudsho_link_and_verify_it_should_redirected_to_correct_page()">
+                <span>Given click Sell your movies & series on gudsho link and verify it should redirected to correct page</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="232"><span class="badge log pass-bg mr-2">Pass</span>PlayStore App Redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.check_play_store_app_redirection()">
+                <span>Given Check Play store App redirection</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="237"><span class="badge log pass-bg mr-2">Pass</span>App Store Redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.check_app_store_app_redirection()">
+                <span>Given Check App store App redirection</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="242"><span class="badge log pass-bg mr-2">Pass</span>Social Links Redirection</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.check_facebook_redirection()">
+                <span>Given Check Facebook redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.check_twitter_redirection()">
+                <span>And Check Twitter redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.check_instagram_redirection()">
+                <span>And Check Instagram redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.check_linkedin_redirection()">
+                <span>And Check Linkedin redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.check_youtube_redirection()">
+                <span>And Check Youtube redirection</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="251"><span class="badge log fail-bg mr-2">Fail</span>Check all profile hover elements redirections</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.hover_on_profile()">
+                <span>Given Hover on profile</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_on_support_menu()">
+                <span>Then Click on support menu and verify redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.hover_on_profile()">
+                <span>Given Hover on profile</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_on_friends_menu_and_verify_redirection()">
+                <span>Then Click on Friends menu and verify redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.hover_on_profile()">
+                <span>Given Hover on profile</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_on_account_and_settings_menu_and_verify_redirection()">
+                <span>Then Click on Account and settings menu and verify redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.hover_on_profile()">
+                <span>Given Hover on profile</span>
+      <div>
+      </div>
+              </div>
+              <div class="step fail-bg" title="steps.frontend.footersteps.click_on_signout_and_check_toaster()">
+                <span>Then Click on Signout and check toaster</span>
+      <div>
+        <textarea disabled class="code-block">org.junit.ComparisonFailure: expected:<[You have logged in] successfully> but was:<[Done!Signed out] successfully>
+	at org.junit.Assert.assertEquals(Assert.java:115)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at steps.frontend.footersteps.click_on_signout_and_check_toaster(footersteps.java:261)
+	at ✽.Click on Signout and check toaster(file:///C:/Users/user/git/GudSho-WEBAutomation/WebAutomation/src/test/resources/Features/frontend/footer.feature:63)
+</textarea>
+      
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER">
+                <span>steps.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded3.png' src="../Screenshots/embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="264"><span class="badge log pass-bg mr-2">Pass</span>Verify Mobile Number and Name on profile</div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="steps.frontend.footersteps.hover_on_profile()">
+                <span>Given Hover on profile</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.click_on_account_and_settings_menu_and_verify_redirection()">
+                <span>Then Click on Account and settings menu and verify redirection</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="steps.frontend.footersteps.capture_name_and_profile_and_verify_with_name_and_number()">
+                <span>And capture name and profile and verify with name and number</span>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="272"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Sho Detail Page Scenarios</p>
+            <p class="text-sm">
+              <span>17:16:11 PM</span> / <span>37:53:759</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Sho Detail Page Scenarios</h5>
+<span class='badge badge-success'>08.09.2021 17:16:11</span>
+<span class='badge badge-danger'>08.09.2021 17:24:05</span>
+<span class='badge badge-default'>37:53:759</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=272</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="273"><span class="badge log pass-bg mr-2">Pass</span>Sho-Purchase & Payment</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="274"><span class="badge log pass-bg mr-2">Pass</span>Sho-Purchase & Payment</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Buy the sho using Card with Success</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Verify after payment Talent is playing and close the player</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="282"><span class="badge log pass-bg mr-2">Pass</span>Promo Gud</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="283"><span class="badge log pass-bg mr-2">Pass</span>Promo Gud</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Play Vakeel Sab Theatrical Trailer and like promo</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then On home page check liked Vakeel Sab Theatrical Trailer is showing in my gud promos</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="291"><span class="badge log pass-bg mr-2">Pass</span>Sho Watchlist</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="292"><span class="badge log pass-bg mr-2">Pass</span>Sho Watchlist</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Add Talent in to watchlist and check the toaster message</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then On home page check the added watchlist Talent</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="315"><span class="badge log pass-bg mr-2">Pass</span>Studio Link Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="316"><span class="badge log pass-bg mr-2">Pass</span>Studio Link Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Click on Studio link and check redirected to studio detail page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="323"><span class="badge log pass-bg mr-2">Pass</span>Continue Watching</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="324"><span class="badge log pass-bg mr-2">Pass</span>Continue Watching</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Paytm and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Play watch free content and close the player</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And On sho detail page verify watch now button should change to resume</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then On Home Page check continue wathing is showing Paytm</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="333"><span class="badge log pass-bg mr-2">Pass</span>Sho detail info</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="334"><span class="badge log pass-bg mr-2">Pass</span>Sho detail info</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Narappa and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Check all sho detail info and check seemore popup if Yes</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then check About section if about tab Yes</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="342"><span class="badge log pass-bg mr-2">Pass</span>Sho detail info</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Paytm and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Check all sho detail info and check seemore popup if No</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then check About section if about tab No</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="350"><span class="badge log pass-bg mr-2">Pass</span>Sho Card Watchist and Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="351"><span class="badge log pass-bg mr-2">Pass</span>Sho Card Watchist and Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any narappa and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Check redirection of card and watchlist functionality of sho card on home page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="358"><span class="badge log pass-bg mr-2">Pass</span>More like this Share popup</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="359"><span class="badge log pass-bg mr-2">Pass</span>More like this Share popup</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any narappa and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Click on shareicon from shocard and verify share popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="365"><span class="badge log pass-bg mr-2">Pass</span>More like this sho card Functionality</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="366"><span class="badge log pass-bg mr-2">Pass</span>More like this sho card Functionality</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any narappa and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then click on more like this link and check watchlist toaster</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Check redirection of sho card</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="374"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Studio Detail page Scenarios</p>
+            <p class="text-sm">
+              <span>17:24:05 PM</span> / <span>44:08:033</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">Studio Detail page Scenarios</h5>
+<span class='badge badge-success'>08.09.2021 17:24:05</span>
+<span class='badge badge-danger'>08.09.2021 17:38:13</span>
+<span class='badge badge-default'>44:08:033</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=374</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="375"><span class="badge log pass-bg mr-2">Pass</span>Studio Share</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="376"><span class="badge log pass-bg mr-2">Pass</span>Studio Share</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click studio share icon</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Share the shoshare using all social icons</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="392"><span class="badge log pass-bg mr-2">Pass</span>Studio Share</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click studio share icon</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Share the shoshare using all social icons</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="384"><span class="badge log pass-bg mr-2">Pass</span>Studio Banner Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="385"><span class="badge log pass-bg mr-2">Pass</span>Studio Banner Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Click on Banner image and verify redirection to correct sho detail page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="400"><span class="badge log pass-bg mr-2">Pass</span>Studio Banner Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Click on Banner image and verify redirection to correct sho detail page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="407"><span class="badge log fail-bg mr-2">Fail</span>Follow Studio</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="408"><span class="badge log fail-bg mr-2">Fail</span>Follow Studio</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step fail-bg">
+                    <span>Given Search any studio Trail Studio and verify it should redirected to correct page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button _ngcontent-serverapp-c176="" value="Search" name="search" id="home-search-icon" mat-icon-button="" class="mat-icon-button mat-button-base search-btn show-shadow">...</button> is not clickable at point (1585, 33). Other element would receive the click: <span class="log-sign-overlay ng-tns-c194-33"></span>
+  (Session info: chrome=92.0.4515.131)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:64795}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 512266bdca597a1ee960b882b75f2306
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at sun.reflect.GeneratedMethodAccessor93.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy23.click(Unknown Source)
+	at Pageobjects.frontend.homepage.HomePageSearch(homepage.java:130)
+	at steps.frontend.commonSteps.search_any_studio_and_verify_it_should_redirected_to_correct_page(commonSteps.java:33)
+	at ✽.Search any studio Trail Studio and verify it should redirected to correct page(file:///C:/Users/user/git/GudSho-WEBAutomation/WebAutomation/src/test/resources/Features/frontend/studiodetailpage.feature:42)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>When Click on Follow button</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then check  toaster message and verify following text</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>steps.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded4.png' src="../Screenshots/embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="416"><span class="badge log pass-bg mr-2">Pass</span>Promo Card Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="417"><span class="badge log pass-bg mr-2">Pass</span>Promo Card Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When verfiy promo player</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then close player</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="425"><span class="badge log pass-bg mr-2">Pass</span>Sho Card Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="426"><span class="badge log pass-bg mr-2">Pass</span>Sho Card Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When click sho card and verify its redirected sho detail page</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="433"><span class="badge log pass-bg mr-2">Pass</span>Sho Card Genre Redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="434"><span class="badge log pass-bg mr-2">Pass</span>Sho Card Genre Redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Trail Studio and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When click Drama and verify sho card redirection</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="441"><span class="badge log fail-bg mr-2">Fail</span>UnFollow Studio</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="442"><span class="badge log fail-bg mr-2">Fail</span>UnFollow Studio</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Trail Studio and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on Follow button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>Then From popup check unfollow studio and check toaster</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='cdk-overlay-pane delete-popup']' (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at steps.frontend.studiodetailpagesteps.from_popup_check_unfollow_studio_and_check_toaster(studiodetailpagesteps.java:138)
+	at ✽.From popup check unfollow studio and check toaster(file:///C:/Users/user/git/GudSho-WEBAutomation/WebAutomation/src/test/resources/Features/frontend/studiodetailpage.feature:87)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='cdk-overlay-pane delete-popup']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:64576}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 033d9848dca5c7fe58605391f4291f64
+*** Element info: {Using=xpath, value=//div[@class='cdk-overlay-pane delete-popup']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy23.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at steps.frontend.studiodetailpagesteps.from_popup_check_unfollow_studio_and_check_toaster(studiodetailpagesteps.java:138)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And check studio info</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>steps.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded5.png' src="../Screenshots/embedded5.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="451"><span class="badge log pass-bg mr-2">Pass</span>WatchFree Tab Card functionality</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="452"><span class="badge log pass-bg mr-2">Pass</span>WatchFree Tab Card functionality</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When click on watch free tab</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Check redirection of sho card from watch free tab</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="459"><span class="badge log pass-bg mr-2">Pass</span>Genere which doesnot have any sho or series</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="460"><span class="badge log pass-bg mr-2">Pass</span>Genere which doesnot have any sho or series</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Trail Studio and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click Comedy which doesnot have any shos</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Click on studio home and verify its redirection to home</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="467"><span class="badge log pass-bg mr-2">Pass</span>Check sharepopup of sho cards</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="468"><span class="badge log pass-bg mr-2">Pass</span>Check sharepopup of sho cards</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Trail Studio and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Share sho card from home and verify popup</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Click Drama share sho card and verify popup</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Verify share popup on watch free tab sho card</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="476"><span class="badge log pass-bg mr-2">Pass</span>Check Share Popup for promo cards</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="477"><span class="badge log pass-bg mr-2">Pass</span>Check Share Popup for promo cards</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Trail Studio and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then verify promo share popup</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on promo see all link and verify share popup</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="484"><span class="badge log fail-bg mr-2">Fail</span>Gud Promo</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="485"><span class="badge log fail-bg mr-2">Fail</span>Gud Promo</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>When play Powerful Police Officer Scenes Back To Back _ Top from the row and like promo</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: RemoteWebDriver
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:332)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+	at java.util.LinkedHashMap$LinkedValues.forEach(Unknown Source)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+	at steps.frontend.studiodetailpagesteps.play_from_the_row_and_like_promo(studiodetailpagesteps.java:262)
+	at ✽.play Powerful Police Officer Scenes Back To Back _ Top from the row and like promo(file:///C:/Users/user/git/GudSho-WEBAutomation/WebAutomation/src/test/resources/Features/frontend/studiodetailpage.feature:137)
+	Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: driver.version: RemoteWebDriver
+		at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:279)
+		at org.openqa.selenium.json.Json.toJson(Json.java:44)
+		at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+		at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+		at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+		at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+		at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+		at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+		at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+		at steps.frontend.studiodetailpagesteps.play_from_the_row_and_like_promo(studiodetailpagesteps.java:262)
+		at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+		at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+		at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+		at java.lang.reflect.Method.invoke(Unknown Source)
+		at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+		at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+		at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+		at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+		at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+		at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+		at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+		at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+		at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+		at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+		at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+		at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+		at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)
+		at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)
+		at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+		at io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)
+		at io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)
+		at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+		at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+		at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+		at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+		at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+		at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)
+		at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+		at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+		at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+		at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+		at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+		at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+		at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+		at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+		at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: java.lang.reflect.InvocationTargetException
+	at sun.reflect.GeneratedMethodAccessor117.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:328)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:155)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$21(JsonOutput.java:168)
+	at java.util.LinkedHashMap$LinkedValues.forEach(Unknown Source)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:168)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.lambda$null$23(JsonOutput.java:177)
+	at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:65)
+	at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:176)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:264)
+	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:255)
+	at org.openqa.selenium.json.Json.toJson(Json.java:42)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:227)
+	at org.openqa.selenium.remote.http.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:117)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:152)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:618)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:639)
+	at steps.frontend.studiodetailpagesteps.play_from_the_row_and_like_promo(studiodetailpagesteps.java:262)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='plyr__poster']"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:53523}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: bf69c24e1e2759f073788e68391b768a
+*** Element info: {Using=xpath, value=//div[@class='plyr__poster']}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy23.getWrappedElement(Unknown Source)
+	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:204)
+	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:155)
+	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:75)
+	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:84)
+	... 66 more
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then On home page check liked Powerful Police Officer Scenes Back To Back _ Top is showing in my gud promos</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>steps.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded6.png' src="../Screenshots/embedded6.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="493"><span class="badge log fail-bg mr-2">Fail</span>See All Promo redirection</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="494"><span class="badge log fail-bg mr-2">Fail</span>See All Promo redirection</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>When Play promo from see all page</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //div[@class='home-slider promo flicks-promos ng-star-inserted']/app-gud-card' (tried for 30 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
+	at steps.frontend.studiodetailpagesteps.play_promo_from_see_all_page(studiodetailpagesteps.java:278)
+	at ✽.Play promo from see all page(file:///C:/Users/user/git/GudSho-WEBAutomation/WebAutomation/src/test/resources/Features/frontend/studiodetailpage.feature:147)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@class='home-slider promo flicks-promos ng-star-inserted']/app-gud-card"}
+  (Session info: chrome=92.0.4515.131)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-BG85F12', ip: '10.212.134.16', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_291'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 92.0.4515.131, chrome: {chromedriverVersion: 92.0.4515.43 (8c61b7e2989f2..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:62183}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 087db34cc0b17a907a79cd7b6c07c9c3
+*** Element info: {Using=xpath, value=//div[@class='home-slider promo flicks-promos ng-star-inserted']/app-gud-card}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy23.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:314)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:43)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:300)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:297)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:249)
+	at steps.frontend.studiodetailpagesteps.play_promo_from_see_all_page(studiodetailpagesteps.java:278)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+	at io.cucumber.junit.PickleRunners$NoStepDescriptions.run(PickleRunners.java:151)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:135)
+	at io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:27)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:199)
+	at io.cucumber.junit.Cucumber.runChild(Cucumber.java:90)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at io.cucumber.junit.Cucumber$RunCucumber.evaluate(Cucumber.java:234)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86)
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:538)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:760)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:460)
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:206)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then check redirection of promo and then to sho detail page</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>steps.Hooks.teardown(io.cucumber.java.Scenario)</span>
+      <div>image
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Screenshots/embedded7.png' src="../Screenshots/embedded7.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="501"><span class="badge log pass-bg mr-2">Pass</span>See all sho card Share</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="502"><span class="badge log pass-bg mr-2">Pass</span>See all sho card Share</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on sho see all link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Check Share popup in see all</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="509"><span class="badge log pass-bg mr-2">Pass</span>See all sho card redirection</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="510"><span class="badge log pass-bg mr-2">Pass</span>See all sho card redirection</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on sho see all link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then check sho card redirection in see all</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="517"><span class="badge log pass-bg mr-2">Pass</span>See all sho card Watchlist</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="518"><span class="badge log pass-bg mr-2">Pass</span>See all sho card Watchlist</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on sho see all link</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Check watchlist in see all</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And On home page check the added watchlist</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="527"><span class="badge log pass-bg mr-2">Pass</span>Home Sho Card Watchlist</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="528"><span class="badge log pass-bg mr-2">Pass</span>Home Sho Card Watchlist</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on watchlist button on sho card and check toaster</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then On home page check this sho card on watchlist row</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="536"><span class="badge log pass-bg mr-2">Pass</span>Watch Free Sho Card Watchlist</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="537"><span class="badge log pass-bg mr-2">Pass</span>Watch Free Sho Card Watchlist</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on watch free tab</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on watchlist button on sho card and check toaster</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then On home page check this sho card on watchlist row</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="546"><span class="badge log pass-bg mr-2">Pass</span>From genere Sho Card Watchlist</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="547"><span class="badge log pass-bg mr-2">Pass</span>From genere Sho Card Watchlist</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any studio Sameer and verify it should redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Click on any Drama</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Click on watchlist button on sho card and check toaster</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then On home page check this sho card on watchlist row</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="556"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Video Player Scenarios</p>
+            <p class="text-sm">
+              <span>17:38:13 PM</span> / <span>30:49:421</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Video Player Scenarios</h5>
+<span class='badge badge-success'>08.09.2021 17:38:13</span>
+<span class='badge badge-danger'>08.09.2021 17:39:02</span>
+<span class='badge badge-default'>30:49:421</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=556</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="557"><span class="badge log pass-bg mr-2">Pass</span>Player Actions</div>
+      </div>
+    </div>
+        <div class="scenario_outline collapse">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="558"><span class="badge log pass-bg mr-2">Pass</span>Player Actions</div>
+                </div>
+              </div>
+              <div class="card-body mt-3 collapse">
+                  <div class="step pass-bg">
+                    <span>Given Search any Talent and verfiy its redirected to correct page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When Play promo</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Pause Video at 00:10 and play agian</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And Forward video after 00:15 and Backward video after 00:27</span>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -174,7 +3004,1303 @@ infoEvents: 0
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-        </div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">6</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>12</span>
+</span>
+<p class="name">@ShodetailPage</p>
+<p class="duration text-sm">12 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@ShodetailPage</h4>
+<span status="pass" class='badge log pass-bg'>12 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:16:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='274'>Sho-Purchase & Payment</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Sho-Purchase & Payment</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:16:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='283'>Promo Gud</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Promo Gud</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:17:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='292'>Sho Watchlist</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Sho Watchlist</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:18:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='300'>Sho Page Social Media Icons Redirection</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Sho Page Social Media Icons Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:19:04 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='308'>Promo Player Social Media Icons Redirection</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Promo Player Social Media Icons Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:20:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='316'>Studio Link Redirection</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Studio Link Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:20:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='324'>Continue Watching</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Continue Watching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:21:32 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='334'>Sho detail info</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Sho detail info</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:22:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='342'>Sho detail info</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Sho detail info</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:22:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='351'>Sho Card Watchist and Redirection</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.Sho Card Watchist and Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:23:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='359'>More like this Share popup</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.More like this Share popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:23:33 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='366'>More like this sho card Functionality</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.More like this sho card Functionality</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>15</span>
+<span class='badge log badge-danger'>2</span>
+</span>
+<p class="name">@HomePage</p>
+<p class="duration text-sm">17 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@HomePage</h4>
+<span status="pass" class='badge log pass-bg'>15 passed</span>
+<span status="fail" class='badge log badge-danger'>2 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:01:57 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Notification Page Redirection</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.Notification Page Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='10'>User Profile</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.User Profile</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:02:49 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='17'>Home page Banner Redirection</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.Home page Banner Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:03:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='23'>Promo Card Redirection</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.Promo Card Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:03:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='30'>Sho Card Redirection</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.Sho Card Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:04:11 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='36'>Studio Card Redirection</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.Studio Card Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:04:45 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='42'>This test is to verify the follow button from home</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the follow button from home</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:05:19 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='49'>This test is to verify the added sho in addto watchlist</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the added sho in addto watchlist</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:05:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='57'>This test is to verify the share button on sho card</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the share button on sho card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:06:29 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='65'>This test is to verify the share button on sho card from see all page</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the share button on sho card from see all page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:07:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='74'>This test is to verify the sho detail page redirection from home continue watching</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the sho detail page redirection from home continue watching</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:07:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='83'>This test is to verify the added sho in addto watchlist from see all</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the added sho in addto watchlist from see all</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:08:26 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='93'>This test is to verify the sho redirection from see all page</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the sho redirection from see all page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:08:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='101'>This test is to verify the share button on promo card</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the share button on promo card</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:09:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='109'>This test is to verify the share button on promo card from see all page</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the share button on promo card from see all page</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:10:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='118'>This test is to verify the sho detail page redirection from promo player</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the sho detail page redirection from promo player</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:11:03 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='125'>This test is to verify the share button on sho card from see all page</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the share button on sho card from see all page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>12</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@Footer</p>
+<p class="duration text-sm">13 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Footer</h4>
+<span status="pass" class='badge log pass-bg'>12 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:13:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='190'>gudsho logo</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.gudsho logo</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:13:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='197'>About us page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.About us page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='202'>Help&support page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Help&support page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='207'>Submit your film page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Submit your film page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='212'>Blog page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Blog page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='217'>Terms page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Terms page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='222'>Privacy page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Privacy page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='227'>Sell your movies & series on gudsho page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Sell your movies & series on gudsho page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='232'>PlayStore App Redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.PlayStore App Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:44 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='237'>App Store Redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.App Store Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='242'>Social Links Redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Social Links Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:15:20 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='251'>Check all profile hover elements redirections</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Check all profile hover elements redirections</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:15:44 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='264'>Verify Mobile Number and Name on profile</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Verify Mobile Number and Name on profile</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>25</span>
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@Paywall</p>
+<p class="duration text-sm">26 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Paywall</h4>
+<span status="pass" class='badge log pass-bg'>25 passed</span>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:11:54 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='134'>Watch List Popup</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Watch List Popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:12:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='142'>Promo icon Gud Popup</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Promo icon Gud Popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:12:28 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='151'>Buy Button Popup</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Buy Button Popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:12:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='159'>Sho Page Social Media Icons Redirection</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Sho Page Social Media Icons Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:12:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='167'>Promo Player Social Media Icons Redirection</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Promo Player Social Media Icons Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:13:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='174'>Follow Studio PopUp</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Follow Studio PopUp</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:13:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='132' id='182'>Studio Page Social Media Icons Redirection</a>
+<div class="">
+<span class="badge badge-default">Paywall Scenarios.Studio Page Social Media Icons Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:13:35 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='190'>gudsho logo</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.gudsho logo</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:13:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='197'>About us page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.About us page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:00 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='202'>Help&support page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Help&support page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='207'>Submit your film page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Submit your film page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:12 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='212'>Blog page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Blog page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:17 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='217'>Terms page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Terms page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='222'>Privacy page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Privacy page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='227'>Sell your movies & series on gudsho page redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Sell your movies & series on gudsho page redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:38 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='232'>PlayStore App Redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.PlayStore App Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:44 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='237'>App Store Redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.App Store Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:14:51 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='242'>Social Links Redirection</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Social Links Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:23:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='272' id='359'>More like this Share popup</a>
+<div class="">
+<span class="badge badge-default">Sho Detail Page Scenarios.More like this Share popup</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:30:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='452'>WatchFree Tab Card functionality</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.WatchFree Tab Card functionality</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:31:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='460'>Genere which doesnot have any sho or series</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Genere which doesnot have any sho or series</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:31:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='468'>Check sharepopup of sho cards</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Check sharepopup of sho cards</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:31:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='477'>Check Share Popup for promo cards</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Check Share Popup for promo cards</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:33:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='494'>See All Promo redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See All Promo redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:34:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='502'>See all sho card Share</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See all sho card Share</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:35:02 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='510'>See all sho card redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See all sho card redirection</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>17</span>
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">@StudioPage</p>
+<p class="duration text-sm">21 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@StudioPage</h4>
+<span status="pass" class='badge log pass-bg'>17 passed</span>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:24:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='376'>Studio Share</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Studio Share</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:25:07 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='385'>Studio Banner Redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Studio Banner Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:25:34 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='392'>Studio Share</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Studio Share</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:26:30 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='400'>Studio Banner Redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Studio Banner Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:26:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='408'>Follow Studio</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Follow Studio</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:27:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='417'>Promo Card Redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Promo Card Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:28:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='426'>Sho Card Redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Sho Card Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:28:55 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='434'>Sho Card Genre Redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Sho Card Genre Redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:29:23 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='442'>UnFollow Studio</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.UnFollow Studio</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:30:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='452'>WatchFree Tab Card functionality</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.WatchFree Tab Card functionality</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:31:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='460'>Genere which doesnot have any sho or series</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Genere which doesnot have any sho or series</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:31:42 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='468'>Check sharepopup of sho cards</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Check sharepopup of sho cards</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:31:59 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='477'>Check Share Popup for promo cards</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Check Share Popup for promo cards</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:32:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='485'>Gud Promo</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Gud Promo</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:33:22 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='494'>See All Promo redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See All Promo redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:34:40 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='502'>See all sho card Share</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See all sho card Share</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:35:02 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='510'>See all sho card redirection</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See all sho card redirection</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:35:21 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='518'>See all sho card Watchlist</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See all sho card Watchlist</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:36:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='528'>Home Sho Card Watchlist</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Home Sho Card Watchlist</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:36:48 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='537'>Watch Free Sho Card Watchlist</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Watch Free Sho Card Watchlist</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:37:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='547'>From genere Sho Card Watchlist</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.From genere Sho Card Watchlist</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@VideoPlayer</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@VideoPlayer</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:38:13 PM</td>
+<td>
+<a href="#" class="linked" test-id='556' id='558'>Player Actions</a>
+<div class="">
+<span class="badge badge-default">Video Player Scenarios.Player Actions</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">5</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.TimeoutException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.TimeoutException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:29:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='448'>Then From popup check unfollow studio and check toaster</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.UnFollow Studio.Then From popup check unfollow studio and check toaster</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:33:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='498'>When Play promo from see all page</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.See All Promo redirection.When Play promo from see all page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.json.JsonException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.json.JsonException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:32:47 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='490'>When play Powerful Police Officer Scenes Back To Back _ Top from the row and like promo</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Gud Promo.When play Powerful Police Officer Scenes Back To Back _ Top from the row and like promo</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.junit.ComparisonFailure</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.junit.ComparisonFailure</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:15:44 PM</td>
+<td>
+<a href="#" class="linked" test-id='189' id='262'>Then Click on Signout and check toaster</a>
+<div class="">
+<span class="badge badge-default">Footer Links & Profile Hover elements Redirection Scenarios.Check all profile hover elements redirections.Then Click on Signout and check toaster</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.StaleElementReferenceException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.StaleElementReferenceException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:04:06 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='34'>Given Click on sho card from any row and verify its redirected to correct sho detail page</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.Sho Card Redirection.Given Click on sho card from any row and verify its redirected to correct sho detail page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:05:05 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='46'>Given From home page click onfollow button and verify the button changes</a>
+<div class="">
+<span class="badge badge-default">GudSho Home Page.This test is to verify the follow button from home.Given From home page click onfollow button and verify the button changes</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:27:46 PM</td>
+<td>
+<a href="#" class="linked" test-id='374' id='412'>Given Search any studio Trail Studio and verify it should redirected to correct page</a>
+<div class="">
+<span class="badge badge-default">Studio Detail page Scenarios.Follow Studio.Given Search any studio Trail Studio and verify it should redirected to correct page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
       </div>
     </div>
   </div>

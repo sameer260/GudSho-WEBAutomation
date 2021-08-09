@@ -670,3 +670,402 @@
 2021-08-09 16:06:10 INFO  commonSteps:46 - paytm
 2021-08-09 16:06:20 INFO  shodetailpagesteps:154 - Resume
 2021-08-09 16:06:21 INFO  shodetailpagesteps:167 - Paytm
+2021-08-09 16:49:46 INFO  Homepagesteps:151 - vada chennai
+2021-08-09 16:49:46 INFO  Homepagesteps:152 - vada chennai
+2021-08-09 16:51:16 INFO  homepage:132 - Sent Text in the Home Page is scedue
+2021-08-09 16:51:19 INFO  homepage:138 - The Auto suggestive dropdown shows:Scedue
+2021-08-09 16:51:20 INFO  commonSteps:46 - Scedue
+2021-08-09 16:55:03 INFO  shodetailpagesteps:120 - Two Years Of Kaala - The Masterpiece _ Rajinikant
+2021-08-09 17:05:47 INFO  Homepagesteps:151 - vada chennai
+2021-08-09 17:05:47 INFO  Homepagesteps:152 - vada chennai
+2021-08-09 17:07:23 INFO  homepage:132 - Sent Text in the Home Page is scedue
+2021-08-09 17:07:26 INFO  homepage:138 - The Auto suggestive dropdown shows:Scedue
+2021-08-09 17:07:28 INFO  commonSteps:46 - Scedue
+2021-08-09 17:11:02 INFO  shodetailpagesteps:120 - Two Years Of Kaala - The Masterpiece _ Rajinikant
+2021-08-09 17:12:05 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:12:08 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:12:09 INFO  commonSteps:46 - Talent
+2021-08-09 17:12:11 INFO  paywallsteps:41 - Clicking on the add to watchlist button
+2021-08-09 17:12:17 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:12:20 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:12:22 INFO  commonSteps:46 - Talent
+2021-08-09 17:12:32 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:12:35 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:12:36 INFO  commonSteps:46 - Talent
+2021-08-09 17:12:46 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:12:49 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:12:51 INFO  commonSteps:46 - Talent
+2021-08-09 17:12:59 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:13:03 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:13:04 INFO  commonSteps:46 - Talent
+2021-08-09 17:13:10 INFO  homepage:132 - Sent Text in the Home Page is santii's studio
+2021-08-09 17:13:14 INFO  homepage:138 - The Auto suggestive dropdown shows:Santii'S Studio
+2021-08-09 17:13:15 INFO  commonSteps:36 - Santii's Studio
+2021-08-09 17:13:25 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:13:28 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:13:28 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:13:28 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:13:28 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:13:28 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:13:30 INFO  commonSteps:36 - Sameer
+2021-08-09 17:13:46 INFO  footersteps:54 - GudSho
+2021-08-09 17:13:46 INFO  footersteps:56 - GudSho
+2021-08-09 17:13:48 INFO  footersteps:66 - Join GudSho to watch the unlimited movies, series, and award-winning GudSho Originals. Everything you want to watch anytime, anywhere, and as much.
+2021-08-09 17:13:48 INFO  footersteps:68 - Join GudSho to watch the unlimited movies, series, and award-winning GudSho Originals. Everything you want to watch anytime, anywhere, and as much.
+2021-08-09 17:13:49 INFO  footersteps:79 - Quick Links
+2021-08-09 17:13:49 INFO  footersteps:82 - Connect with us
+2021-08-09 17:13:49 INFO  footersteps:85 - Download the App
+2021-08-09 17:13:59 INFO  Footer:84 - About Us | GudSho - All-in-One OTT Platform
+2021-08-09 17:13:59 INFO  Footer:87 - https://stream.gudsho.com/about.php
+2021-08-09 17:14:06 INFO  Footer:84 - GudSho - Watch Unlimited Movies & Web Series Online
+2021-08-09 17:14:06 INFO  Footer:87 - https://www.gudsho.com/support
+2021-08-09 17:14:11 INFO  Footer:84 - Submit Your Film | All-in-One OTT Platform to Release Movies & Web Series- GudSho
+2021-08-09 17:14:11 INFO  Footer:87 - https://monetize.gudsho.com/submit-your-film
+2021-08-09 17:14:17 INFO  Footer:84 - GudSho Blog - The Future Trends & Technologies of OTT Streaming
+2021-08-09 17:14:17 INFO  Footer:87 - https://stories.gudsho.com/
+2021-08-09 17:14:21 INFO  Footer:84 - GudSho - Terms & Conditions
+2021-08-09 17:14:21 INFO  Footer:87 - https://stream.gudsho.com/terms-of-service.php
+2021-08-09 17:14:26 INFO  Footer:84 - GudSho - Privacy Policy
+2021-08-09 17:14:26 INFO  Footer:87 - https://stream.gudsho.com/privacy-policy.php
+2021-08-09 17:14:37 INFO  Footer:84 - Contact Us | GudSho
+2021-08-09 17:14:37 INFO  Footer:87 - https://stream.gudsho.com/contact-sales.php
+2021-08-09 17:14:43 INFO  Footer:84 - GudSho OTT - Apps on Google Play
+2021-08-09 17:14:44 INFO  Footer:87 - https://play.google.com/store/apps/details?id=com.gudsho
+2021-08-09 17:14:51 INFO  footersteps:163 - ‎GudSho OTT on the App Store
+2021-08-09 17:14:51 INFO  footersteps:165 - https://apps.apple.com/in/app/gudsho-ott/id1539371660
+2021-08-09 17:15:06 INFO  Footer:108 - GudSho - முகப்பு | Facebook
+2021-08-09 17:15:06 INFO  Footer:110 - https://www.facebook.com/GudSho.Digital/
+2021-08-09 17:15:10 INFO  Footer:108 - GudSho (@GudShoIN) / Twitter
+2021-08-09 17:15:10 INFO  Footer:110 - https://twitter.com/GudShoIN
+2021-08-09 17:15:12 INFO  Footer:108 - Login • Instagram
+2021-08-09 17:15:12 INFO  Footer:110 - https://www.instagram.com/accounts/login/
+2021-08-09 17:15:13 INFO  Footer:108 - Sign Up | LinkedIn
+2021-08-09 17:15:13 INFO  Footer:110 - https://www.linkedin.com/authwall?trk=gf&trkInfo=AQGIvebsToTwagAAAXsquyFAJpjxzZ3LZKTfJDr96gtZMvpVbLIKoMsx4-SGc1Vfhg9ilQoYfQ3bxCyj0ydyYYivRAS2IzqE0Mn8o26JkYw3ozgoGGNRDkhPp0YQZTiEvlJJGIs=&originalReferer=https://qa.gudsho.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fgudsho%2F
+2021-08-09 17:15:16 INFO  Footer:108 - GudSho - YouTube
+2021-08-09 17:15:16 INFO  Footer:110 - https://www.youtube.com/channel/UCtCPBufttxYK_kAY8HyMfSw
+2021-08-09 17:16:32 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:16:35 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:16:36 INFO  commonSteps:46 - Talent
+2021-08-09 17:16:47 INFO  shodetailpagesteps:60 - Payment Processed
+2021-08-09 17:17:14 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:17:17 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:17:19 INFO  commonSteps:46 - Talent
+2021-08-09 17:17:23 INFO  shodetailpagesteps:104 - You liked this promo
+2021-08-09 17:17:23 INFO  shodetailpagesteps:110 - Vakeel Sab Theatrical Trailer
+2021-08-09 17:17:32 INFO  shodetailpagesteps:120 - Vakeel Sab Theatrical Trailer
+2021-08-09 17:17:54 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:17:57 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:18:00 INFO  commonSteps:46 - Talent
+2021-08-09 17:18:11 INFO  shodetailpagesteps:78 - Talent
+2021-08-09 17:18:31 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:18:35 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:18:36 INFO  commonSteps:46 - Talent
+2021-08-09 17:19:24 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:19:27 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:19:29 INFO  commonSteps:46 - Talent
+2021-08-09 17:20:43 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:20:46 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:20:47 INFO  commonSteps:46 - Talent
+2021-08-09 17:21:12 INFO  homepage:132 - Sent Text in the Home Page is Paytm
+2021-08-09 17:21:15 INFO  homepage:138 - The Auto suggestive dropdown shows:Paytm
+2021-08-09 17:21:17 INFO  commonSteps:46 - paytm
+2021-08-09 17:21:28 INFO  shodetailpagesteps:154 - Resume
+2021-08-09 17:21:28 INFO  shodetailpagesteps:167 - Paytm
+2021-08-09 17:21:52 INFO  homepage:132 - Sent Text in the Home Page is Narappa
+2021-08-09 17:21:55 INFO  homepage:138 - The Auto suggestive dropdown shows:Narappa
+2021-08-09 17:21:56 INFO  commonSteps:46 - Narappa
+2021-08-09 17:21:58 INFO  shodetailpagesteps:187 - After Sinnabba murders an upper-caste landlord to avenge his older brother`s death, his father Narappa is forced to flee into the forest. Will he be able to challenge the system?
+2021-08-09 17:21:58 INFO  shodetailpagesteps:189 - About
+2021-08-09 17:22:29 INFO  homepage:132 - Sent Text in the Home Page is Paytm
+2021-08-09 17:22:32 INFO  homepage:138 - The Auto suggestive dropdown shows:Paytm
+2021-08-09 17:22:33 INFO  commonSteps:46 - paytm
+2021-08-09 17:22:33 INFO  shodetailpagesteps:195 - This sho doesnot have more description,so no See more link
+2021-08-09 17:22:33 INFO  shodetailpagesteps:212 - This Sho doesnot any Audios and promos tab
+2021-08-09 17:22:59 INFO  homepage:132 - Sent Text in the Home Page is narappa
+2021-08-09 17:23:02 INFO  homepage:138 - The Auto suggestive dropdown shows:Narappa
+2021-08-09 17:23:04 INFO  commonSteps:46 - Narappa
+2021-08-09 17:23:08 INFO  shodetailpagesteps:247 - Scedue
+2021-08-09 17:23:09 INFO  shodetailpagesteps:251 - Scedue has been added to watchlist
+2021-08-09 17:23:25 INFO  homepage:132 - Sent Text in the Home Page is narappa
+2021-08-09 17:23:28 INFO  homepage:138 - The Auto suggestive dropdown shows:Narappa
+2021-08-09 17:23:30 INFO  commonSteps:46 - Narappa
+2021-08-09 17:23:56 INFO  homepage:132 - Sent Text in the Home Page is narappa
+2021-08-09 17:24:00 INFO  homepage:138 - The Auto suggestive dropdown shows:Narappa
+2021-08-09 17:24:01 INFO  commonSteps:46 - Narappa
+2021-08-09 17:24:04 INFO  shodetailpagesteps:276 - Monster Part Two
+2021-08-09 17:24:04 INFO  shodetailpagesteps:280 - Monster Part Two has been added to watchlist
+2021-08-09 17:24:26 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:24:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:24:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:24:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:24:30 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:24:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:24:31 INFO  commonSteps:36 - Sameer
+2021-08-09 17:25:26 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:25:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:25:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:25:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:25:31 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:25:31 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:25:32 INFO  commonSteps:36 - Sameer
+2021-08-09 17:25:34 INFO  studiodetailpagesteps:49 - Narappa
+2021-08-09 17:25:54 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:25:57 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:25:57 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:25:57 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:25:57 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:25:57 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:25:59 INFO  commonSteps:36 - Sameer
+2021-08-09 17:26:50 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:26:53 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:26:53 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:26:54 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:26:54 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:26:54 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:26:55 INFO  commonSteps:36 - Sameer
+2021-08-09 17:26:56 INFO  studiodetailpagesteps:49 - Narappa
+2021-08-09 17:28:09 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:28:12 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:28:12 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:28:12 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:28:13 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:28:13 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:28:14 INFO  commonSteps:36 - Sameer
+2021-08-09 17:28:14 INFO  studiodetailpagesteps:111 - Kung Fu Panda (2008)
+2021-08-09 17:28:24 INFO  studiodetailpagesteps:117 - Kung Fu Panda (2008)
+2021-08-09 17:28:45 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:28:48 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:28:48 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:28:48 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:28:48 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:28:49 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:28:50 INFO  commonSteps:36 - Sameer
+2021-08-09 17:28:50 INFO  studiodetailpagesteps:129 - Test
+2021-08-09 17:28:51 INFO  studiodetailpagesteps:132 - Test
+2021-08-09 17:29:16 INFO  homepage:132 - Sent Text in the Home Page is Trail Studio
+2021-08-09 17:29:19 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail111
+2021-08-09 17:29:19 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail222
+2021-08-09 17:29:20 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail Studio
+2021-08-09 17:29:21 INFO  commonSteps:36 - Trail Studio
+2021-08-09 17:29:22 INFO  studiodetailpagesteps:101 - shoat30thapril
+2021-08-09 17:29:23 INFO  studiodetailpagesteps:104 - shoat30thapril
+2021-08-09 17:29:45 INFO  homepage:132 - Sent Text in the Home Page is Trail Studio
+2021-08-09 17:29:49 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail111
+2021-08-09 17:29:49 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail222
+2021-08-09 17:29:49 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail Studio
+2021-08-09 17:29:50 INFO  commonSteps:36 - Trail Studio
+2021-08-09 17:31:15 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:31:18 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:31:18 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:31:18 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:31:19 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:31:19 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:31:20 INFO  commonSteps:36 - Sameer
+2021-08-09 17:31:31 INFO  homepage:132 - Sent Text in the Home Page is Trail Studio
+2021-08-09 17:31:35 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail111
+2021-08-09 17:31:35 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail222
+2021-08-09 17:31:35 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail Studio
+2021-08-09 17:31:37 INFO  commonSteps:36 - Trail Studio
+2021-08-09 17:31:46 INFO  homepage:132 - Sent Text in the Home Page is Trail Studio
+2021-08-09 17:31:50 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail111
+2021-08-09 17:31:50 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail222
+2021-08-09 17:31:50 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail Studio
+2021-08-09 17:31:51 INFO  commonSteps:36 - Trail Studio
+2021-08-09 17:32:04 INFO  homepage:132 - Sent Text in the Home Page is Trail Studio
+2021-08-09 17:32:07 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail111
+2021-08-09 17:32:07 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail222
+2021-08-09 17:32:07 INFO  homepage:138 - The Auto suggestive dropdown shows:Trail Studio
+2021-08-09 17:32:08 INFO  commonSteps:36 - Trail Studio
+2021-08-09 17:32:43 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:32:46 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:32:46 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:32:46 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:32:46 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:32:46 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:32:47 INFO  commonSteps:36 - Sameer
+2021-08-09 17:33:27 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:33:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:33:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:33:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:33:30 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:33:30 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:33:31 INFO  commonSteps:36 - Sameer
+2021-08-09 17:34:45 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:34:48 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:34:48 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:34:48 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:34:48 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:34:48 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:34:49 INFO  commonSteps:36 - Sameer
+2021-08-09 17:35:07 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:35:10 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:35:10 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:35:10 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:35:10 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:35:10 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:35:11 INFO  commonSteps:36 - Sameer
+2021-08-09 17:35:15 INFO  studiodetailpagesteps:327 - Test
+2021-08-09 17:35:16 INFO  studiodetailpagesteps:331 - Test
+2021-08-09 17:35:41 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:35:44 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:35:44 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:35:44 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:35:44 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:35:44 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:35:47 INFO  commonSteps:36 - Sameer
+2021-08-09 17:35:52 INFO  studiodetailpagesteps:314 - Test
+2021-08-09 17:35:53 INFO  studiodetailpagesteps:351 - Test
+2021-08-09 17:36:02 INFO  studiodetailpagesteps:355 - Test
+2021-08-09 17:36:26 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:36:29 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:36:29 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:36:29 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:36:29 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:36:29 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:36:31 INFO  commonSteps:36 - Sameer
+2021-08-09 17:36:44 INFO  studiodetailpagesteps:376 - Check Transacode
+2021-08-09 17:37:09 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:37:12 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:37:12 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:37:13 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:37:13 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:37:13 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:37:14 INFO  commonSteps:36 - Sameer
+2021-08-09 17:37:26 INFO  studiodetailpagesteps:376 - paytm
+2021-08-09 17:37:51 INFO  homepage:132 - Sent Text in the Home Page is Sameer
+2021-08-09 17:37:55 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer2
+2021-08-09 17:37:55 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-09 17:37:55 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-09 17:37:55 INFO  homepage:138 - The Auto suggestive dropdown shows:SameerR
+2021-08-09 17:37:55 INFO  homepage:138 - The Auto suggestive dropdown shows:Sameer
+2021-08-09 17:37:56 INFO  commonSteps:36 - Sameer
+2021-08-09 17:38:09 INFO  studiodetailpagesteps:376 - Vikramarkudu
+2021-08-09 17:38:32 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-09 17:38:35 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-09 17:38:37 INFO  commonSteps:46 - Talent
+2021-08-09 17:38:42 INFO  videoplayer:113 - Total duration of the video: 01:57
+2021-08-09 17:38:43 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:43 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:43 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:43 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:04
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:44 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:05
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:45 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:06
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:46 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:07
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:47 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:08
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:48 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:118 - 00:09
+2021-08-09 17:38:49 INFO  videoplayer:122 - Video paused at:00:10
+2021-08-09 17:38:56 INFO  videoplayer:135 - 00:25
+2021-08-09 17:38:58 INFO  videoplayer:135 - 00:37

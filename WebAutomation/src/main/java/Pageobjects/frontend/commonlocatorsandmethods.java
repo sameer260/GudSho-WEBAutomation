@@ -165,22 +165,18 @@ public class commonlocatorsandmethods extends BaseSetup {
 
 	public static String PromoCardClick(String promoname) throws InterruptedException {
 		Actions a = new Actions(driver);
-		WebDriverWait wait = new WebDriverWait(driver, 30);
 		String promonameoncard = null;
-		int totalPromoCards = shodetailpage.PromoNamesofPromoCards.size();
-		Thread.sleep(2000);
-		for (int i = 0; i < totalPromoCards; i++) {
-
-			wait.until(ExpectedConditions.visibilityOfAllElements(shodetailpage.PromoNamesofPromoCards));
-			String promoCardsAllNames = shodetailpage.PromoNamesofPromoCards.get(i).getText();
-
-			if (promoCardsAllNames.equalsIgnoreCase(promoname)) {
+		System.out.println(shodetailpage.PromoNamesofPromoCards.size());
+		for (int i = 0; i < shodetailpage.PromoNamesofPromoCards.size(); i++) {
+        System.out.println(shodetailpage.PromoNamesofPromoCards.get(i).getText());
+			if (shodetailpage.PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname)) {
 				promonameoncard = shodetailpage.PromoNamesofPromoCards.get(i).getText();
-				// a.moveToElement(shodetailpage.PromoNamesofPromoCards.get(i)).build().perform();
 				a.moveToElement(shodetailpage.PromoNamesofPromoCards.get(i)).click().build().perform();
+				break;
 			}
 		}
 		return promonameoncard;
+		
 
 	}
 

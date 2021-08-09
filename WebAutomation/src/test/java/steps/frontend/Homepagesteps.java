@@ -187,9 +187,11 @@ public class Homepagesteps extends BaseSetup {
 		Actions actions = new Actions(driver);
 		wait.until(ExpectedConditions.visibilityOf(commonlocatorsandmethods.ShareButtononShoCard));
 		actions.moveToElement(commonlocatorsandmethods.ShareButtononShoCard).click().build().perform();
-		// commonlocatorsandmethods.ShareButtononShoCard.click();
 		wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
 		assertTrue(ShareFeature.SharePopup.isDisplayed());
+		
+		
+		
 	}
 
 	@And("^Navigate to gudsho home and click on sho name hyperlink from continue watching and verify redirection$")
@@ -218,16 +220,15 @@ public class Homepagesteps extends BaseSetup {
 		commonlocatorsandmethods.hoverTitleCardHome(shoname);
 		homepage.addToWatchlistButton.click();
 
-		mainShoName = shoname;
+		
 	}
 
-	@And("^Navigate back and check card availbility on my watchlist row$")
-	public void navigate_back_and_check_card_availbility_on_my_watchlist_row() throws Throwable {
+	@And("^Navigate back and (.+) availbility on my watchlist row$")
+    public void navigate_back_and_availbility_on_my_watchlist_row(String shoname) throws Throwable {
 		driver.navigate().back();
 		commonlocatorsandmethods.scrolldownm();
-
-		String mywatchlistShoCardName = commonlocatorsandmethods.shocardwatchlistShoName(masterShoName);
-		assertTrue(mywatchlistShoCardName.equalsIgnoreCase(mainShoName));
+		String mywatchlistShoCardName = commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
+		assertTrue(mywatchlistShoCardName.equalsIgnoreCase(shoname));
 
 	}
 
@@ -243,6 +244,7 @@ public class Homepagesteps extends BaseSetup {
 	@Given("^From home page hover on (.+) promo card$")
 	public void from_home_page_click_on_share_button_in_promo_card_and_verify_share_popup(String promoName)
 			throws Throwable {
+		commonlocatorsandmethods.scrolldownm();
 		commonlocatorsandmethods.PromoCardHover(promoName);
 	}
 
@@ -254,10 +256,10 @@ public class Homepagesteps extends BaseSetup {
 
 	}
 
-	@Given("^From home page hover on (.+) promo card and close the player$")
-	public void from_home_page_hover_on_promo_card_and_close_the_player(String promoName) throws Throwable {
+	 @Given("^From home page hover on (.+) promo card and close the player$")
+	    public void from_home_page_hover_on_promo_card_and_close_the_player(String promoname) throws Throwable {
 		commonlocatorsandmethods.scrolldownm();
-		commonlocatorsandmethods.PromoCardClick(promoName);
+		commonlocatorsandmethods.PromoCardClick(promoname);
 		Thread.sleep(10000);
 		Actions actions = new Actions(driver);
 		actions.moveToElement(videoplayer.HoverOnPlayer).build().perform();
@@ -271,16 +273,22 @@ public class Homepagesteps extends BaseSetup {
 	public void from_home_page_click_onfollow_button_and_verify_the_button_changes() throws Throwable {
 		commonlocatorsandmethods.scrolldownm();
 		Actions action = new Actions(driver);
-		action.moveToElement(homepage.followButtons.get(0)).click().build().perform();
+		homepage.followButtons.get(0).click();
 		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		assertEquals("You have started following this studio", ToastandErrormessages.ToastMessageText.getText());
-		action.moveToElement(homepage.StudioCards.get(0)).click().build().perform();
-		homepage.followingButton.click();
-		homepage.yesButton.click();
-
-		commonlocatorsandmethods.WatchlistRowonHomePage(masterShoName);
-		
-
+	
+	}
+	@And("^Close promo player (.+) and verify redirection$")
+	   public void close_promo_player_and_verify_redirection(String promoName) throws Throwable {
+	 WebDriverWait wait=new WebDriverWait(driver,20);
+	commonlocatorsandmethods.scrolldownm();
+	commonlocatorsandmethods.PromoCardClick(promoName);
+	Thread.sleep(10000);
+	Actions actions = new Actions(driver);
+	actions.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+	videoplayer.CloseButton.click();
+	wait.until(ExpectedConditions.visibilityOf(shodetailpage.ShoNameonShoDetailPage));
+	assertTrue(shodetailpage.ShoNameonShoDetailPage.isDisplayed());
 
 	}
 }

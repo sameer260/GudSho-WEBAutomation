@@ -177,7 +177,7 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//*[@class='release-card card-slider ng-star-inserted']//child::span[@class='text']")
 	public static List<WebElement> shoTypeRowSeeAll;
 
-	@FindBy(xpath = "//*[text()='Follow ']")
+	@FindBy(xpath = "//div[starts-with(@class,'studio-card-wrapper card-border ng-tns-')]/div/div[2]/div/app-follow-studios/button")
 	public static List<WebElement> followButtons;
 
 	@FindBy(xpath = "//*[@class='button is-default following small mat-button mat-button-base ng-star-inserted']")

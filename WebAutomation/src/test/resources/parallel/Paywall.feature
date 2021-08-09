@@ -1,4 +1,4 @@
-@Paywall
+@Execute @Paywall
 Feature: Paywall Scenarios
 
    @paywall

@@ -1,4 +1,4 @@
-@HomePage
+@Execute @HomePage
 Feature: GudSho Home Page
 
   Scenario: Notification Page Redirection

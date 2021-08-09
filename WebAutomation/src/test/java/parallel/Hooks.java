@@ -1,4 +1,4 @@
-package steps;
+package parallel;
 
 
 
@@ -20,7 +20,7 @@ import Resources.Remoteclass;
 
 public class Hooks extends BaseSetup {
 	 
-	/*@Before("@Remote")
+/*	/*@Before("@Remote")
 	public void abcd() throws InterruptedException, IOException
 	{
 		Remoteclass.remote();
@@ -36,7 +36,7 @@ public class Hooks extends BaseSetup {
 		//BaseSetup.remote();
 
 		
-	}	
+	}	 
 	@Before(order=1)
 	public void Closecookie() throws InterruptedException, IOException
 	{
@@ -59,7 +59,9 @@ public class Hooks extends BaseSetup {
 		
 		
 		
+		
 	}
+	
 	@After()
 	public void teardown(Scenario scenario)
 	{

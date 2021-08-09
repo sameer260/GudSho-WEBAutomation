@@ -1,4 +1,4 @@
-package steps.frontend;
+package Runner;
 
 
 
@@ -24,14 +24,16 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features= "src/test/resources/Features/frontend",
-	glue={"steps/frontend"}
+	@CucumberOptions(features= "src/test/resources/parallel",
+	glue={"parallel"},
+	tags= "@Execute"
+	
 	
 	
 			)
 
 		
-	public class RunnerTest 
+	public class RunCucumberTest
 	{	
 		
 	}

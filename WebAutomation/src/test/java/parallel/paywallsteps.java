@@ -1,4 +1,4 @@
-package steps.frontend;
+package parallel;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;

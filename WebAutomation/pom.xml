@@ -38,20 +38,22 @@
 			<artifactId>cucumber-java</artifactId>
 			<version>6.8.1</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+		
 		<dependency>
-			<groupId>io.cucumber</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>6.8.1</version>
-			<scope>test</scope>
-		</dependency>
+    <groupId>io.cucumber</groupId>
+    <artifactId>cucumber-junit</artifactId>
+    <version>6.8.1</version>
+    <scope>test</scope>
+</dependency>
+
+		
 
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope>
+			
 		</dependency>
 
 		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
@@ -120,6 +122,9 @@
 	<version>0.3</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+
+
 
 
 		<dependency>
@@ -146,43 +151,26 @@
 		<pluginManagement>
 			<plugins>
 			
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.6.1</version>
-					<configuration>
-						<source>1.8</source>
-						<target>1.8</target>
-					</configuration>
-				</plugin>
-				
-    <plugin>
+			
+			
+			
+			
+			
+			
+			
+<plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
     <version>2.22.0</version>
-    </plugin>
-    
-    
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-failsafe-plugin</artifactId>
-        <version>3.0.0-M5</version>
-    <executions>
-    <execution>
-    <goals>
-    <goal>integration-test</goal>
-    </goals>
-    <configuration>
-    <includes>
-    <inculde>C:\Users\user\gitdemo\GudSho-WEBAutomation\WebAutomation\src\test\java\Runner\RunnerTest.java</inculde>
-    </includes>
-    <parallel>methods</parallel>
-    <threadCount>4</threadCount>
-    <perCoreThreadCount>true</perCoreThreadCount>
+   <configuration>
+        <parallel>methods</parallel>
+        <threadCount>3</threadCount>
     </configuration>
-    </execution>
-    </executions>
 </plugin>
+    
+    
+    
+    
 
 			</plugins>
 		</pluginManagement>

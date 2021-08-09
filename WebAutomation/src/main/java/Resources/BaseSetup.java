@@ -59,7 +59,7 @@ public class BaseSetup
     
      driver.manage().window().maximize();
      driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-     
+     driver.manage().deleteAllCookies();
      driver.get(url);
      return driver;
 	}  

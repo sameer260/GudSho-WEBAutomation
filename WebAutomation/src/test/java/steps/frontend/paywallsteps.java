@@ -44,59 +44,64 @@ public class paywallsteps extends BaseSetup {
 
 	}
 
-	/*@When("^Validate the minipopup add to watchlist$")
-	public void validate_the_minipopup_add_to_watchlist() throws Throwable {
-		shodetailpage.SignInPopUp.isDisplayed();
-		shodetailpage.SignInPopUpHeadderText.isDisplayed();
-		wait.until(ExpectedConditions.visibilityOf(shodetailpage.SignInPopUpHeadderText));
-		assertEquals("Want to save & watch later?", shodetailpage.SignInPopUpHeadderText.getText());
-		shodetailpage.SignInPopUpDescriptionText.isDisplayed();
-		assertEquals("Sign In to save this video & watch again later",
-				shodetailpage.SignInPopUpDescriptionText.getText());
-		log.info("All minipopup elements are displaying");
-		shodetailpage.PopUpSignInButton.click();
-		WebElement home = driver.findElement(By.xpath("//*[text()='Hello there!']"));
-		wait.until(ExpectedConditions.visibilityOf(home));
-		home.isDisplayed();
+	/*
+	 * @When("^Validate the minipopup add to watchlist$") public void
+	 * validate_the_minipopup_add_to_watchlist() throws Throwable {
+	 * shodetailpage.SignInPopUp.isDisplayed();
+	 * shodetailpage.SignInPopUpHeadderText.isDisplayed();
+	 * wait.until(ExpectedConditions.visibilityOf(shodetailpage.
+	 * SignInPopUpHeadderText)); assertEquals("Want to save & watch later?",
+	 * shodetailpage.SignInPopUpHeadderText.getText());
+	 * shodetailpage.SignInPopUpDescriptionText.isDisplayed();
+	 * assertEquals("Sign In to save this video & watch again later",
+	 * shodetailpage.SignInPopUpDescriptionText.getText());
+	 * log.info("All minipopup elements are displaying");
+	 * shodetailpage.PopUpSignInButton.click(); WebElement home =
+	 * driver.findElement(By.xpath("//*[text()='Hello there!']"));
+	 * wait.until(ExpectedConditions.visibilityOf(home)); home.isDisplayed();
+	 * 
+	 * }
+	 */
 
-	}*/
+	/*
+	 * @Then("^Validate the minipopup Create gud$") public void
+	 * validate_the_minipopup_create_gud() throws Throwable {
+	 * shodetailpage.SignInPopUp.isDisplayed();
+	 * shodetailpage.SignInPopUpHeadderText.isDisplayed();
+	 * assertEquals("Like this Promo?",
+	 * shodetailpage.SignInPopUpHeadderText.getText());
+	 * shodetailpage.SignInPopUpDescriptionText.isDisplayed();
+	 * assertEquals("Sign in now to rate this promo 'Gud'",
+	 * shodetailpage.SignInPopUpDescriptionText.getText());
+	 * log.info("All minipopup elements are displaying");
+	 * shodetailpage.PopUpSignInButton.click(); WebElement home =
+	 * driver.findElement(By.xpath("//*[text()='Hello there!']"));
+	 * wait.until(ExpectedConditions.visibilityOf(home)); home.isDisplayed(); }
+	 */
 
-	/*@Then("^Validate the minipopup Create gud$")
-	public void validate_the_minipopup_create_gud() throws Throwable {
-		shodetailpage.SignInPopUp.isDisplayed();
-		shodetailpage.SignInPopUpHeadderText.isDisplayed();
-		assertEquals("Like this Promo?", shodetailpage.SignInPopUpHeadderText.getText());
-		shodetailpage.SignInPopUpDescriptionText.isDisplayed();
-		assertEquals("Sign in now to rate this promo 'Gud'", shodetailpage.SignInPopUpDescriptionText.getText());
-		log.info("All minipopup elements are displaying");
-		shodetailpage.PopUpSignInButton.click();
-		WebElement home = driver.findElement(By.xpath("//*[text()='Hello there!']"));
-		wait.until(ExpectedConditions.visibilityOf(home));
-		home.isDisplayed();
-	}*/
-
-	/*@When("^Validate the minipopup follow button$")
-	public void validate_the_minipopup_follow_button() throws Throwable {
-		shodetailpage.SignInPopUp.isDisplayed();
-		shodetailpage.SignInPopUpHeadderText.isDisplayed();
-		assertEquals("Follow this Studio?", shodetailpage.SignInPopUpHeadderText.getText());
-		shodetailpage.SignInPopUpDescriptionText.isDisplayed();
-		assertEquals("Sign In to follow this studio & enter into the world of entertainment",
-				shodetailpage.SignInPopUpDescriptionText.getText());
-		log.info("All minipopup elements are displaying");
-		shodetailpage.PopUpSignInButton.click();
-		Thread.sleep(2000);
-		WebElement home = driver.findElement(By.xpath("//*[text()='Hello there!']"));
-		wait.until(ExpectedConditions.visibilityOf(home));
-		home.isDisplayed();
-
-	}*/
+	/*
+	 * @When("^Validate the minipopup follow button$") public void
+	 * validate_the_minipopup_follow_button() throws Throwable {
+	 * shodetailpage.SignInPopUp.isDisplayed();
+	 * shodetailpage.SignInPopUpHeadderText.isDisplayed();
+	 * assertEquals("Follow this Studio?",
+	 * shodetailpage.SignInPopUpHeadderText.getText());
+	 * shodetailpage.SignInPopUpDescriptionText.isDisplayed();
+	 * assertEquals("Sign In to follow this studio & enter into the world of entertainment"
+	 * , shodetailpage.SignInPopUpDescriptionText.getText());
+	 * log.info("All minipopup elements are displaying");
+	 * shodetailpage.PopUpSignInButton.click(); Thread.sleep(2000); WebElement home
+	 * = driver.findElement(By.xpath("//*[text()='Hello there!']"));
+	 * wait.until(ExpectedConditions.visibilityOf(home)); home.isDisplayed();
+	 * 
+	 * }
+	 */
 
 	@When("^while playing click on greate gud button$")
 	public void while_playing_click_on_greate_gud_button() throws Throwable {
 		Thread.sleep(3000);
 		Actions a = new Actions(driver);
-		//wait.until(ExpectedConditions.visibilityOfAllElements(videoplayer.PlayerGudICon));
+		// wait.until(ExpectedConditions.visibilityOfAllElements(videoplayer.PlayerGudICon));
 		a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 		videoplayer.PlayerGudICon.click();
 	}
@@ -109,14 +114,14 @@ public class paywallsteps extends BaseSetup {
 
 	}
 
-	/*@Then("^Validate Home page redirection$")
-	public void validate_home_page_redirection() throws Throwable {
-		Thread.sleep(2000);
-		assertEquals("Please login to continue", ToastandErrormessages.ToastMessageText.getText());
-		WebElement home = driver.findElement(By.xpath("//*[text()='Hello there!']"));
-		wait.until(ExpectedConditions.visibilityOf(home));
-		home.isDisplayed();
-	}*/
+	/*
+	 * @Then("^Validate Home page redirection$") public void
+	 * validate_home_page_redirection() throws Throwable { Thread.sleep(2000);
+	 * assertEquals("Please login to continue",
+	 * ToastandErrormessages.ToastMessageText.getText()); WebElement home =
+	 * driver.findElement(By.xpath("//*[text()='Hello there!']"));
+	 * wait.until(ExpectedConditions.visibilityOf(home)); home.isDisplayed(); }
+	 */
 
 	@And("^From sho detail page click on Buy button$")
 	public void from_sho_detail_page_click_on_buy_button() throws Throwable {
@@ -129,32 +134,30 @@ public class paywallsteps extends BaseSetup {
 		studiodetailpage.FollowButton.click();
 
 	}
-	
-	 @Then("^Check share popup is displayed with social ions$")
-	    public void check_share_popup_is_displayed_with_social_ions() throws Throwable {
-		 wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
-	       assertTrue(ShareFeature.SharePopup.isDisplayed());
-	       wait.until(ExpectedConditions.visibilityOf(ShareFeature.FacebookShareIcon));
-	       assertTrue(ShareFeature.FacebookShareIcon.isDisplayed());
-	       assertTrue(ShareFeature.TwitterShare.isDisplayed());
-	       assertTrue(ShareFeature.WhatsappShare.isDisplayed());
-	       assertTrue(ShareFeature.CopyLinkShare.isDisplayed());
-	    }
-	 @Then("^Share (.+) and verify share popup and share icons are displayed$")
-	    public void share_and_verify_share_popup_and_share_icons_are_displayed(String promoname) throws Throwable {
-		   shodetailpage.PromoCardShare(promoname);
-		   wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
-	       assertTrue(ShareFeature.SharePopup.isDisplayed());
-	    }
-	 @Then("^Vaildate Signin Popup$")
-	    public void vaildate_signin_popup() throws Throwable {
-		 wait.until(ExpectedConditions.visibilityOf(SignUp.SignInPoup));
-	        assertTrue(SignUp.SignInPoup.isDisplayed());
-	        assertTrue(SignUp.HelloThereText.isDisplayed());
-	    }
-	 
-	
 
+	@Then("^Check share popup is displayed with social ions$")
+	public void check_share_popup_is_displayed_with_social_ions() throws Throwable {
+		wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
+		assertTrue(ShareFeature.SharePopup.isDisplayed());
+		wait.until(ExpectedConditions.visibilityOf(ShareFeature.FacebookShareIcon));
+		assertTrue(ShareFeature.FacebookShareIcon.isDisplayed());
+		assertTrue(ShareFeature.TwitterShare.isDisplayed());
+		assertTrue(ShareFeature.WhatsappShare.isDisplayed());
+		assertTrue(ShareFeature.CopyLinkShare.isDisplayed());
+	}
+
+	@Then("^Share (.+) and verify share popup and share icons are displayed$")
+	public void share_and_verify_share_popup_and_share_icons_are_displayed(String promoname) throws Throwable {
+		shodetailpage.PromoCardShare(promoname);
+		wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
+		assertTrue(ShareFeature.SharePopup.isDisplayed());
+	}
+
+	@Then("^Vaildate Signin Popup$")
+	public void vaildate_signin_popup() throws Throwable {
+		wait.until(ExpectedConditions.visibilityOf(SignUp.SignInPoup));
+		assertTrue(SignUp.SignInPoup.isDisplayed());
+		assertTrue(SignUp.HelloThereText.isDisplayed());
+	}
 
 }
-

@@ -42,7 +42,7 @@ public class Homepagesteps extends BaseSetup {
 	accountandsettingspage ac = new accountandsettingspage();
 	commonlocatorsandmethods common = new commonlocatorsandmethods();
 	ShareFeature share = new ShareFeature();
-	WebDriverWait wait = new WebDriverWait(driver, 20);
+	WebDriverWait wait = new WebDriverWait(driver, 30);
 	JavascriptExecutor executor = (JavascriptExecutor) driver;
 
 	@Given("^verify notification tab$")
@@ -179,12 +179,15 @@ public class Homepagesteps extends BaseSetup {
 	public void from_home_page_click_on_share_button_in_title_card(String shoName) throws Throwable {
 		commonlocatorsandmethods.hoverTitleCardHome(shoName);
 		Thread.sleep(2000);
-		commonlocatorsandmethods.ShareButtononShoCard.click();
 
 	}
 
 	@When("^Click on share button from the card and verify share popup$")
 	public void click_on_share_button_from_the_card_and_verify_share_popup() throws Throwable {
+		Actions actions = new Actions(driver);
+		wait.until(ExpectedConditions.visibilityOf(commonlocatorsandmethods.ShareButtononShoCard));
+		actions.moveToElement(commonlocatorsandmethods.ShareButtononShoCard).click().build().perform();
+		// commonlocatorsandmethods.ShareButtononShoCard.click();
 		wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
 		assertTrue(ShareFeature.SharePopup.isDisplayed());
 	}
@@ -222,8 +225,62 @@ public class Homepagesteps extends BaseSetup {
 	public void navigate_back_and_check_card_availbility_on_my_watchlist_row() throws Throwable {
 		driver.navigate().back();
 		commonlocatorsandmethods.scrolldownm();
+
+		String mywatchlistShoCardName = commonlocatorsandmethods.shocardwatchlistShoName(masterShoName);
+		assertTrue(mywatchlistShoCardName.equalsIgnoreCase(mainShoName));
+
+	}
+
+	@When("^From see all page click on sho card (.+) and verif redirection$")
+	public void from_see_all_page_click_on_sho_card_and_verif_redirection(String shoname) throws Throwable {
+		commonlocatorsandmethods.clickTitleCardHome(shoname);
+		String shoDetailPageShoName = shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+		System.out.println("detail page sho name: " + shoDetailPageShoName);
+		assertTrue(shoname.equalsIgnoreCase(shoDetailPageShoName));
+
+	}
+
+	@Given("^From home page hover on (.+) promo card$")
+	public void from_home_page_click_on_share_button_in_promo_card_and_verify_share_popup(String promoName)
+			throws Throwable {
+		commonlocatorsandmethods.PromoCardHover(promoName);
+	}
+
+	@Given("^From home page click on promo type row see all hyperlink$")
+	public void from_home_page_click_on_promo_type_row_see_all_hyperlink() throws Throwable {
+		commonlocatorsandmethods.scrolldownm();
+		Actions actions = new Actions(driver);
+		actions.moveToElement(homepage.promoSeeAll).click().build().perform();
+
+	}
+
+	@Given("^From home page hover on (.+) promo card and close the player$")
+	public void from_home_page_hover_on_promo_card_and_close_the_player(String promoName) throws Throwable {
+		commonlocatorsandmethods.scrolldownm();
+		commonlocatorsandmethods.PromoCardClick(promoName);
+		Thread.sleep(10000);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+		videoplayer.PlayerGudICon.click();
+		actions.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+		videoplayer.CloseButton.click();
+
+	}
+
+	@Given("^From home page click onfollow button and verify the button changes$")
+	public void from_home_page_click_onfollow_button_and_verify_the_button_changes() throws Throwable {
+		commonlocatorsandmethods.scrolldownm();
+		Actions action = new Actions(driver);
+		action.moveToElement(homepage.followButtons.get(0)).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+		assertEquals("You have started following this studio", ToastandErrormessages.ToastMessageText.getText());
+		action.moveToElement(homepage.StudioCards.get(0)).click().build().perform();
+		homepage.followingButton.click();
+		homepage.yesButton.click();
+
 		commonlocatorsandmethods.WatchlistRowonHomePage(masterShoName);
 		
+
 
 	}
 }

@@ -33,7 +33,7 @@ public class Hooks extends BaseSetup {
 	public void Closecookie() throws InterruptedException, IOException
 	{
 		homepage home=new homepage();
-		homepage.CookieClose.click();
+		//homepage.CookieClose.click();
 		
 	}	
 	@Before("not @Paywall")
@@ -55,13 +55,13 @@ public class Hooks extends BaseSetup {
 	@After()
 	public void teardown(Scenario scenario)
 	{
-		if(scenario.isFailed())
+		/*if(scenario.isFailed())
 		{
 
 		  byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
 	       scenario.attach(screenshot, "image/png", "image");
 	       
-		}
+		}*/
 		driver.close();
 	}
 

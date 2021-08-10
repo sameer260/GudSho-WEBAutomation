@@ -22,7 +22,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features= "src/test/resources/Features/frontend",
+	@CucumberOptions(features= "src/test/resources/Features/frontend/Paywall.feature",
 	glue={"steps"}
 	
 			)

@@ -45,9 +45,15 @@ public class Hooks extends BaseSetup {
 		ToastandErrormessages ts=new ToastandErrormessages();
 		SignUp.HomePageSignInButton.click();
 		SignUp.GmailLogin("sameer.g@contus.in", "Ayesha@1996");
-		WebDriverWait wait=new WebDriverWait(driver,20);
-	    wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
-		ToastandErrormessages.ToastMessageClose.click();
+		WebDriverWait wait=new WebDriverWait(driver,5);
+		try {
+			  wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+				ToastandErrormessages.ToastMessageClose.click();
+			
+		} catch (Exception e) {
+			System.out.println("Toaster is not visible");
+		}
+	    
 		
 		
 		

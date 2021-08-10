@@ -2,6 +2,7 @@ package Resources;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -36,8 +37,11 @@ public class BaseSetup
     	
     		
     	}
-    	options.addArguments("--disable-notifications");
+    	/*HashMap<String, Object> images=new HashMap<String, Object>();
+    	images.put("profile.managed_default_content_settings.images", 2); 
+    	options.setExperimentalOption("prefs", images);*/
     	driver=new ChromeDriver(options);
+    	
     	        
     }
     else if(browsername.contains("Firefox"))

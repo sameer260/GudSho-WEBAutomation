@@ -14,6 +14,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import Resources.AutomatedEmail;
+import Resources.BaseSetup;
 import io.cucumber.junit.Cucumber;
 import net.masterthought.cucumber.Configuration;
 import net.masterthought.cucumber.ReportBuilder;
@@ -22,7 +23,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features= "src/test/resources/Features/frontend/Paywall.feature",
+	@CucumberOptions(features= "src/test/resources/Features",
 	glue={"steps"},
 	plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 			  "pretty","json:target/cucumber-reports/Cucumber.json", 
@@ -38,7 +39,7 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 		@BeforeClass
 		public static void logger() throws IOException {
 			
-			        
+			
 			PropertyConfigurator.configure(System.getProperty("user.dir")+"/src/main/java/Resources/log4j.properties");
 
 		}

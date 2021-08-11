@@ -10,6 +10,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 
+import Pageobjects.frontend.SignUp;
 import Resources.AutomatedEmail;
 import Resources.FailureAutomated;
 import io.cucumber.junit.Cucumber;
@@ -29,12 +30,12 @@ plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"
            monochrome=true)
 
 public class rerunRunnerTest {
-	
+
 	@BeforeClass
-	public static void logger() throws IOException {
+	public static void logger() throws IOException, InterruptedException {
 		
 		  PropertyConfigurator.configure(System.getProperty("user.dir")+"/src/main/java/Resources/log4j.properties");
-
+           
 	}
 
 	@AfterClass

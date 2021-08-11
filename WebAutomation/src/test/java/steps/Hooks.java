@@ -4,13 +4,9 @@ package steps;
 
 import java.io.IOException;
 
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import Pageobjects.frontend.SignUp;
-import Pageobjects.frontend.ToastandErrormessages;
-import Pageobjects.frontend.homepage;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.After;
@@ -21,22 +17,19 @@ public class Hooks extends BaseSetup {
 	 
 	
 	
-	@Before(order=0)
+	@Before()
 	public void launchdriverandapplication() throws InterruptedException, IOException
 	{
-		
 		BaseSetup.intiliazedriver();
-
-		
-	}	
-	@Before(order=1)
+	}
+	/*@Before(order=1)
 	public void Closecookie() throws InterruptedException, IOException
 	{
 		homepage home=new homepage();
 		homepage.CookieClose.click();
 		
-	}	
-	@Before("not @Paywall")
+	}
+	/*@Before("not @Paywall")
 	public void loginapplication() throws InterruptedException, IOException
 	{
 			
@@ -57,7 +50,7 @@ public class Hooks extends BaseSetup {
 		
 		
 		
-	}
+	}*/
 	@After()
 	public void teardown(Scenario scenario)
 	{
@@ -68,7 +61,8 @@ public class Hooks extends BaseSetup {
 	       scenario.attach(screenshot, "image/png", "image");
 	       
 		}
-		driver.close();
+		driver.quit();
+		
 	}
 
 }

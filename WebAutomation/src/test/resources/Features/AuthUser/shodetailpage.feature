@@ -82,11 +82,7 @@ Feature: Sho Detail Page Scenarios
       | ShoName |
       | narappa |
 
-
-    
-   @Paywall
    Scenario Outline: More like this Share popup
-
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Click on shareicon from shocard and verify share popup
 

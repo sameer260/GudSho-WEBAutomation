@@ -290,6 +290,12 @@ public class footersteps extends BaseSetup {
 			assertEquals(name,Username);
 	    }
 
+	    @And("^Clear cookies$")
+	    public void clear_cookies() throws Throwable {
+	        driver.manage().deleteAllCookies();
+	    }
+
+
 	   
 
 	

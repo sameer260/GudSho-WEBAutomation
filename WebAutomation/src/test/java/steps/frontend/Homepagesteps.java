@@ -44,9 +44,11 @@ public class Homepagesteps extends BaseSetup {
 	ShareFeature share = new ShareFeature();
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 	JavascriptExecutor executor = (JavascriptExecutor) driver;
-
+    commonSteps com=new commonSteps();
+    
 	@Given("^verify notification tab$")
 	public void verify_notification_tab() throws Throwable {
+		
 		WebElement notify = wait.until(ExpectedConditions.elementToBeClickable(homepage.clicknotification));
 		executor.executeScript("arguments[0].click();", notify);
 		Thread.sleep(2000);

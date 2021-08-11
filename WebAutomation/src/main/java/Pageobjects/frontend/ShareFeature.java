@@ -140,7 +140,7 @@ public class ShareFeature extends BaseSetup {
 		while (i1.hasNext()) {
 			String ChildWindow = i1.next();
 
-			if(!MainWindow.equalsIgnoreCase(ChildWindow)) {
+			if (!MainWindow.equalsIgnoreCase(ChildWindow)) {
 				driver.switchTo().window(ChildWindow);
 				FacebookuserName.clear();
 				FacebookuserName.sendKeys("sameergudsho@gmail.com");
@@ -148,19 +148,19 @@ public class ShareFeature extends BaseSetup {
 				FacebookPassword.sendKeys("sameer1234");
 				FacebookLoginButton.click();
 				try {
-				FacebookPostButton.click();
-				driver.close();
-				}
-				catch(Exception e)
-				{
+					FacebookPostButton.click();
+				} finally {
+					driver.manage().deleteAllCookies();
 					driver.close();
 				}
-
 			}
+
 		}
 		driver.switchTo().window(MainWindow);
 		Thread.sleep(1000);
 	}
+		
+	
 
 	public static void twitterwindowhandle() throws InterruptedException {
 
@@ -179,6 +179,7 @@ public class ShareFeature extends BaseSetup {
 				TwitterPassword.clear();
 				TwitterPassword.sendKeys("sameer1234");
 				TwitterSignInButton.click();
+				driver.manage().deleteAllCookies();
 				driver.close();
 			}
 

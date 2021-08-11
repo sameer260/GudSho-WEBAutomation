@@ -150,6 +150,7 @@ public class shodetailpagesteps extends BaseSetup {
     @And("^On sho detail page verify watch now button should change to resume$")
     public void on_sho_detail_page_verify_watch_now_button_should_change_to_resume() throws Throwable {
         wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
+        wait.until(ExpectedConditions.visibilityOf(shodetailpage.ResumeButtonForSho));
         String str=shodetailpage.ResumeButtonForSho.getText();
         log.info(str);
         assertEquals(str,"Resume");
@@ -229,7 +230,7 @@ public class shodetailpagesteps extends BaseSetup {
          assertTrue(ShareFeature.SharePopup.isDisplayed());
          ShareFeature.SharepopupClose.click();
          shodetailpage.MoreLikeThisEle.click();
-         wait.until(ExpectedConditions.visibilityOf(commonlocatorsandmethods.MoreLikethistext));
+         Thread.sleep(2000);
          assertTrue(commonlocatorsandmethods.MoreLikethistext.isDisplayed());
          a.moveToElement(commonlocatorsandmethods.Shocards.get(0)).build().perform();
          commonlocatorsandmethods.ShareButtononShoCard.click();

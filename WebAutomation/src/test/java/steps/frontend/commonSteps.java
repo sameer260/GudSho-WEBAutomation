@@ -27,6 +27,7 @@ public class commonSteps extends BaseSetup {
 	public static Logger log = Logger.getLogger(commonSteps.class.getName());
 	videoplayer video = new videoplayer();
 	WebDriverWait wait = new WebDriverWait(driver, 30);
+	
 
 	@Given("^Search any studio (.+) and verify it should redirected to correct page$")
 	public void search_any_studio_and_verify_it_should_redirected_to_correct_page(String studioname) throws Throwable {

@@ -18,25 +18,6 @@ Feature: Studio Detail page Scenarios
     Examples: 
       | StudioName |
       | Sameer     |
-
-
- Scenario Outline: Studio Share
-      Given Search any studio <StudioName> and verify it should redirected to correct page
-      When Click studio share icon
-      Then Share the <ShareType> using all social icons
-      
-      Examples:
-      |StudioName|ShareType|
-      |Sameer    |shoshare | 
-     
- Scenario Outline: Studio Banner Redirection
-      Given Search any studio <StudioName> and verify it should redirected to correct page
-      Then Click on Banner image and verify redirection to correct sho detail page
-      
-      Examples:
-      |StudioName|
-      |Sameer    |
-     
    
   Scenario Outline: Follow Studio
     Given Search any studio <StudioName> and verify it should redirected to correct page
@@ -91,7 +72,7 @@ Feature: Studio Detail page Scenarios
       | StudioName   |
       | Trail Studio |
       
-   @Paywall
+  
    Scenario Outline: WatchFree Tab Card functionality
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When click on watch free tab
@@ -100,7 +81,7 @@ Feature: Studio Detail page Scenarios
     Examples: 
       | StudioName   |
       | Sameer       | 
-    @Paywall
+    
    Scenario Outline: Genere which doesnot have any sho or series
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Click <genere> which doesnot have any shos
@@ -110,7 +91,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |genere|
     |Trail Studio|Comedy|
     
-    @Paywall
+    
    Scenario Outline: Check sharepopup of sho cards
     Given Search any studio <StudioName> and verify it should redirected to correct page
     Then Share sho card from home and verify popup
@@ -121,7 +102,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |genere|
     |Trail Studio|Drama | 
     
-    @Paywall
+    
    Scenario Outline: Check Share Popup for promo cards
     Given Search any studio <StudioName> and verify it should redirected to correct page
     Then verify promo share popup
@@ -141,7 +122,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |PromoName                                          |
     |Sameer      | Powerful Police Officer Scenes Back To Back _ Top |  
     
-    @Paywall
+    
    Scenario Outline: See All Promo redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Play promo from see all page
@@ -151,7 +132,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |
     |Sameer      | 
     
-    @Paywall
+    
    Scenario Outline: See all sho card Share
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Click on sho see all link
@@ -161,7 +142,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |
     |Sameer      | 
     
-   @Paywall
+  
    Scenario Outline: See all sho card redirection
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Click on sho see all link
@@ -214,6 +195,14 @@ Feature: Studio Detail page Scenarios
   Examples:
   |StudioName|genere|
   |Sameer    |Drama |
+  
+ 
+  Scenario: Logout From the application
+  Given Hover on profile
+  Then Click on Signout and check toaster
+  And Clear cookies
+  
+  
       
       
   

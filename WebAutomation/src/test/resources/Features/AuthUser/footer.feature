@@ -51,7 +51,7 @@ Feature: Footer Links & Profile Hover elements Redirection Scenarios
     And Check Linkedin redirection
     And Check Youtube redirection
     
- 
+
   Scenario: Check all profile hover elements redirections
     Given Hover on profile
     Then Click on support menu and verify redirection

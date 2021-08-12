@@ -131,7 +131,10 @@ public class Homepagesteps extends BaseSetup {
 
 	@Then("^Click on notifications link and it should redirect to notifications tab$")
 	public void click_on_notifications_link_and_it_should_redirect_to_notifications_tab() throws Throwable {
-		accountandsettingspage.NotificationSettingLink.click();
+		//wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.NotificationSettingLink)).click();
+		JavascriptExecutor executor = (JavascriptExecutor) driver;
+		executor.executeScript("arguments[0].click();", accountandsettingspage.NotificationSettingLink);
+		//accountandsettingspage.NotificationSettingLink.click();
 		assertTrue(accountandsettingspage.NotificationsTab.isDisplayed());
 		wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.NotificationElements));
 		assertTrue(accountandsettingspage.NotificationElements.isDisplayed());

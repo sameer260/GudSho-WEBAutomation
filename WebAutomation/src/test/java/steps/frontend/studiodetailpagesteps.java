@@ -95,7 +95,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 					 break;
 				 }
 			 }
-			 Thread.sleep(1000);
+			 Thread.sleep(2000);
 			wait.until(ExpectedConditions.visibilityOfAllElements(studiodetailpage.selectshocardfromgenre));
 			String actualsho=studiodetailpage.ShoNameattribtute.get(0).getAttribute("alt");
 			log.info(actualsho);

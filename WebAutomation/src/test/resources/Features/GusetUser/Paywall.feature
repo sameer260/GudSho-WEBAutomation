@@ -1,7 +1,7 @@
 @Paywall
 Feature: Paywall Scenarios
 
-   
+   @test
   Scenario Outline: Watch List Popup 
     Given Search any <ShoName> and verfiy its redirected to correct page
     And From sho detail page click on add to watchlist

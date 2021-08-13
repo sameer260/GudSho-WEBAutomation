@@ -2776,3 +2776,7 @@
 2021-08-12 15:53:21 INFO  commonSteps:37 - Trail Studio
 2021-08-12 15:53:24 INFO  studiodetailpagesteps:101 - shoat30thapril
 2021-08-12 15:53:24 INFO  studiodetailpagesteps:104 - shoat30thapril
+2021-08-12 20:12:11 INFO  homepage:132 - Sent Text in the Home Page is Talent
+2021-08-12 20:12:15 INFO  homepage:138 - The Auto suggestive dropdown shows:Talent
+2021-08-12 20:12:18 INFO  commonSteps:47 - Talent
+2021-08-12 20:12:20 INFO  paywallsteps:41 - Clicking on the add to watchlist button

@@ -379,6 +379,7 @@ public class studiodetailpagesteps  extends BaseSetup{
 	    }
 	    @And("^Click on any (.+)$")
 	    public void click_on_any(String genere) throws Throwable {
+	    	wait.until(ExpectedConditions.visibilityOf(studio.WatchfreeButton));
 	    	for(int i=0;i<studiodetailpage.selectgenre.size();i++)
 			 {
 				 if(studiodetailpage.selectgenre.get(i).getText().equalsIgnoreCase(genere))

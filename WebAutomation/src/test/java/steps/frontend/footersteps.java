@@ -222,7 +222,7 @@ public class footersteps extends BaseSetup {
 	    	WebDriverWait wait=new WebDriverWait(driver,20);
 	    	wait.until(ExpectedConditions.visibilityOf(homepage.support));
 	    	String ChildUrl="https://qa.gudsho.com/support";
-			String Childtitle="GudSho - Watch Unlimited Movies & Web Series Online";	
+			String Childtitle="support | GudSho";	
 			homepage.support.click();
 			wait.until(ExpectedConditions.urlMatches(ChildUrl));
 			assertEquals(ChildUrl,driver.getCurrentUrl());

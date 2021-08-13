@@ -40,7 +40,7 @@ public class BaseSetup
     	/*HashMap<String, Object> images=new HashMap<String, Object>();
     	images.put("profile.managed_default_content_settings.images", 2); 
     	options.setExperimentalOption("prefs", images);*/
-        options.addArguments("user-data-dir=C:\\Users\\user\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
+        options.addArguments("--user-data-dir=C:\\Users\\user\\AppData\\Local\\Google\\Chrome\\User Data\\Profile 1");
         driver=new ChromeDriver(options);  	        
     }
     else if(browsername.contains("Firefox"))

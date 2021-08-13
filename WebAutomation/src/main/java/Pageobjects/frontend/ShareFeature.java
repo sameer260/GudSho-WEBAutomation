@@ -11,8 +11,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
-import org.apache.log4j.Logger;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -22,7 +20,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Resources.BaseSetup;
-import steps.frontend.commonSteps;
 
 public class ShareFeature extends BaseSetup {
 	
@@ -33,7 +30,6 @@ public class ShareFeature extends BaseSetup {
 	    {
 		PageFactory.initElements(driver, this);
 	    }
-	    public static Logger log = Logger.getLogger(ShareFeature.class.getName());
 	
 		@FindBy(xpath="//ul[@class='shocial-links ng-star-inserted']/li[1]")
 		public static WebElement FacebookShareIcon;
@@ -153,7 +149,7 @@ public class ShareFeature extends BaseSetup {
 				FacebookLoginButton.click();
 				try {
 					FacebookPostButton.click();
-				} catch(Exception e){log.info("Facebook not working");}finally {
+				} finally {
 					driver.manage().deleteAllCookies();
 					driver.close();
 				}

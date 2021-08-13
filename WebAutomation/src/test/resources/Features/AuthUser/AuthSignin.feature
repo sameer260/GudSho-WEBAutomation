@@ -1,3 +1,4 @@
+@Paywall
 Feature: Auth Signin
 
 Scenario: Auth Sig in

@@ -197,5 +197,34 @@ public class shodetailpage extends BaseSetup {
 
 	@FindBy(xpath = "//div[starts-with(@class,'hover-share flex align-items-center justify-content-center ng-tns-')]")
 	public static WebElement ShareButtononShoCard;
+	
+	
+	
+	
+	//Header
+	
+	@FindBy(xpath = "//li[starts-with(@class,'watch-lists ng-tns-')]")
+	public static WebElement HeaderWatchlistbutton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'share-play top-fixed ng-tns-')]")
+	public static WebElement HeaderShareButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share top-fixed ng-tns-')]/ul/app-gud-play-button")
+	public static WebElement HeaderWatchButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share animation-bg ng-tns-')]/ul/app-gud-play-button")
+	public static WebElement AnimationWatchButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share animation-bg ng-tns-')]/ul/li[1]")
+	public static WebElement AnimationWatchListButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share animation-bg ng-tns-')]/ul/li[2]")
+	public static WebElement AnimationShareButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'sho-content animation-bg ng-tns-')]")
+	public static WebElement AnimationElement;
+	
+	
+	
 
 }

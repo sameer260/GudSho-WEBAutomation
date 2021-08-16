@@ -1,8 +1,11 @@
 package Resources;
 
+import static Resources.BaseSetup.options;
+
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +20,7 @@ public class BaseSetup
 {
 	
 	public static WebDriver driver;
+	static ChromeOptions options;
 	public static WebDriver intiliazedriver() throws IOException
 	{
 	Properties prop=new Properties();
@@ -27,7 +31,7 @@ public class BaseSetup
     if(browsername.contains("chrome"))
     {
     	System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\BrowserDrivers\\chromedriver.exe");
-    	ChromeOptions options=new ChromeOptions();
+    	 options=new ChromeOptions();
     	
     	if(browsername.contains("headless"))
     	{
@@ -59,5 +63,5 @@ public class BaseSetup
      driver.get(url);
      return driver;
 	}  
-
+	
 }

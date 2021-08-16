@@ -98,3 +98,84 @@ Feature: Sho Detail Page Scenarios
     Examples: 
       | ShoName |
       | narappa |
+
+  Scenario Outline: Header Watchlist
+  Given Search any <ShoName> and verfiy its redirected to correct page
+  When Scroll down page and click on watchlist button
+  Then On home page check the added watchlist <ShoName> 
+  
+    Examples: 
+      | ShoName |
+      | narappa |
+       
+   Scenario Outline: Header Share
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then Click header share icon and verify share popup
+
+    Examples: 
+      | ShoName |
+      | narappa |   
+      
+      
+  Scenario Outline: Header Watch Now-PriceButton
+  Given Search any <ShoName> and verfiy its redirected to correct page
+  When click header watch now button
+  Then verify payment continue popup dislayed
+  
+    Examples: 
+      | ShoName |
+      | narappa | 
+      
+   
+  Scenario Outline: Header Watch FreeButton
+  Given Search any <ShoName> and verfiy its redirected to correct page
+  When click header watch now button
+  Then verify sho is playing and close player and verify resume button
+  And On sho detail page verify watch now button should change to resume
+  Then On Home Page check continue wathing is showing <ShoName>
+  
+    Examples: 
+      |ShoName         |
+      |Check Transacode| 
+      
+     @test 
+   Scenario Outline: Animation WatchList
+  Given Search any <ShoName> and verfiy its redirected to correct page
+  When Wait for Animation buttons and click on watchlist button
+  Then On home page check the added watchlist <ShoName> 
+  
+    Examples: 
+      | ShoName |
+      | Kaithi  |
+    
+   
+   Scenario Outline: Animation Share
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then Wait for Animation buttons and click on Share button
+
+    Examples: 
+      | ShoName |
+      | Ranam |   
+      
+   
+  Scenario Outline: Animation WatchNow-PriceButton
+  Given Search any <ShoName> and verfiy its redirected to correct page
+  When Wait for Animation buttons and click on WatchNow button
+  Then verify payment continue popup dislayed
+  
+    Examples: 
+      | ShoName |
+      | narappa | 
+      
+  
+  Scenario Outline: Animation WatchFree Button
+  Given Search any <ShoName> and verfiy its redirected to correct page
+   When Wait for Animation buttons and click on WatchNow button
+  Then verify sho is playing and close player and verify resume button
+  And On sho detail page verify watch now button should change to resume
+  Then On Home Page check continue wathing is showing <ShoName>
+  
+    Examples: 
+      |ShoName|
+      |Locked|          
+      

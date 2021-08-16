@@ -3,13 +3,19 @@ package steps.frontend;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+
+import java.util.HashMap;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.sun.xml.xsom.impl.scd.Iterators.Map;
 import com.tigervnc.rdr.Exception;
 
 import Pageobjects.frontend.ShareFeature;
@@ -76,7 +82,7 @@ public class shodetailpagesteps extends BaseSetup {
         commonlocatorsandmethods.scrolldownm();
         String str=commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
         log.info(str);
-        assertEquals(shoname,str);
+        assertTrue(shoname.equalsIgnoreCase(str));
         
     }
     @When("^Click on Share button$")
@@ -293,6 +299,70 @@ public class shodetailpagesteps extends BaseSetup {
         assertEquals(shoname,str);
         
     }
+    @When("^Scroll down page and click on watchlist button$")
+    public void scroll_down_page_and_click_on_watchlist_button() throws Throwable {
+       commonlocatorsandmethods.scrolldownm();
+       String shoname=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+       shodetailpage.HeaderWatchlistbutton.click();
+       wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+       String toastermessage=ToastandErrormessages.ToastMessageText.getText();
+       ToastandErrormessages.ToastMessageClose.click();
+       assertEquals(toastermessage,shoname+ " has been added to watchlist");
+       Actions a=new Actions(driver);
+       a.sendKeys(Keys.HOME).build().perform();
+    }
+
+    @Then("^Click header share icon and verify share popup$")
+    public void click_header_share_icon_and_verify_share_popup() throws Throwable {
+    	commonlocatorsandmethods.scrolldownm();
+    	shodetailpage.HeaderShareButton.click();
+    	wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
+        assertTrue(ShareFeature.SharePopup.isDisplayed());
+    	
+    }
+    @When("^click header watch now button$")
+    public void click_header_watch_now_button() throws Throwable {
+    	commonlocatorsandmethods.scrolldownm();
+    	shodetailpage.HeaderWatchButton.click();
+    }
+
+    @Then("^verify payment continue popup dislayed$")
+    public void verify_payment_continue_popup_dislayed() throws Throwable {
+    	wait.until(ExpectedConditions.visibilityOf(paymentpage.PopupContinueButton));
+        assertTrue(paymentpage.PopupContinueButton.isDisplayed());
+    }
+    @Then("^verify sho is playing and close player and verify resume button$")
+    public void verify_sho_is_playing_and_close_player_and_verify_resume_button() throws Throwable {
+        Thread.sleep(10000);
+        Actions a =new Actions(driver);
+        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+        videoplayer.CloseButton.click();  
+        videoplayer.RateCloseButton.click();
+    }
+    @When("^Wait for Animation buttons and click on watchlist button$")
+    public void wait_for_animation_buttons_and_click_on_watchlist_button() throws Throwable {
+    	String shoname=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+    	log.info(shoname);
+    	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[starts-with(@class,'sho-content animation-bg ng-tns-')]"))));
+    	assertTrue(shodetailpage.AnimationWatchListButton.isDisplayed());  
+    }
+
+    @When("^Wait for Animation buttons and click on WatchNow button$")
+    public void wait_for_animation_buttons_and_click_on_watchnow_button() throws Throwable {
+    	String shoname=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+    	log.info(shoname);
+    	wait.until(ExpectedConditions.visibilityOf(shodetailpage.AnimationElement));
+    	assertTrue(shodetailpage.AnimationWatchButton.isDisplayed()); 
+    }
+
+    @Then("^Wait for Animation buttons and click on Share button$")
+    public void wait_for_animation_buttons_and_click_on_share_button() throws Throwable {
+    	String shoname=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+    	log.info(shoname);
+    	wait.until(ExpectedConditions.visibilityOf(shodetailpage.AnimationElement));
+    	assertTrue(shodetailpage.AnimationShareButton.isDisplayed()); 
+    }
+
 
 
 }

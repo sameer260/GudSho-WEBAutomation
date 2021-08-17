@@ -98,25 +98,7 @@ public class shodetailpagesteps extends BaseSetup {
     	
     	
     }
-    @When("^Play (.+) and like promo$")
-    public void play_and_like_promo(String promoname) throws Throwable {
-        shodetailpage.PromoCardClick(promoname);
-        Actions a=new Actions(driver);
-        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
-        Thread.sleep(700);
-        videoplayer.PlayerGudICon.click();
-        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
-        String actual=ToastandErrormessages.ToastMessageText.getText();
-        log.info(actual);
-        assertEquals(actual,"You liked this promo");
-        ToastandErrormessages.ToastMessageClose.click();
-        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
-        wait.until(ExpectedConditions.visibilityOf(videoplayer.PromoNameonPlayer));
-        String promonameonplayer=videoplayer.Promoname();
-        log.info(promonameonplayer);
-        assertTrue(promonameonplayer.equalsIgnoreCase(promoname));
-        a.moveToElement(videoplayer.CloseButton).click().build().perform();
-    }
+   
 
     @Then("^On home page check liked (.+) is showing in my gud promos$")
     public void on_home_page_check_liked_is_showing_in_my_gud_promos(String promoname) throws Throwable {
@@ -339,30 +321,155 @@ public class shodetailpagesteps extends BaseSetup {
         videoplayer.CloseButton.click();  
         videoplayer.RateCloseButton.click();
     }
-    @When("^Wait for Animation buttons and click on watchlist button$")
-    public void wait_for_animation_buttons_and_click_on_watchlist_button() throws Throwable {
+    @When("^Wait for Animation buttons and Verify its displaying all button$")
+    public void wait_for_animation_buttons_and_verify_its_displaying_all_button() throws Throwable {
     	String shoname=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
     	log.info(shoname);
     	wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//div[starts-with(@class,'sho-content animation-bg ng-tns-')]"))));
     	assertTrue(shodetailpage.AnimationWatchListButton.isDisplayed());  
+    	assertTrue(shodetailpage.AnimationShareButton.isDisplayed());
+    	assertTrue(shodetailpage.AnimationWatchButton.isDisplayed());
     }
 
-    @When("^Wait for Animation buttons and click on WatchNow button$")
-    public void wait_for_animation_buttons_and_click_on_watchnow_button() throws Throwable {
-    	String shoname=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
-    	log.info(shoname);
-    	wait.until(ExpectedConditions.visibilityOf(shodetailpage.AnimationElement));
-    	assertTrue(shodetailpage.AnimationWatchButton.isDisplayed()); 
+    @Then("^hover on banner check the sho detail element is retained$")
+    public void hover_on_banner_check_the_sho_detail_element_is_retained() throws Throwable {
+    	Actions a=new Actions(driver);
+    	a.moveToElement(shodetailpage.AnimationWatchListButton).build().perform();
+    	assertTrue(shodetailpage.WatchListButton.isDisplayed());
+    }
+    static int timeleft;
+    @When("^Play video till (.+) and close player$")
+    public void play_video_till_and_close_player(String time) throws Throwable {
+    	shodetailpage.WatchFreeButton.click();
+    	Thread.sleep(10000);
+    	Actions a =new Actions(driver);
+    	a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+    	timeleft=videoplayer.TimeLeftCal(time);
+    	log.info(timeleft);
+    	videoplayer.CloseButton.click();
+    	wait.until(ExpectedConditions.visibilityOf(videoplayer.RateCloseButton));
+    	videoplayer.RateCloseButton.click();
+    	
     }
 
-    @Then("^Wait for Animation buttons and click on Share button$")
-    public void wait_for_animation_buttons_and_click_on_share_button() throws Throwable {
-    	String shoname=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
-    	log.info(shoname);
-    	wait.until(ExpectedConditions.visibilityOf(shodetailpage.AnimationElement));
-    	assertTrue(shodetailpage.AnimationShareButton.isDisplayed()); 
+    @Then("^verify time left on sho detail page$")
+    public void verify_time_left_on_sho_detail_page() throws Throwable {
+      wait.until(ExpectedConditions.visibilityOf(shodetailpage.TimeLeftonShodetailpage));
+      String timeLeftonshodetailpage= shodetailpage.TimeLeftonShodetailpage.getText();
+      log.info(timeLeftonshodetailpage);
+      assertEquals(timeleft+"m left",timeLeftonshodetailpage);
+      log.info(timeLeftonshodetailpage);
+    }
+    
+    @Then("^Check right and left arrow is working as expected$")
+    public void check_right_and_left_arrow_is_working_as_expected() throws Throwable {
+    	Actions a=new Actions(driver);
+    	a.sendKeys(Keys.END).build().perform();
+        commonlocatorsandmethods.RightLeftArrows();
     }
 
+	@Then("^verify all lables of the card with sho detail page$")
+	public void verify_all_lables_of_the_card_with_sho_detail_page() throws Throwable {
+		Actions a = new Actions(driver);
+		a.sendKeys(Keys.END).build().perform();
+		wait.until(ExpectedConditions.visibilityOf(shodetailpage.MoreLikeThisEle));
+		a.moveToElement(commonlocatorsandmethods.ShoCards.get(0)).build().perform();
+		wait.until(ExpectedConditions.visibilityOf(commonlocatorsandmethods.ShoSeriesCardLabel));
+		String sholabel = commonlocatorsandmethods.ShoSeriesCardLabel.getText();
+		String Shoduration = commonlocatorsandmethods.ShoCardDuration.getText();
+		String ShoGenere = commonlocatorsandmethods.ShoCardGenere.getText();
+		String Sholanguage = commonlocatorsandmethods.ShoCardLanguage.getText();
+		String ShonameonCard;
+		try {
+			ShonameonCard = commonlocatorsandmethods.ShoNameOnShoCard.getText();
+		} catch (Exception e) {
+			ShonameonCard = commonlocatorsandmethods.ShoNameOnShoCardImage.getAttribute("alt");
+		}
+
+		shodetailpage.ShareButtononShoCard.click();
+		wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
+		assertTrue(ShareFeature.SharePopup.isDisplayed());
+		ShareFeature.SharepopupClose.click();
+		a.moveToElement(shodetailpage.ShoCards.get(0)).click().build().perform();
+		wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
+		String Sholabelonshobanner = shodetailpage.ShoDetailsInfo.get(0).getText();
+		String ShoDurationShobanner = shodetailpage.ShoDetailsInfo.get(2).getText();
+		String ShoGenereShobanner = shodetailpage.ShoDetailsInfo.get(3).getText();
+		String ShoanguageShobanner = shodetailpage.ShoDetailsInfo.get(5).getText();
+		String Shonameofshodetailpage = shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+
+		assertTrue(sholabel.equalsIgnoreCase(Sholabelonshobanner));
+		assertTrue(Shoduration.equalsIgnoreCase(ShoDurationShobanner));
+		assertTrue(ShoGenere.equalsIgnoreCase(ShoGenereShobanner));
+		assertTrue(Sholanguage.equalsIgnoreCase(ShoanguageShobanner));
+		assertTrue(ShonameonCard.equalsIgnoreCase(Shonameofshodetailpage));
+
+	}
+	@And("^verify price label$")
+    public void verify_price_label() throws Throwable {
+		Actions a = new Actions(driver);
+		commonlocatorsandmethods.scrolldownm();
+		String str=commonlocatorsandmethods.PriceLabel();
+		String pricelabelonshocard = str.replace("\n", "").replace("\r", "");
+		a.moveToElement(shodetailpage.ShoCards.get(0)).click().build().perform();
+		commonlocatorsandmethods.CheckPriceverification(pricelabelonshocard);
+		
+		
+    }
+	
+
+	    @And("^Take a gud and view count of (.+)$")
+	    public void take_a_gud_and_view_count_of(String promoname) throws Throwable {
+	    	viewcountbeforeplay= shodetailpage.ViewCount(promoname);
+	    	gudcountbeforeplay=shodetailpage.GudCount(promoname);
+	    }
+	   
+	    @When("^Play (.+) and (.+) promo$")
+	    public void play_and_promo(String promoname, String useraction) throws Throwable {
+	    	shodetailpage.PromoCardClick(promoname);
+	        Actions a=new Actions(driver);
+	        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+	        Thread.sleep(700);
+	        videoplayer.PlayerGudICon.click();
+	        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+	        String actual=ToastandErrormessages.ToastMessageText.getText();
+	        log.info(actual);
+	        if(useraction.equalsIgnoreCase("Like"))
+	        {
+	        assertEquals(actual,"You liked this promo");
+	        }
+	        else if(useraction.equalsIgnoreCase("UnLike"))
+	        {
+	        	assertEquals(actual,"You unliked this promo");
+	        }
+	        ToastandErrormessages.ToastMessageClose.click();
+	        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+	        wait.until(ExpectedConditions.visibilityOf(videoplayer.PromoNameonPlayer));
+	        String promonameonplayer=videoplayer.Promoname();
+	        log.info(promonameonplayer);
+	        assertTrue(promonameonplayer.equalsIgnoreCase(promoname));
+	        a.moveToElement(videoplayer.CloseButton).click().build().perform();
+	    }
+	    static int viewcountbeforeplay;
+		static int gudcountbeforeplay;
+	    @Then("^verify view and gudcount of (.+) for (.+)$")
+	    public void verify_view_and_gudcount_of_for(String promoname, String useraction) throws Throwable {
+	    	wait.until(ExpectedConditions.visibilityOfAllElements(shodetailpage.PromoNamesofPromoCards));
+		    int viewcountafterview=shodetailpage.ViewCount(promoname);
+	        int gudcountaftergud=shodetailpage.GudCount(promoname);
+	        assertEquals(viewcountafterview,viewcountbeforeplay+1);
+	        if(useraction.equalsIgnoreCase("Like"))
+	        {
+	        	assertEquals(gudcountaftergud,gudcountbeforeplay+1);
+	        }
+	        else if(useraction.equalsIgnoreCase("Unlike"))
+	        {
+	        	assertEquals(gudcountaftergud,gudcountbeforeplay-1);
+	        }
+	        	
+	        
+	    }
 
 
+    
 }

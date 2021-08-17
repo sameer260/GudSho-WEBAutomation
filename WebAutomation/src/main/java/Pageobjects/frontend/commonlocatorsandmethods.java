@@ -1,6 +1,12 @@
 package Pageobjects.frontend;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -11,12 +17,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Resources.BaseSetup;
+import steps.frontend.shodetailpagesteps;
 
 public class commonlocatorsandmethods extends BaseSetup {
 
 	public commonlocatorsandmethods() {
 		PageFactory.initElements(driver, this);
 	}
+	public static Logger log = Logger.getLogger(commonlocatorsandmethods.class.getName());
 
 	// Home Page- Watch List Elements and Methods-start
 	static By ShoCradShareButton = By
@@ -201,5 +209,101 @@ public class commonlocatorsandmethods extends BaseSetup {
 		
 		
 	}
+	
+	// Next and Previous Arrows
+	
+	@FindBy(xpath="//div[@aria-label='Next slide']")
+	public static WebElement NextArrow;
+	
+	@FindBy(xpath="//div[@aria-label='Previous slide']")
+	public static WebElement PreviousArrow;
+	
+	@FindBy(xpath = "//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal']/app-gud-card/div/div/div")
+	public static List<WebElement> ShoCards;
+	
+	public static void RightLeftArrows() throws InterruptedException {
+		int i = 0;
+		int j = 0;
+		Actions a = new Actions(driver);
+
+		if (ShoCards.size() > 6) {
+			a.moveToElement(NextArrow).build().perform();
+			if (NextArrow.getAttribute("aria-disabled").equalsIgnoreCase("false")) {
+				while (!(NextArrow.getAttribute("aria-disabled").equalsIgnoreCase("true"))) {
+					i = ShoCards.size();
+					a.moveToElement(NextArrow).build().perform();
+					NextArrow.click();
+					Thread.sleep(1400);
+
+				}
+				log.info("No.of Cards:" + i);
+
+			}
+			if (PreviousArrow.getAttribute("aria-disabled").equalsIgnoreCase("false")) {
+				while (!(PreviousArrow.getAttribute("aria-disabled").equalsIgnoreCase("true"))) {
+					j = ShoCards.size();
+					PreviousArrow.click();
+				}
+				log.info("No.of Cards:" + j);
+
+				assertEquals(i, j);
+			}
+		} else {
+			log.info("The Cards are less less than 6");
+			log.info(ShoCards.size());
+		}
+	}
+	
+	//Sho Card Labels
+	
+	@FindBy(xpath="//span[starts-with(@class,'card-badge coin-label ng-tns-')]")
+	public static List<WebElement> ShoCardPriceLabel;
+	
+	@FindBy(xpath="//span[starts-with(@class,'wl-sho badge full-badge sho ng-tns-')]")
+	public static WebElement ShoSeriesCardLabel;
+	
+	@FindBy(xpath="//ul[@class='ng-star-inserted']/li[1]")
+	public static WebElement ShoCardDuration;
+	
+	@FindBy(xpath="//ul[@class='ng-star-inserted']/li[2]")
+	public static WebElement ShoCardGenere;
+	
+	@FindBy(xpath="//ul[@class='ng-star-inserted']/li[3]")
+	public static WebElement ShoCardLanguage;
+	
+	@FindBy(xpath="//div[starts-with(@class,'card-sho-name flex align-items-center justify-content-between ng-tns-')]/h5")
+	public static WebElement ShoNameOnShoCard;
+	
+	@FindBy(xpath="//div[starts-with(@class,'card-sho-name flex align-items-center justify-content-between ng-tns-')]/img")
+	public static WebElement ShoNameOnShoCardImage;
+	
+	@FindBy(xpath="//span[@class='gud-value']")
+	public static WebElement PriceOnShoBannerWatchButton;
+	
+	public static String PriceLabel()
+	{
+	
+		return commonlocatorsandmethods.ShoCardPriceLabel.get(0).getText();
+	}	
+	public static void CheckPriceverification(String pricelabel)
+	{
+		
+		if(pricelabel.contains("₹"))
+		{
+			assertTrue(shodetailpage.WatchFreeButton.isDisplayed());
+			log.info(shodetailpage.WatchFreeButton.getText());
+			assertEquals(pricelabel,PriceOnShoBannerWatchButton.getText());
+		}
+		else
+		{
+			assertTrue(shodetailpage.WatchFreeButton.isDisplayed());
+		}
+		
+	}
+	
+	
+	
+	
+	
 	
 }

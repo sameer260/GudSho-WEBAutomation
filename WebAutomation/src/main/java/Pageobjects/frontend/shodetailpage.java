@@ -1,6 +1,8 @@
 package Pageobjects.frontend;
 
 import java.util.List;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -104,10 +106,10 @@ public class shodetailpage extends BaseSetup {
 	@FindBy(xpath = "//div[starts-with(@class,'card-main promo-card-content sho-promocard ng-tns-')]//child::div[2]/h4")
 	public static List<WebElement> PromoNamesofPromoCards;
 
-	@FindBy(xpath = "//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode']/app-gud-card/div/div/div[2]/div/p")
+	@FindBy(xpath = "//div[starts-with(@class,'guds flex align-items-center ng-tns-')]/p")
 	public static List<WebElement> ViewCountofPromos;
 
-	@FindBy(xpath = "//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode']/app-gud-card/div/div/div[2]/div/span")
+	@FindBy(xpath = "//div[starts-with(@class,'guds flex align-items-center ng-tns-')]/span")
 	public static List<WebElement> GudCountofPromos;
 
 	@FindBy(xpath = "//div[starts-with(@class,'see-all-image cursor ng-tns-')]")
@@ -224,7 +226,55 @@ public class shodetailpage extends BaseSetup {
 	@FindBy(xpath="//div[starts-with(@class,'sho-content animation-bg ng-tns-')]")
 	public static WebElement AnimationElement;
 	
+	@FindBy(xpath="//div[starts-with(@class,'play-share ng-tns-')]/p/span")
+	public static WebElement TimeLeftonShodetailpage;
 	
+	public static int GudCount(String promoname)
+	{
+		//Actions a=new Actions(driver);
+		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		int gudcount = 0;
+		String GudCountStringFormat;;
+		for(int i=0;i<PromoNamesofPromoCards.size();i++)
+		{
+			if(PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname))
+			{
+				String str=GudCountofPromos.get(i).getText();
+				String verifygudtext=str.substring(str.lastIndexOf("G"));
+				if(verifygudtext.equalsIgnoreCase("Gud"))
+				{
+					GudCountStringFormat=str.substring(0,str.lastIndexOf(" Gud"));
+					gudcount=Integer.parseInt(GudCountStringFormat);
+				}
+				else {
+					GudCountStringFormat=str.substring(0,str.lastIndexOf(" Guds"));
+					gudcount=Integer.parseInt(GudCountStringFormat);
+				}
+				break;
+			}
+		}
+		return gudcount;
+	}
+	public static int ViewCount(String promoname)
+	{
+		//Actions a=new Actions(driver);
+		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		int viewcount = 0;
+		for(int i=0;i<PromoNamesofPromoCards.size();i++)
+		{
+			if(PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname))
+			{
+				String str=ViewCountofPromos.get(i).getText();
+				
+				String str1=str.substring(0,str.lastIndexOf(" Views"));
+				viewcount=Integer.parseInt(str1);
+				
+				break;
+				
+			}
+		}
+		return viewcount;
+	}
 	
 
 }

@@ -176,7 +176,7 @@ Feature: Sho Detail Page Scenarios
    Examples: 
       | ShoName  |
       | Hacking  |
-   @test 
+  
   Scenario Outline: Gud count Increament and View Count check
   Given Search any <ShoName> and verfiy its redirected to correct page
   And Take a gud and view count of <PromoName>
@@ -188,7 +188,7 @@ Feature: Sho Detail Page Scenarios
       | Hacking  |Kung Fu Panda|Like      |   
       
   
-    @test  
+   
   Scenario Outline: Gud count Decrement and View Count check
   Given Search any <ShoName> and verfiy its redirected to correct page
   And Take a gud and view count of <PromoName>
@@ -197,7 +197,32 @@ Feature: Sho Detail Page Scenarios
   
    Examples: 
       | ShoName  |PromoName    |UserAction|
-      | Hacking  |Kung Fu Panda|Unlike    |        
+      | Hacking  |Kung Fu Panda|Unlike    |    
+      
+      
+ ## Home Page Scenarios
+
+  Scenario Outline: Sho Watchlist card redirection
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Add <ShoName> in to watchlist and check the toaster message
+    Then On home page check the added watchlist <ShoName>
+    And Check redirection of sho card <ShoName> is in mywatchlist row
+
+    Examples: 
+      | ShoName |
+      | Locked  |
+     
+   Scenario Outline: Remove watchlist from watchlist row
+  Given Search any <ShoName> and verfiy its redirected to correct page
+  When Scroll down page and click on watchlist button
+  Then On home page check the added watchlist <ShoName>
+  And Remove <ShoName> card from watchlist and verify 
+  
+    Examples: 
+      | ShoName |
+      | Check   |   
+ 
+          
       
       
          

@@ -25,7 +25,7 @@ public class commonlocatorsandmethods extends BaseSetup {
 		PageFactory.initElements(driver, this);
 	}
 	public static Logger log = Logger.getLogger(commonlocatorsandmethods.class.getName());
-
+    ToastandErrormessages toast=new ToastandErrormessages();
 	// Home Page- Watch List Elements and Methods-start
 	static By ShoCradShareButton = By
 			.xpath("//div[@class='slider-content hovered']/swiper/div/app-gud-card/div/div/div[2]/div/div/div/div[2]");
@@ -88,7 +88,7 @@ public class commonlocatorsandmethods extends BaseSetup {
 	@FindBy(xpath = "//div[starts-with(@class,'follow-btn ng-tns-')]/app-watch-later/div")
 	public static WebElement WatchLaterbuttononShoCard;
 
-	@FindBy(xpath = "//*[starts-with(@class, 'share ng-tns')]")
+	@FindBy(xpath = "//*[starts-with(@class, 'hover-share flex align-items-center justify-content-center ng-tns-')]")
 	public static WebElement ShareButtononShoCard;
 
 	@FindBy(xpath = "//*[starts-with(@class,'mat-card-image ng-tns-')]")
@@ -100,7 +100,7 @@ public class commonlocatorsandmethods extends BaseSetup {
 			Object lastHeight = js.executeScript("return document.body.scrollHeight");
 			while (true) {
 				js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-				Thread.sleep(2000);
+				Thread.sleep(3000);
 				Object newHeight = js.executeScript("return document.body.scrollHeight");
 				if (newHeight.equals(lastHeight)) {
 					break;
@@ -301,6 +301,51 @@ public class commonlocatorsandmethods extends BaseSetup {
 		
 	}
 	
+	//static By WatchListRowHomepage = By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider/div/div[2]/swiper/div/app-gud-card");
+	public static String  WatchlistRowonHomePageCardClick(String shoname) throws InterruptedException
+	{
+		int rowsize=driver.findElements(WatchListRowHomepage).size();
+		String Shonameonshocard = null;
+		WebElement watchlist = driver.findElement(WatchListRowHomepage);
+		for (int i = 0; i < watchlist.findElements(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]/swiper/div/app-gud-card/div")).size(); i++) {
+			Actions a = new Actions(driver);
+			a.moveToElement(driver.findElements(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]/swiper/div/app-gud-card/div")).get(i)).build().perform();
+			Thread.sleep(500);
+			if (watchlist.findElement(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]//following::a[1]//child::img")).getAttribute("alt").equalsIgnoreCase(shoname)) {
+				Shonameonshocard = watchlist.findElement(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]//following::a[1]//child::img")).getAttribute("alt");
+				watchlist.findElements(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]/swiper/div/app-gud-card/div")).get(i).click();
+				break;
+			}
+
+		}
+		return Shonameonshocard;
+		
+		
+		
+	}
+	static WebDriverWait wait=new WebDriverWait(driver,20);
+	public static String  RemoveWatchlistRowonHomePage(String shoname) throws InterruptedException
+	{
+		int rowsize=driver.findElements(WatchListRowHomepage).size();
+		String Shonameonshocard = null;
+		WebElement watchlist = driver.findElement(WatchListRowHomepage);
+		for (int i = 0; i < watchlist.findElements(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]/swiper/div/app-gud-card/div")).size(); i++) {
+			Actions a = new Actions(driver);
+			a.moveToElement(driver.findElements(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]/swiper/div/app-gud-card/div")).get(i)).build().perform();
+			Thread.sleep(500);
+			if (watchlist.findElement(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]//following::a[1]//child::img")).getAttribute("alt").equalsIgnoreCase(shoname)) {
+				a.moveToElement(watchlist.findElement(ShoCardWatchListButton)).click().build().perform();
+				wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+				Shonameonshocard = watchlist.findElement(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]//following::a[1]//child::img")).getAttribute("alt");
+				break;
+			}
+
+		}
+		return Shonameonshocard;
+		
+		
+		
+	}
 	
 	
 	

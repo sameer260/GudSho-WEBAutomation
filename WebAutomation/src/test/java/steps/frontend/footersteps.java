@@ -99,7 +99,7 @@ public class footersteps extends BaseSetup {
 	@Given("^click help&support link and verify it should redirected to correct page$")
 	public void click_helpsupport_link_and_verify_it_should_redirected_to_correct_page() throws Throwable {
 		String ChildUrl="https://www.gudsho.com/support";
-		String Childtitle="GudSho - Watch Unlimited Movies & Web Series Online";	
+		String Childtitle="Help Desk | GudSho";	
 		Footer.WindowhandleforLinks(Footer.helpsupport, ChildUrl, Childtitle);
 	}
 
@@ -222,7 +222,7 @@ public class footersteps extends BaseSetup {
 	    	WebDriverWait wait=new WebDriverWait(driver,20);
 	    	wait.until(ExpectedConditions.visibilityOf(homepage.support));
 	    	String ChildUrl="https://qa.gudsho.com/support";
-			String Childtitle="support | GudSho";	
+			String Childtitle="Support | GudSho";	
 			homepage.support.click();
 			wait.until(ExpectedConditions.urlMatches(ChildUrl));
 			assertEquals(ChildUrl,driver.getCurrentUrl());

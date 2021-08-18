@@ -466,7 +466,30 @@ public class shodetailpagesteps extends BaseSetup {
 	        {
 	        	assertEquals(gudcountaftergud,gudcountbeforeplay-1);
 	        }
-	        	
+	         
+	    }
+	    
+	//Home Page Scenarios
+	    
+	    @And("^Check redirection of sho card (.+) is in mywatchlist row$")
+	    public void check_redirection_of_sho_card_is_in_mywatchlist_row(String shoname) throws Throwable {
+	        commonlocatorsandmethods.WatchlistRowonHomePageCardClick(shoname);
+	        wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
+	        String str=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+	        assertEquals(str,shoname);
+	    }
+
+	    @And("^Remove (.+) card from watchlist and verify$")
+	    public void remove_card_from_watchlist_and_verify(String shoname) throws Throwable {
+	    	String str=commonlocatorsandmethods.RemoveWatchlistRowonHomePage(shoname);
+	        log.info(str);
+	        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+	        String toastermessage=ToastandErrormessages.ToastMessageText.getText();
+	        ToastandErrormessages.ToastMessageClose.click();
+	        log.info(toastermessage);
+	        assertTrue(toastermessage.equalsIgnoreCase(shoname+ " has been removed from watchlist"));
+	        String str1=commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
+	        assertEquals(null,str1);
 	        
 	    }
 

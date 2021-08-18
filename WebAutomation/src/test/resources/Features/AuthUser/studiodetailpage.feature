@@ -91,7 +91,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |genere|
     |Trail Studio|Comedy|
     
-    
+    @test
    Scenario Outline: Check sharepopup of sho cards
     Given Search any studio <StudioName> and verify it should redirected to correct page
     Then Share sho card from home and verify popup
@@ -132,7 +132,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |
     |Sameer      | 
     
-    
+    @test
    Scenario Outline: See all sho card Share
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Click on sho see all link

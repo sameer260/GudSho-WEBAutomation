@@ -146,6 +146,7 @@ public class footersteps extends BaseSetup {
 	}
 	 @Given("^Check App store App redirection$")
 	 public void check_app_store_app_redirection() throws Throwable {
+		 commonlocatorsandmethods.scrolldownm();
 		 String ChildUrl="https://apps.apple.com/in/app/gudsho-ott/id1539371660";
 		 JavascriptExecutor executor = (JavascriptExecutor) driver;
 			String parentWindowHandle = driver.getWindowHandle();
@@ -172,6 +173,7 @@ public class footersteps extends BaseSetup {
 	 
 	    @Given("^Check Facebook redirection$")
 	    public void check_facebook_redirection() throws Throwable {
+	    	commonlocatorsandmethods.scrolldownm();
 	         String ChildUrl="https://www.facebook.com/GudSho.Digital/";
 			 String Childtitle="GudSho - Home | Facebook";	
 			 Footer.WindowhandleforSocialLinks(Footer.ConnectUsSocialLinks.get(0), ChildUrl, Childtitle);

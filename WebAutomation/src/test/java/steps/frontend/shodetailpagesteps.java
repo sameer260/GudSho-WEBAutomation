@@ -289,7 +289,7 @@ public class shodetailpagesteps extends BaseSetup {
        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
        String toastermessage=ToastandErrormessages.ToastMessageText.getText();
        ToastandErrormessages.ToastMessageClose.click();
-       assertEquals(toastermessage,shoname+ " has been added to watchlist");
+       assertTrue(toastermessage.equalsIgnoreCase(shoname+ " has been added to watchlist"));
        Actions a=new Actions(driver);
        a.sendKeys(Keys.HOME).build().perform();
     }

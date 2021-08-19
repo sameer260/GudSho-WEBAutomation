@@ -8,7 +8,7 @@ Feature: Sho Detail Page Scenarios
 
     Examples: 
       | ShoName | PaymentMode | PaymentScenario |
-      | Talent  | Card        | Success         |
+      | Hacking | Card        | Success         |
 
   Scenario Outline: Promo Gud
     Given Search any <ShoName> and verfiy its redirected to correct page

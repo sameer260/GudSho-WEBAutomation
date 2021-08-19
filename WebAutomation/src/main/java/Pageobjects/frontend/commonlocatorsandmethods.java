@@ -100,7 +100,7 @@ public class commonlocatorsandmethods extends BaseSetup {
 			Object lastHeight = js.executeScript("return document.body.scrollHeight");
 			while (true) {
 				js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
-				Thread.sleep(3000);
+				Thread.sleep(1300);
 				Object newHeight = js.executeScript("return document.body.scrollHeight");
 				if (newHeight.equals(lastHeight)) {
 					break;

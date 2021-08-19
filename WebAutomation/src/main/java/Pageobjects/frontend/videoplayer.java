@@ -31,7 +31,7 @@ public class videoplayer extends BaseSetup{
 	@FindBy(xpath="//div[@class='next-promo ng-star-inserted']/span")
 	public static WebElement PromosandExtrasText;
 	
-	@FindBy(xpath="//div[@class='player-clap singup-pops-player']")
+	@FindBy(xpath="//div[starts-with(@class,'promo-player-details ng-tns-')]/app-player-gud/button")
 	public static WebElement PlayerGudICon;
 	
 	@FindBy(xpath="//div[@class='sign-popup ng-star-inserted']")
@@ -267,7 +267,7 @@ public class videoplayer extends BaseSetup{
 		Actions a =new Actions(driver);
 		while (!(SeekBar.getAttribute("aria-valuetext").substring(0, 5).substring(0, 2).equals(duration.subSequence(0, 2)))) {
               playerforwardbutton.click();
-              Thread.sleep(200);
+              Thread.sleep(500);
               a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 		}
 		PlayerPauseandPlayButton.click();

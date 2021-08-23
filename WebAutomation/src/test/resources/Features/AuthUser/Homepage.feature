@@ -20,11 +20,13 @@ Feature: GudSho Home Page
   Scenario: Sho Card Redirection
     Given Click on sho card from any row and verify its redirected to correct sho detail page
 
-  Scenario: Studio Card Redirection
-    Given Click on studio card from studio row and verify its redirected to correct studio detail page
-
   Scenario: This test is to verify the follow button from home
-    Given From home page click onfollow button and verify the button changes
+    Given Check Follow count of studio
+    When From home page click onfollow button and verify the button changes
+    And verify studio follower count incremented by one
+    Then click on Studio card and check count on studio page
+    And verify count on studio detail page
+    
 
   Scenario Outline: This test is to verify the added sho in addto watchlist
     Given From home page click on add to watchlist in <ShoName> title card
@@ -113,39 +115,48 @@ Feature: GudSho Home Page
       | promoName                                         |
       | Two Years Of Kaala - The Masterpiece _ Rajinikant |
 
-  Scenario Outline: This test is to verify the added sho in addto watchlist from see all
-    Given From home hover on sho card <ShoName>
-
-    Examples: 
-      | ShoName                            |
-      | Transformer: The Age Of Extinction |
-
-  Scenario Outline: This test is verify the remove from continue watching
+  Scenario Outline: Sho Watchlist card redirection
     Given Search any <ShoName> and verfiy its redirected to correct page
-    When Play watch free content and close the player
-    And Navigate to gudsho home and remove the show from continue watching
+    When Add <ShoName> in to watchlist and check the toaster message
+    Then On home page check the added watchlist <ShoName>
+    And Check redirection of sho card <ShoName> is in mywatchlist row
 
     Examples: 
       | ShoName |
-      | kaithi  |
+      | Locked  |
 
-  Scenario Outline: This test is to verify the view count and gud count for promo
-    Given From home get the gud count and view count of the promo <promoName>
-    When Now play the promo and give the gud
-    And Close the player
-    Then Verify the view count and gud count
+  Scenario Outline: Remove watchlist from watchlist row
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Scroll down page and click on watchlist button
+    Then On home page check the added watchlist <ShoName>
+    And Remove <ShoName> card from watchlist and verify
 
     Examples: 
-      | promoName                             |
-      | Pullinangal - Official Video Song - 2 |
+      | ShoName |
+      | Check   |
 
-  Scenario: Followers count validation for studio card
-    Given get studio followers count click on studio follow verify the incremented count
+  Scenario Outline: Gud And View Count Increment
+    Given From home get the gud count and view count of the promo <PromoName>
+    When Play <PromoName> and <UserAction> promo
+    Then Verify the view count and gud count of <PromoName>
+    And Check from gud and view Count from my gud promos for <PromoName>
 
-  @test
+    Examples: 
+      | PromoName                                        | UserAction |
+      | Salaam Rocky Bhai Song With Lyrics - Kgf Chapter | Like       |
+
+  Scenario Outline: Gud And View Count Decrement
+    Given From home get the gud count and view count of the promo <PromoName>
+    When Play <PromoName> and <UserAction> promo
+    Then After unlike verify view and gud count of <PromoName>
+
+    Examples: 
+      | PromoName                                        | UserAction |
+      | Salaam Rocky Bhai Song With Lyrics - Kgf Chapter | UnLike     |
+
   Scenario Outline: This test is to verify the dislike promo and availability check on my gud promos
-    Given From home page hover on <PromoName> promo card and close the player
-    When On home page check liked <PromoName> is showing in my gud promos
+    ##Given From home page hover on <PromoName> promo card and close the player
+    ##When On home page check liked <PromoName> is showing in my gud promos
     And From home page hover on <PromoName> promo card and close the player
     Then Verify the disliked promo from my gudpromos row <PromoName>
 

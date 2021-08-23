@@ -59,10 +59,18 @@ Feature: Sho Detail Page Scenarios
     And On sho detail page verify watch now button should change to resume
     Then On Home Page check continue wathing is showing <ShoName>
     
-
+    
     Examples: 
       | ShoName |
       | Paytm   |
+      
+  Scenario Outline: Remove Continue Watching
+  Given Remove <ShoName> from continue watching
+  Then verify toaster message is displayed with <ShoName>  
+  
+   Examples: 
+      | ShoName |
+      | Paytm   |     
 
   Scenario Outline: Sho detail info
     Given Search any <ShoName> and verfiy its redirected to correct page
@@ -202,27 +210,9 @@ Feature: Sho Detail Page Scenarios
       | Hacking  |Kung Fu Panda|Unlike    |    
       
       
- ## Home Page Scenarios
 
-  Scenario Outline: Sho Watchlist card redirection
-    Given Search any <ShoName> and verfiy its redirected to correct page
-    When Add <ShoName> in to watchlist and check the toaster message
-    Then On home page check the added watchlist <ShoName>
-    And Check redirection of sho card <ShoName> is in mywatchlist row
 
-    Examples: 
-      | ShoName |
-      | Locked  |
-     
-   Scenario Outline: Remove watchlist from watchlist row
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  When Scroll down page and click on watchlist button
-  Then On home page check the added watchlist <ShoName>
-  And Remove <ShoName> card from watchlist and verify 
-  
-    Examples: 
-      | ShoName |
-      | Check   |
+ 
       
       
   

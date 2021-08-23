@@ -61,6 +61,9 @@ public class studiodetailpage extends BaseSetup {
 	@FindBy(xpath="//div[@class='home-slider promo flicks-promos ng-star-inserted']/app-gud-card")
 	public static WebElement SeeALLpromoelem;
 	
+	@FindBy(xpath="//span[@class='total-follow']")
+	public static WebElement StudioFollowerCount;
+	
 	
 	/*public static String BannerImageClick(String shoname) throws InterruptedException
 	{

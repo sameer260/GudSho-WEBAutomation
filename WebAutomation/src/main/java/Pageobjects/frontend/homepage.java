@@ -121,6 +121,8 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//*[starts-with(@class,'auto-image cursor slider-card-promo promo-top hover-img play-hover-icon')]")
 	public static WebElement promoCard;
 
+    
+	
 	static By MyGudPromoCards = By.xpath(
 			"//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider[1]/div/div[2]/swiper/div/app-gud-card/div");
 	static By PromoNameonGudPromos = By.xpath(
@@ -143,6 +145,12 @@ public class homepage extends BaseSetup {
 			}
 		}
 	}
+	public static List<WebElement> GudPromoCards()
+	{
+	
+		return MyGudPromosRow.findElements(PromoNameonGudPromos);
+		
+	}
 
 	public static String mygudpromos(String promoname) {
 		String Promonameoncard = null;
@@ -164,7 +172,7 @@ public class homepage extends BaseSetup {
 		WebElement gudpromorow = MyGudPromosRow;
 		for (int i = 0; i < gudpromorow.findElements(MyGudPromoCards).size(); i++) {
 
-			if (!gudpromorow.findElements(PromoNameonGudPromos).get(i).getText().equalsIgnoreCase(promoname)) {
+			if (gudpromorow.findElements(PromoNameonGudPromos).get(i).getText().equalsIgnoreCase(promoname)) {
 				Promonameoncard = gudpromorow.findElements(PromoNameonGudPromos).get(i).getText();
 				break;
 			}
@@ -195,6 +203,9 @@ public class homepage extends BaseSetup {
 
 	@FindBy(xpath = "//div[starts-with(@class,'studio-card-wrapper card-border ng-tns-')]/div/div[2]/div/app-follow-studios/button")
 	public static List<WebElement> followButtons;
+	
+	@FindBy(xpath="//div[starts-with(@class,'studio-card-wrapper card-border ng-tns-')]/div/div[2]/div/p")
+	public static List<WebElement> FollowerCount;
 
 	@FindBy(xpath = "//*[@class='button is-default following small mat-button mat-button-base ng-star-inserted']")
 	public static WebElement followingButton;
@@ -217,7 +228,7 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//ul[@class='clearfix']//child::li")
 	public static List<WebElement> titleCardInfoShodetail;
 
-	@FindBy(xpath = "//*[starts-with(@class, 'close flex align-items-center justify-content-center ng-tns-')]")
+	@FindBy(xpath = "//div[starts-with(@class, 'mat-ripple card-img ng-tns-')]/span[1]")
 	public static List<WebElement> continueWatchingCloseButton;
 
 	@FindBy(xpath = "//h4[@mattooltipposition='below']")
@@ -225,25 +236,59 @@ public class homepage extends BaseSetup {
 	
 	@FindBy(xpath = "//p[@mattooltipposition='below']")
 	public static List<WebElement> allStudioFollowersCount;
+	
+	static By GudPromoViewCount=By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider[1]/div/div[2]/swiper/div/app-gud-card/div/div/div[2]/div/p");
+	
 
-	/*
-	 * public static String getShoTypeLableText(String shoTypelable) { shoTypelable
-	 * = homepage.shoTypeLabelOnTitleCard.getText(); return shoTypelable;
-	 */
+	static By GudPromoGudCount=By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider[1]/div/div[2]/swiper/div/app-gud-card/div/div/div[2]/div/span");
+	
+	public static int GudCount(String promoname)
+	{
+		//Actions a=new Actions(driver);
+		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		int gudcount = 0;
+		String GudCountStringFormat;;
+		WebElement gudpromorow = MyGudPromosRow;
+		for(int i=0;i<gudpromorow.findElements(MyGudPromoCards).size();i++)
+		{
+			if(gudpromorow.findElements(PromoNameonGudPromos).get(i).getText().equalsIgnoreCase(promoname))
+			{
+				String str=gudpromorow.findElements(GudPromoGudCount).get(i).getText();
+				String verifygudtext=str.substring(str.lastIndexOf("G"));
+				if(verifygudtext.equalsIgnoreCase("Gud"))
+				{
+					GudCountStringFormat=str.substring(0,str.lastIndexOf(" Gud"));
+					gudcount=Integer.parseInt(GudCountStringFormat);
+				}
+				else {
+					GudCountStringFormat=str.substring(0,str.lastIndexOf(" Guds"));
+					gudcount=Integer.parseInt(GudCountStringFormat);
+				}
+				break;
+			}
+		}
+		return gudcount;
+	}
+	public static int ViewCount(String promoname)
+	{
+		//Actions a=new Actions(driver);
+		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		int viewcount = 0;
+		WebElement gudpromorow = MyGudPromosRow;
+		for(int i=0;i<gudpromorow.findElements(MyGudPromoCards).size();i++)
+		{
+			if(gudpromorow.findElements(PromoNameonGudPromos).get(i).getText().equalsIgnoreCase(promoname))
+			{
+				String str=gudpromorow.findElements(GudPromoViewCount).get(i).getText();
+				
+				String str1=str.substring(0,str.lastIndexOf(" Views"));
+				viewcount=Integer.parseInt(str1);
+				
+				break;
+				
+			}
+		}
+		return viewcount;
+	}
 
 }
-
-/*
- * public static String getShoCardPriceAmmountt() {
- * 
- * homepage.priceOnTitleCard.getText(); return null;
- * 
- * }
- * 
- * public static String[] getDurationGenerLang(String[] shoPrice) { shoPrice[0]
- * = homepage.titleCardInfo.get(0).getText(); shoPrice[1] =
- * homepage.titleCardInfo.get(1).getText(); shoPrice[2] =
- * homepage.titleCardInfo.get(1).getText(); return shoPrice;
- * 
- * }
- */

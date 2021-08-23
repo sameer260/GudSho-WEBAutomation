@@ -124,7 +124,7 @@ public class Homepagesteps extends BaseSetup {
 
 	@Then("^verify redirection of promo player$")
 	public void verify_redirection_of_promo_player() throws Throwable {
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 		videoplayer.PromoNameonPlayer.isDisplayed();
 		Actions a =new Actions(driver);
 		a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
@@ -275,11 +275,10 @@ public class Homepagesteps extends BaseSetup {
 
 	}
 
-	@Given("^From home page click onfollow button and verify the button changes$")
+	@When("^From home page click onfollow button and verify the button changes$")
 	public void from_home_page_click_onfollow_button_and_verify_the_button_changes() throws Throwable {
-		commonlocatorsandmethods.scrolldownm();
-		Actions action = new Actions(driver);
-		homepage.followButtons.get(0).click();
+		Actions a =new Actions(driver);
+		a.moveToElement(homepage.followButtons.get(1)).click().build().perform();
 		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		assertEquals("You have started following this studio", ToastandErrormessages.ToastMessageText.getText());
 
@@ -299,68 +298,162 @@ public class Homepagesteps extends BaseSetup {
 
 	}
 
-	@Given("^From home hover on sho card (.+)$")
-	public void from_home_hover_on_sho_card(String shoname) throws Throwable {
-		commonlocatorsandmethods.scrolldownm();
-		commonlocatorsandmethods.hoverTitleCardHome(shoname);
-		String shoTypeLabel = homepage.shoTypeLabelOnTitleCard.getText();
-		System.out.println(shoTypeLabel);
-		String shoPrice = homepage.priceOnTitleCard.getText();
-		System.out.println(shoPrice);
-		String shoDurationOnCard = homepage.titleCardInfo.get(0).getText();
-		System.out.println(shoDurationOnCard);
-		String shoGenerOnCard = homepage.titleCardInfo.get(1).getText();
-		System.out.println(shoGenerOnCard);
-		String sholangOnCard = homepage.titleCardInfo.get(2).getText();
-		System.out.println(sholangOnCard);
-		commonlocatorsandmethods.clickTitleCardHome(shoname);
-
-		wait.until(ExpectedConditions.visibilityOfAllElements(homepage.titleCardInfoShodetail));
-
-		assertTrue(shoTypeLabel.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(0).getText()));
-		System.out.println(homepage.titleCardInfoShodetail.get(0).getText());
-		assertTrue(shoDurationOnCard.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(2).getText()));
-		System.out.println(homepage.titleCardInfoShodetail.get(2).getText());
-		assertTrue(shoGenerOnCard.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(3).getText()));
-		System.out.println(homepage.titleCardInfoShodetail.get(3).getText());
-		assertTrue(sholangOnCard.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(4).getText()));
-		System.out.println(homepage.titleCardInfoShodetail.get(4).getText());
-
-	}
-	
-	@And("^Navigate to gudsho home and remove the show from continue watching$")
-    public void navigate_to_gudsho_home_and_remove_the_show_from_continue_watching() throws Throwable {
-		homepage.HeaderLogo.click();
-		Actions action = new Actions(driver);
-		String continueWatchlingShoName = homepage.ShoNamesInContinueWatching.get(0).getText();
-		action.moveToElement(homepage.continueWatchingCloseButton.get(0)).click().build().perform();
-		assertTrue((continueWatchlingShoName+" has been removed").equalsIgnoreCase(ToastandErrormessages.ToastMessageText.getText()));
 		
-	}
-	
+
+	int GudCountonHomepage;
+	int ViewCountonHomepage;
 	@Given("^From home get the gud count and view count of the promo (.+)$")
     public void from_home_get_the_gud_count_and_view_count_of_the_promo(String promoname) throws Throwable {
 		commonlocatorsandmethods.scrolldownm();
-		commonlocatorsandmethods.getPromoViewsAndGuds(promoname);
-       
+		GudCountonHomepage=shodetailpage.GudCount(promoname,homepage.allPromoNames);
+		ViewCountonHomepage=shodetailpage.ViewCount(promoname,homepage.allPromoNames); 
+    }
+	 
+	
+
+	    @Then("^Verify the view count and gud count of (.+)$")
+	    public void verify_the_view_count_and_gud_count_of(String promoname) throws Throwable {
+    	wait.until(ExpectedConditions.visibilityOf(homepage.HeaderLogo));
+    	commonlocatorsandmethods.scrolldownm();
+    	int afterGudCountonHomepage = 0;
+    	int afterViewCountonHomepage = 0;
+    	for(int i=0;i<homepage.allPromoNames.size();i++)
+        {
+        	if(homepage.allPromoNames.get(i).getText().equalsIgnoreCase(promoname))
+        	{
+        		afterGudCountonHomepage=shodetailpage.GudCount(promoname,homepage.allPromoNames);
+        		afterViewCountonHomepage=shodetailpage.ViewCount(promoname,homepage.allPromoNames);
+        		break;
+        	}
+        }
+    	
+		assertEquals(afterGudCountonHomepage, GudCountonHomepage+1);
+		assertEquals(afterViewCountonHomepage, ViewCountonHomepage+1);	
+    }
+	    @And("^Check from gud and view Count from my gud promos for (.+)$")
+	    public void check_from_gud_and_view_count_from_my_gud_promos_for(String promoname) throws Throwable {
+	    	String PromonameongudPromos=homepage.mygudpromos(promoname);
+	        log.info(PromonameongudPromos);
+	        int gudcountinmygudpromos=homepage.GudCount(promoname);
+	        System.out.println(gudcountinmygudpromos);
+	        int viewcountinmygudpromos=homepage.ViewCount(promoname);
+	        System.out.println(viewcountinmygudpromos);
+	        assertEquals(gudcountinmygudpromos, GudCountonHomepage+1);
+			assertEquals(viewcountinmygudpromos, ViewCountonHomepage+1);	
+	    }
+
+    
+    @Then("^Verify the disliked promo from my gudpromos row (.+)$")
+    public void verify_the_disliked_promo_from_my_gudpromos_row(String promoname) throws Throwable {
+    	homepage.HeaderLogo.click();
+		commonlocatorsandmethods.scrolldownm();
+		String PromonameongudPromos = homepage.mygudpromosdislike(promoname);
+		log.info(PromonameongudPromos);
+		assertNotEquals(promoname, PromonameongudPromos);
+    }
+    @And("^Check redirection of sho card (.+) is in mywatchlist row$")
+    public void check_redirection_of_sho_card_is_in_mywatchlist_row(String shoname) throws Throwable {
+        commonlocatorsandmethods.WatchlistRowonHomePageCardClick(shoname);
+        wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
+        String str=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
+        assertEquals(str,shoname);
     }
 
-    @When("^Now play the promo and give the gud$")
-    public void now_play_the_promo_and_give_the_gud() throws Throwable {
+    @And("^Remove (.+) card from watchlist and verify$")
+    public void remove_card_from_watchlist_and_verify(String shoname) throws Throwable {
+    	String str=commonlocatorsandmethods.RemoveWatchlistRowonHomePage(shoname);
+        log.info(str);
+        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+        String toastermessage=ToastandErrormessages.ToastMessageText.getText();
+        ToastandErrormessages.ToastMessageClose.click();
+        log.info(toastermessage);
+        assertTrue(toastermessage.equalsIgnoreCase(shoname+ " has been removed from watchlist"));
+        String str1=commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
+        assertEquals(null,str1);
         
     }
-
-    @Then("^Verify the view count and gud count$")
-    public void verify_the_view_count_and_gud_count() throws Throwable {
-       
+    @Then("^After unlike verify view and gud count of (.+)$")
+    public void after_unlike_verify_view_and_gud_count_of(String promoname) throws Throwable {
+    	wait.until(ExpectedConditions.visibilityOf(homepage.HeaderLogo));
+    	commonlocatorsandmethods.scrolldownm();
+    	int afterGudCountonHomepage = 0;
+    	int afterViewCountonHomepage = 0;
+    	for(int i=0;i<homepage.allPromoNames.size();i++)
+        {
+        	if(homepage.allPromoNames.get(i).getText().equalsIgnoreCase(promoname))
+        	{
+        		afterGudCountonHomepage=shodetailpage.GudCount(promoname,homepage.allPromoNames);
+        		afterViewCountonHomepage=shodetailpage.ViewCount(promoname,homepage.allPromoNames);
+        		break;
+        	}
+        }
+    	
+		assertEquals(afterGudCountonHomepage, GudCountonHomepage-1);
+		assertEquals(afterViewCountonHomepage, ViewCountonHomepage+1);
+    }
+    int Studiofollowerscount;
+    @Given("^Check Follow count of studio$")
+    public void check_follow_count_of_studio() throws Throwable {
+    	commonlocatorsandmethods.scrolldownm();
+        String followcount=homepage.FollowerCount.get(1).getText();
+        String str=followcount.substring(0,followcount.lastIndexOf(" Followers"));
+        Studiofollowerscount=Integer.parseInt(str);
+       log.info(Studiofollowerscount);
     }
 
-    @And("^Close the player$")
-    public void close_the_player() throws Throwable {
-      
+    @Then("^click on Studio card and check count on studio page$")
+    public void click_on_studio_card_and_check_count_on_studio_page() throws Throwable {
+    	String studionameoncard = homepage.RowStudioNameonCard.get(1).getText();
+		homepage.StudioCards.get(1).click();
+		wait.until(ExpectedConditions.visibilityOf(studiodetailpage.StudioNameInStudioPage));
+		String studioname = studiodetailpage.StudioNameInStudioPage.getText();
+		log.info(studioname);
+		assertEquals(studioname, studionameoncard);
     }
+    @And("^verify studio follower count incremented by one$")
+    public void vrify_studio_follower_count_incremented_by_one() throws Throwable {
+    	String followcount=homepage.FollowerCount.get(1).getText();
+        String str=followcount.substring(0,followcount.lastIndexOf(" Followers"));
+        int Studiofollowerscountafterfollow=Integer.parseInt(str);
+        assertEquals(Studiofollowerscountafterfollow,Studiofollowerscount+1);
+    }
+    @And("^verify count on studio detail page$")
+    public void verify_count_on_studio_detail_page() throws Throwable {
+        String followCountonStudio=studiodetailpage.StudioFollowerCount.getText();
+        String str=followCountonStudio.substring(0,followCountonStudio.lastIndexOf(" Followers"));
+        int Studiocountonstudiodetail=Integer.parseInt(str);
+        log.info(Studiocountonstudiodetail);
+        assertEquals(Studiocountonstudiodetail, Studiofollowerscount+1);
+    }
+
     
-    @Given("^get studio followers count click on studio follow verify the incremented count$")
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   /* @Given("^get studio followers count click on studio follow verify the incremented count$")
     public void get_studio_followers_count_click_on_studio_follow_verify_the_incremented_count() throws Throwable {
     	commonlocatorsandmethods.scrolldownm();
 		String intialFollowCount = homepage.allStudioFollowersCount.get(0).getText();
@@ -373,15 +466,6 @@ public class Homepagesteps extends BaseSetup {
 		assertEquals("You have started following this studio", ToastandErrormessages.ToastMessageText.getText());
 		System.out.println("inital count :" +intialFollowCount+ "final follow count :"+finalFollowCount);
 		assertNotEquals(intialFollowCount, finalFollowCount);
-    }
-    
-    @Then("^Verify the disliked promo from my gudpromos row (.+)$")
-    public void verify_the_disliked_promo_from_my_gudpromos_row(String promoname) throws Throwable {
-    	homepage.HeaderLogo.click();
-		commonlocatorsandmethods.scrolldownm();
-		String PromonameongudPromos = homepage.mygudpromosdislike(promoname);
-		log.info(PromonameongudPromos);
-		assertNotEquals(promoname, PromonameongudPromos);
-    }
+    }*/
     
 }

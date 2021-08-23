@@ -229,15 +229,15 @@ public class shodetailpage extends BaseSetup {
 	@FindBy(xpath="//div[starts-with(@class,'play-share ng-tns-')]/p/span")
 	public static WebElement TimeLeftonShodetailpage;
 	
-	public static int GudCount(String promoname)
+	public static int GudCount(String promoname,List<WebElement> ele)
 	{
 		//Actions a=new Actions(driver);
 		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
 		int gudcount = 0;
 		String GudCountStringFormat;;
-		for(int i=0;i<PromoNamesofPromoCards.size();i++)
+		for(int i=0;i<ele.size();i++)
 		{
-			if(PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname))
+			if(ele.get(i).getText().equalsIgnoreCase(promoname))
 			{
 				String str=GudCountofPromos.get(i).getText();
 				String verifygudtext=str.substring(str.lastIndexOf("G"));
@@ -255,14 +255,14 @@ public class shodetailpage extends BaseSetup {
 		}
 		return gudcount;
 	}
-	public static int ViewCount(String promoname)
+	public static int ViewCount(String promoname,List<WebElement> ele)
 	{
 		//Actions a=new Actions(driver);
 		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
 		int viewcount = 0;
-		for(int i=0;i<PromoNamesofPromoCards.size();i++)
+		for(int i=0;i<ele.size();i++)
 		{
-			if(PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname))
+			if(ele.get(i).getText().equalsIgnoreCase(promoname))
 			{
 				String str=ViewCountofPromos.get(i).getText();
 				

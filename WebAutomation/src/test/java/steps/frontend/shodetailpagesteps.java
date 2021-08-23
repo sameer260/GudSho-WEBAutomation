@@ -28,6 +28,7 @@ import Pageobjects.frontend.studiodetailpage;
 import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -446,13 +447,14 @@ public class shodetailpagesteps extends BaseSetup {
 
 	    @And("^Take a gud and view count of (.+)$")
 	    public void take_a_gud_and_view_count_of(String promoname) throws Throwable {
-	    	viewcountbeforeplay= shodetailpage.ViewCount(promoname);
-	    	gudcountbeforeplay=shodetailpage.GudCount(promoname);
+	    	viewcountbeforeplay= shodetailpage.ViewCount(promoname,shodetailpage.PromoNamesofPromoCards);
+	    	gudcountbeforeplay=shodetailpage.GudCount(promoname,shodetailpage.PromoNamesofPromoCards);
 	    }
 	   
 	    @When("^Play (.+) and (.+) promo$")
 	    public void play_and_promo(String promoname, String useraction) throws Throwable {
 	    	shodetailpage.PromoCardClick(promoname);
+	    	Thread.sleep(8000);
 	        Actions a=new Actions(driver);
 	        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 	        Thread.sleep(700);
@@ -481,8 +483,8 @@ public class shodetailpagesteps extends BaseSetup {
 	    @Then("^verify view and gudcount of (.+) for (.+)$")
 	    public void verify_view_and_gudcount_of_for(String promoname, String useraction) throws Throwable {
 	    	wait.until(ExpectedConditions.visibilityOfAllElements(shodetailpage.PromoNamesofPromoCards));
-		    int viewcountafterview=shodetailpage.ViewCount(promoname);
-	        int gudcountaftergud=shodetailpage.GudCount(promoname);
+		    int viewcountafterview=shodetailpage.ViewCount(promoname,shodetailpage.PromoNamesofPromoCards);
+	        int gudcountaftergud=shodetailpage.GudCount(promoname,shodetailpage.PromoNamesofPromoCards);
 	        assertEquals(viewcountafterview,viewcountbeforeplay+1);
 	        if(useraction.equalsIgnoreCase("Like"))
 	        {
@@ -495,29 +497,9 @@ public class shodetailpagesteps extends BaseSetup {
 	         
 	    }
 	    
-	//Home Page Scenarios
+	
 	    
-	    @And("^Check redirection of sho card (.+) is in mywatchlist row$")
-	    public void check_redirection_of_sho_card_is_in_mywatchlist_row(String shoname) throws Throwable {
-	        commonlocatorsandmethods.WatchlistRowonHomePageCardClick(shoname);
-	        wait.until(ExpectedConditions.visibilityOf(shodetailpage.WatchListButton));
-	        String str=shodetailpage.ShoNameonShoDetailPage.getAttribute("alt");
-	        assertEquals(str,shoname);
-	    }
-
-	    @And("^Remove (.+) card from watchlist and verify$")
-	    public void remove_card_from_watchlist_and_verify(String shoname) throws Throwable {
-	    	String str=commonlocatorsandmethods.RemoveWatchlistRowonHomePage(shoname);
-	        log.info(str);
-	        wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
-	        String toastermessage=ToastandErrormessages.ToastMessageText.getText();
-	        ToastandErrormessages.ToastMessageClose.click();
-	        log.info(toastermessage);
-	        assertTrue(toastermessage.equalsIgnoreCase(shoname+ " has been removed from watchlist"));
-	        String str1=commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
-	        assertEquals(null,str1);
-	        
-	    }
+	 //Continue Watching from Home Page
 	    @And("^veirfy time left on continue watching (.+) on home page$")
 	    public void veirfy_time_left_on_continue_watching_on_home_page(String shoname) throws Throwable {
 	    	String timeLeftonshodetailpage= shodetailpage.TimeLeftonShodetailpage.getText();
@@ -540,6 +522,27 @@ public class shodetailpagesteps extends BaseSetup {
 	        assertEquals(timeleft+"m left",timeLeftonCard);
 	        assertEquals(timeLeftonshodetailpage, timeLeftonCard);
 	        
+	    }
+	   
+	    @Given("^Remove (.+) from continue watching$")
+	    public void remove_from_continue_watching(String shoname) throws Throwable {
+	    	Actions action = new Actions(driver);
+	    	for(int i=0;i<homepage.ShoNamesInContinueWatching.size();i++)
+	    	{
+	    		if(homepage.ShoNamesInContinueWatching.get(i).getText().equalsIgnoreCase(shoname))
+	    		{
+	    			String continueWatchlingShoName = homepage.ShoNamesInContinueWatching.get(i).getText();
+	    			log.info(continueWatchlingShoName);
+	    			action.moveToElement(homepage.continueWatchingCloseButton.get(i)).click().build().perform();
+	    		}
+	    	}
+			
+	    }
+
+	    @Then("^verify toaster message is displayed with (.+)$")
+	    public void verify_toaster_message_is_displayed_with(String shoname) throws Throwable {
+	    	wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+	    	assertTrue((shoname+" has been removed").equalsIgnoreCase(ToastandErrormessages.ToastMessageText.getText()));
 	    }
 
 

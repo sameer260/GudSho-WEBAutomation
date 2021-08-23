@@ -1,6 +1,7 @@
 package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
@@ -44,11 +45,11 @@ public class Homepagesteps extends BaseSetup {
 	ShareFeature share = new ShareFeature();
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 	JavascriptExecutor executor = (JavascriptExecutor) driver;
-    commonSteps com=new commonSteps();
-    
+	commonSteps com = new commonSteps();
+
 	@Given("^verify notification tab$")
 	public void verify_notification_tab() throws Throwable {
-		
+
 		WebElement notify = wait.until(ExpectedConditions.elementToBeClickable(homepage.clicknotification));
 		executor.executeScript("arguments[0].click();", notify);
 		Thread.sleep(2000);
@@ -118,8 +119,7 @@ public class Homepagesteps extends BaseSetup {
 	public void select_first_promo_card_from_promo_row() throws Throwable {
 		commonlocatorsandmethods.scrolldownm();
 		Actions a = new Actions(driver);
-		a.moveToElement(
-				shodetailpage.PromoNamesofPromoCards.get(0)).click().build().perform();
+		a.moveToElement(shodetailpage.PromoNamesofPromoCards.get(0)).click().build().perform();
 	}
 
 	@Then("^verify redirection of promo player$")
@@ -131,21 +131,21 @@ public class Homepagesteps extends BaseSetup {
 
 	@Then("^Click on notifications link and it should redirect to notifications tab$")
 	public void click_on_notifications_link_and_it_should_redirect_to_notifications_tab() throws Throwable {
-		//wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.NotificationSettingLink)).click();
+		// wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.NotificationSettingLink)).click();
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		executor.executeScript("arguments[0].click();", accountandsettingspage.NotificationSettingLink);
-		//accountandsettingspage.NotificationSettingLink.click();
+		// accountandsettingspage.NotificationSettingLink.click();
 		assertTrue(accountandsettingspage.NotificationsTab.isDisplayed());
 		wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.NotificationElements));
 		assertTrue(accountandsettingspage.NotificationElements.isDisplayed());
-		String str=accountandsettingspage.NotificationsTab.getText();
-    	String areatstate=accountandsettingspage.TabSelection(str);
-    	assertEquals(areatstate,"true");
+		String str = accountandsettingspage.NotificationsTab.getText();
+		String areatstate = accountandsettingspage.TabSelection(str);
+		assertEquals(areatstate, "true");
 	}
 
 	// phase 2 home
 
-	static String  mainShoName;
+	static String mainShoName;
 
 	@Given("^From home page click on add to watchlist in (.+) title card$")
 	public void from_home_page_click_on_add_to_watchlist_in_title_card(String shoName) throws Throwable {
@@ -195,9 +195,7 @@ public class Homepagesteps extends BaseSetup {
 		actions.moveToElement(commonlocatorsandmethods.ShareButtononShoCard).click().build().perform();
 		wait.until(ExpectedConditions.visibilityOf(ShareFeature.SharePopup));
 		assertTrue(ShareFeature.SharePopup.isDisplayed());
-		
-		
-		
+
 	}
 
 	@And("^Navigate to gudsho home and click on sho name hyperlink from continue watching and verify redirection$")
@@ -226,11 +224,10 @@ public class Homepagesteps extends BaseSetup {
 		commonlocatorsandmethods.hoverTitleCardHome(shoname);
 		homepage.addToWatchlistButton.click();
 
-		
 	}
 
 	@And("^Navigate back and (.+) availbility on my watchlist row$")
-    public void navigate_back_and_availbility_on_my_watchlist_row(String shoname) throws Throwable {
+	public void navigate_back_and_availbility_on_my_watchlist_row(String shoname) throws Throwable {
 		driver.navigate().back();
 		commonlocatorsandmethods.scrolldownm();
 		String mywatchlistShoCardName = commonlocatorsandmethods.WatchlistRowonHomePage(shoname);
@@ -262,8 +259,8 @@ public class Homepagesteps extends BaseSetup {
 
 	}
 
-	 @Given("^From home page hover on (.+) promo card and close the player$")
-	    public void from_home_page_hover_on_promo_card_and_close_the_player(String promoname) throws Throwable {
+	@Given("^From home page hover on (.+) promo card and close the player$")
+	public void from_home_page_hover_on_promo_card_and_close_the_player(String promoname) throws Throwable {
 		commonlocatorsandmethods.scrolldownm();
 		commonlocatorsandmethods.PromoCardClick(promoname);
 		Thread.sleep(10000);
@@ -282,19 +279,106 @@ public class Homepagesteps extends BaseSetup {
 		homepage.followButtons.get(0).click();
 		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		assertEquals("You have started following this studio", ToastandErrormessages.ToastMessageText.getText());
-	
-	}
-	@And("^Close promo player (.+) and verify redirection$")
-	   public void close_promo_player_and_verify_redirection(String promoName) throws Throwable {
-	 WebDriverWait wait=new WebDriverWait(driver,20);
-	commonlocatorsandmethods.scrolldownm();
-	commonlocatorsandmethods.PromoCardClick(promoName);
-	Thread.sleep(10000);
-	Actions actions = new Actions(driver);
-	actions.moveToElement(videoplayer.HoverOnPlayer).build().perform();
-	videoplayer.CloseButton.click();
-	wait.until(ExpectedConditions.visibilityOf(shodetailpage.ShoNameonShoDetailPage));
-	assertTrue(shodetailpage.ShoNameonShoDetailPage.isDisplayed());
 
 	}
+
+	@And("^Close promo player (.+) and verify redirection$")
+	public void close_promo_player_and_verify_redirection(String promoName) throws Throwable {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		commonlocatorsandmethods.scrolldownm();
+		commonlocatorsandmethods.PromoCardClick(promoName);
+		Thread.sleep(10000);
+		Actions actions = new Actions(driver);
+		actions.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+		videoplayer.CloseButton.click();
+		wait.until(ExpectedConditions.visibilityOf(shodetailpage.ShoNameonShoDetailPage));
+		assertTrue(shodetailpage.ShoNameonShoDetailPage.isDisplayed());
+
+	}
+
+	@Given("^From home hover on sho card (.+)$")
+	public void from_home_hover_on_sho_card(String shoname) throws Throwable {
+		commonlocatorsandmethods.scrolldownm();
+		commonlocatorsandmethods.hoverTitleCardHome(shoname);
+		String shoTypeLabel = homepage.shoTypeLabelOnTitleCard.getText();
+		System.out.println(shoTypeLabel);
+		String shoPrice = homepage.priceOnTitleCard.getText();
+		System.out.println(shoPrice);
+		String shoDurationOnCard = homepage.titleCardInfo.get(0).getText();
+		System.out.println(shoDurationOnCard);
+		String shoGenerOnCard = homepage.titleCardInfo.get(1).getText();
+		System.out.println(shoGenerOnCard);
+		String sholangOnCard = homepage.titleCardInfo.get(2).getText();
+		System.out.println(sholangOnCard);
+		commonlocatorsandmethods.clickTitleCardHome(shoname);
+
+		wait.until(ExpectedConditions.visibilityOfAllElements(homepage.titleCardInfoShodetail));
+
+		assertTrue(shoTypeLabel.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(0).getText()));
+		System.out.println(homepage.titleCardInfoShodetail.get(0).getText());
+		assertTrue(shoDurationOnCard.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(2).getText()));
+		System.out.println(homepage.titleCardInfoShodetail.get(2).getText());
+		assertTrue(shoGenerOnCard.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(3).getText()));
+		System.out.println(homepage.titleCardInfoShodetail.get(3).getText());
+		assertTrue(sholangOnCard.equalsIgnoreCase(homepage.titleCardInfoShodetail.get(4).getText()));
+		System.out.println(homepage.titleCardInfoShodetail.get(4).getText());
+
+	}
+	
+	@And("^Navigate to gudsho home and remove the show from continue watching$")
+    public void navigate_to_gudsho_home_and_remove_the_show_from_continue_watching() throws Throwable {
+		homepage.HeaderLogo.click();
+		Actions action = new Actions(driver);
+		String continueWatchlingShoName = homepage.ShoNamesInContinueWatching.get(0).getText();
+		action.moveToElement(homepage.continueWatchingCloseButton.get(0)).click().build().perform();
+		assertTrue((continueWatchlingShoName+" has been removed").equalsIgnoreCase(ToastandErrormessages.ToastMessageText.getText()));
+		
+	}
+	
+	@Given("^From home get the gud count and view count of the promo (.+)$")
+    public void from_home_get_the_gud_count_and_view_count_of_the_promo(String promoname) throws Throwable {
+		commonlocatorsandmethods.scrolldownm();
+		commonlocatorsandmethods.getPromoViewsAndGuds(promoname);
+       
+    }
+
+    @When("^Now play the promo and give the gud$")
+    public void now_play_the_promo_and_give_the_gud() throws Throwable {
+        
+    }
+
+    @Then("^Verify the view count and gud count$")
+    public void verify_the_view_count_and_gud_count() throws Throwable {
+       
+    }
+
+    @And("^Close the player$")
+    public void close_the_player() throws Throwable {
+      
+    }
+    
+    @Given("^get studio followers count click on studio follow verify the incremented count$")
+    public void get_studio_followers_count_click_on_studio_follow_verify_the_incremented_count() throws Throwable {
+    	commonlocatorsandmethods.scrolldownm();
+		String intialFollowCount = homepage.allStudioFollowersCount.get(0).getText();
+		System.out.println(intialFollowCount);
+		Actions action = new Actions(driver);
+		action.moveToElement(homepage.followButtons.get(0)).click().build().perform();
+		Thread.sleep(2000);
+		String finalFollowCount = homepage.allStudioFollowersCount.get(0).getText();
+		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+		assertEquals("You have started following this studio", ToastandErrormessages.ToastMessageText.getText());
+		System.out.println("inital count :" +intialFollowCount+ "final follow count :"+finalFollowCount);
+		assertNotEquals(intialFollowCount, finalFollowCount);
+    }
+    
+    @Then("^Verify the disliked promo from my gudpromos row (.+)$")
+    public void verify_the_disliked_promo_from_my_gudpromos_row(String promoname) throws Throwable {
+    	homepage.HeaderLogo.click();
+		commonlocatorsandmethods.scrolldownm();
+		String PromonameongudPromos = homepage.mygudpromosdislike(promoname);
+		log.info(PromonameongudPromos);
+		assertNotEquals(promoname, PromonameongudPromos);
+    }
+    
 }

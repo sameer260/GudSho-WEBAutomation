@@ -197,6 +197,24 @@ Feature: Studio Detail page Scenarios
   |Sameer    |Drama |
   
  
+  Scenario Outline: To check followers count
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  When Click on <UserAction> and check followers count
+  Then Check studio count on home page after <UserAction>
+
+   Examples:
+  |StudioName|UserAction|
+  |Samme     |Follow    |
+  |Samme     |UnFollow  |
+  
+ 
+ 
+ 
+  
+  
+  
+  
+ 
   Scenario: Logout From the application
   Given Hover on profile
   Then Click on Signout and check toaster

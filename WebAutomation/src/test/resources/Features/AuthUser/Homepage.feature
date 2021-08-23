@@ -20,7 +20,7 @@ Feature: GudSho Home Page
   Scenario: Sho Card Redirection
     Given Click on sho card from any row and verify its redirected to correct sho detail page
 
-  Scenario: This test is to verify the follow button from home
+  Scenario: Follow Count Increment
     Given Check Follow count of studio
     When From home page click onfollow button and verify the button changes
     And verify studio follower count incremented by one

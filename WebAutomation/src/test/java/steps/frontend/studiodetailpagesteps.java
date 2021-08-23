@@ -386,5 +386,74 @@ public class studiodetailpagesteps extends BaseSetup {
 			}
 		}
 	}
+	int afterStudiocountonstudiodetail;
+	
+	    @When("^Click on (.+) and check followers count$")
+	    public void click_on_and_check_followers_count(String useraction) throws Throwable {
+	    	   String studiofollowercount= studiodetailpage.StudioFollowerCount.getText();
+		       String str=studiofollowercount.substring(0,studiofollowercount.lastIndexOf(" Followers"));
+		       int beforeStudiocountonstudiodetail=Integer.parseInt(str);
+		       studiodetailpage.FollowButton.click();
+		       if(useraction.equalsIgnoreCase("Follow"))
+		       {
+		    	    wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+					String followtext = ToastandErrormessages.ToastMessageText.getText();
+					assertEquals(followtext, "You have started following this studio");
+					log.info("the toaster message is: " + followtext);
+					ToastandErrormessages.ToastMessageClose.click();
+		       }
+		       else if(useraction.equalsIgnoreCase("UnFollow"))
+		       {
+		    	   wait.until(ExpectedConditions.visibilityOf(studiodetailpage.UnfollowPopup));
+					assertTrue(studiodetailpage.ConfirmationTextPopup.isDisplayed());
+					assertTrue(studiodetailpage.ConfirmationHeading.isDisplayed());
+					studiodetailpage.PopUpNoButton.click();
+					studiodetailpage.FollowButton.click();
+					wait.until(ExpectedConditions.visibilityOf(studiodetailpage.UnfollowPopup));
+					assertTrue(studiodetailpage.ConfirmationTextPopup.isDisplayed());
+					assertTrue(studiodetailpage.ConfirmationHeading.isDisplayed());
+					studiodetailpage.PopUpYesButton.click();
+					wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+					String toastmessage = ToastandErrormessages.ToastMessageText.getText();
+					log.info(toastmessage);
+					assertEquals(toastmessage, "You have unfollowed this studio");
+		       }
+		       if(useraction.equalsIgnoreCase("Follow"))
+		       {
+		    	    String Afterstudiofollowercount= studiodetailpage.StudioFollowerCount.getText();
+				    String str1=Afterstudiofollowercount.substring(0,Afterstudiofollowercount.lastIndexOf(" Followers"));
+				    afterStudiocountonstudiodetail=Integer.parseInt(str1);
+				    assertEquals(beforeStudiocountonstudiodetail+1, afterStudiocountonstudiodetail); 
+		       }
+		       else if(useraction.equalsIgnoreCase("UnFollow"))
+		       {
+		    	   String Afterstudiofollowercount= studiodetailpage.StudioFollowerCount.getText();
+				    String str1=Afterstudiofollowercount.substring(0,Afterstudiofollowercount.lastIndexOf(" Followers"));
+				    afterStudiocountonstudiodetail=Integer.parseInt(str1);
+				    assertEquals(beforeStudiocountonstudiodetail-1, afterStudiocountonstudiodetail); 
+		       }
+	    }
+	    
+	    @Then("^Check studio count on home page after (.+)$")
+	    public void check_studio_count_on_home_page_after(String useraction) throws Throwable {
+	    	 homepage.HeaderLogo.click();
+		     commonlocatorsandmethods.scrolldownm();
+	        if(useraction.equalsIgnoreCase("Follow"))
+	        {
+	        	String studiofollowcount=homepage.FollowerCount.get(0).getText();
+		        String str1=studiofollowcount.substring(0,studiofollowcount.lastIndexOf(" Followers"));
+		        int studiofollowercountint=Integer.parseInt(str1);
+		        assertEquals(afterStudiocountonstudiodetail, studiofollowercountint);
+	        }
+	        else if(useraction.equalsIgnoreCase("Unfollow"))
+	        {
+	        	String studiofollowcount=homepage.FollowerCount.get(0).getText();
+		        String str1=studiofollowcount.substring(0,studiofollowcount.lastIndexOf(" Followers"));
+		        int studiofollowercountint=Integer.parseInt(str1);
+		        assertEquals(afterStudiocountonstudiodetail, studiofollowercountint);
+	        }
+	    }
+	    
+	    
 
 }

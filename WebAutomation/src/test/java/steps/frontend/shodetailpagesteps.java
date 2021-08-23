@@ -492,6 +492,29 @@ public class shodetailpagesteps extends BaseSetup {
 	        assertEquals(null,str1);
 	        
 	    }
+	    @And("^veirfy time left on continue watching (.+) on home page$")
+	    public void veirfy_time_left_on_continue_watching_on_home_page(String shoname) throws Throwable {
+	    	String timeLeftonshodetailpage= shodetailpage.TimeLeftonShodetailpage.getText();
+	    	homepage.HeaderLogo.click();
+	        String ShonameInContinueWatching=null;
+	        String timeLeftonCard=null;
+	        for(int i=0;i<homepage.ShoNamesInContinueWatching.size();i++)
+	        {
+	        	if(homepage.ShoNamesInContinueWatching.get(i).getText().equalsIgnoreCase(shoname))
+	        	{
+	        		ShonameInContinueWatching=homepage.ShoNamesInContinueWatching.get(i).getText();
+	        		log.info(ShonameInContinueWatching);
+	        		timeLeftonCard=shodetailpage.TimeLeftInContinueWatching.get(i).getText();
+	        		log.info(timeLeftonCard);
+	        		break;
+	        	}
+	        }
+	        
+	        assertEquals(ShonameInContinueWatching,shoname);
+	        assertEquals(timeleft+"m left",timeLeftonCard);
+	        assertEquals(timeLeftonshodetailpage, timeLeftonCard);
+	        
+	    }
 
 
     

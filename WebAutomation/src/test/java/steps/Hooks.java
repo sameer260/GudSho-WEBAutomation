@@ -67,7 +67,6 @@ public class Hooks extends BaseSetup {
 	       scenario.attach(screenshot, "image/png", "image");
 	       
 		}
-		//driver.manage().deleteAllCookies();
 		driver.quit();
 		
 	}

@@ -124,8 +124,11 @@ public class Homepagesteps extends BaseSetup {
 
 	@Then("^verify redirection of promo player$")
 	public void verify_redirection_of_promo_player() throws Throwable {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		videoplayer.PromoNameonPlayer.isDisplayed();
+		Actions a =new Actions(driver);
+		a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+		videoplayer.CloseButton.click();
 
 	}
 

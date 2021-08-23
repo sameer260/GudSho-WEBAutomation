@@ -58,6 +58,7 @@ Feature: Sho Detail Page Scenarios
     When Play watch free content and close the player
     And On sho detail page verify watch now button should change to resume
     Then On Home Page check continue wathing is showing <ShoName>
+    
 
     Examples: 
       | ShoName |
@@ -148,15 +149,16 @@ Feature: Sho Detail Page Scenarios
       | ShoName |
       | Kaithi  |
       
-   
+  
   Scenario Outline: Play Left time verification
   Given Search any <ShoName> and verfiy its redirected to correct page
   When Play video till <time> and close player
   Then verify time left on sho detail page
+  And veirfy time left on continue watching <ShoName> on home page
   
   Examples: 
       | ShoName         |time |
-      | Khaidhi No 150  |08:20|
+      | Khaidhi No 150  |05:20|
       
   Scenario Outline: Left and Right Arrows
   Given Search any <ShoName> and verfiy its redirected to correct page
@@ -220,7 +222,10 @@ Feature: Sho Detail Page Scenarios
   
     Examples: 
       | ShoName |
-      | Check   |   
+      | Check   |
+      
+      
+  
  
           
       

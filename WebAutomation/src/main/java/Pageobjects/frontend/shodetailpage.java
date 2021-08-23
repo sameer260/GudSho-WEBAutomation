@@ -277,4 +277,10 @@ public class shodetailpage extends BaseSetup {
 	}
 	
 
+	
+	// Home Page Elements
+	
+	@FindBy(xpath="//div[starts-with(@class,'mat-ripple card-img ng-tns-')]/span[2]")
+	public static List<WebElement> TimeLeftInContinueWatching;
+	
 }

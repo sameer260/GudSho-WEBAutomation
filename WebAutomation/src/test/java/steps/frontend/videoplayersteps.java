@@ -39,6 +39,9 @@ public class videoplayersteps extends BaseSetup {
 		   videoplayer.PlayerPauseandPlayButton.click();
 		   String durationafterbackward=videoplayer.forwardm(backwordduration);
 		   assertNotEquals(durationafterbackward,backwordduration);
+		   Actions a=new Actions(driver);
+		   a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+		   videoplayer.CloseButton.click();
 		   
 	        
 	        

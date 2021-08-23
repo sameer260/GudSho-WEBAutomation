@@ -22,16 +22,16 @@ Feature: GudSho Home Page
 
   Scenario: Studio Card Redirection
     Given Click on studio card from studio row and verify its redirected to correct studio detail page
-    
+
   Scenario: This test is to verify the follow button from home
     Given From home page click onfollow button and verify the button changes
 
   Scenario Outline: This test is to verify the added sho in addto watchlist
     Given From home page click on add to watchlist in <ShoName> title card
     When check card availbility on my watchlist row
+
     #And check card availbility on my wacthlist row see all
     #Then Remove from watchlit
-
     Examples: 
       | ShoName      |
       | vada chennai |
@@ -58,10 +58,9 @@ Feature: GudSho Home Page
     When Play watch free content and close the player
     And Navigate to gudsho home and click on sho name hyperlink from continue watching and verify redirection
 
-      Examples: 
-      | ShoName      |
-      | scedue       |
-
+    Examples: 
+      | ShoName |
+      | scedue  |
 
   Scenario Outline: This test is to verify the added sho in addto watchlist from see all
     Given From home page click on sho type row see all hyperlink
@@ -88,7 +87,6 @@ Feature: GudSho Home Page
     Examples: 
       | PromoName                                         |
       | Two Years Of Kaala - The Masterpiece _ Rajinikant |
-      
 
   Scenario Outline: This test is to verify the share button on promo card from see all page
     Given From home page click on promo type row see all hyperlink
@@ -97,21 +95,60 @@ Feature: GudSho Home Page
 
     Examples: 
       | PromoName                                         |
-      | Two Years Of Kaala - The Masterpiece _ Rajinikant |   
+      | Two Years Of Kaala - The Masterpiece _ Rajinikant |
 
   Scenario Outline: This test is to verify the sho detail page redirection from promo player
     Given From home page hover on <PromoName> promo card and close the player
     Then On home page check liked <PromoName> is showing in my gud promos
 
     Examples: 
-      |PromoName|
-      |Two Years Of Kaala - The Masterpiece _ Rajinikant|
-      
-   
+      | PromoName                                         |
+      | Two Years Of Kaala - The Masterpiece _ Rajinikant |
+
   Scenario Outline: This test is to verify the share button on sho card from see all page
-   Given From home page click on promo type row see all hyperlink
-   And Close promo player <promoName> and verify redirection
-   
-  Examples:
-     | promoName                                         |
-     | Two Years Of Kaala - The Masterpiece _ Rajinikant |    
+    Given From home page click on promo type row see all hyperlink
+    And Close promo player <promoName> and verify redirection
+
+    Examples: 
+      | promoName                                         |
+      | Two Years Of Kaala - The Masterpiece _ Rajinikant |
+
+  Scenario Outline: This test is to verify the added sho in addto watchlist from see all
+    Given From home hover on sho card <ShoName>
+
+    Examples: 
+      | ShoName                            |
+      | Transformer: The Age Of Extinction |
+
+  Scenario Outline: This test is verify the remove from continue watching
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Play watch free content and close the player
+    And Navigate to gudsho home and remove the show from continue watching
+
+    Examples: 
+      | ShoName |
+      | kaithi  |
+
+  Scenario Outline: This test is to verify the view count and gud count for promo
+    Given From home get the gud count and view count of the promo <promoName>
+    When Now play the promo and give the gud
+    And Close the player
+    Then Verify the view count and gud count
+
+    Examples: 
+      | promoName                             |
+      | Pullinangal - Official Video Song - 2 |
+
+  Scenario: Followers count validation for studio card
+    Given get studio followers count click on studio follow verify the incremented count
+
+  @test
+  Scenario Outline: This test is to verify the dislike promo and availability check on my gud promos
+    Given From home page hover on <PromoName> promo card and close the player
+    When On home page check liked <PromoName> is showing in my gud promos
+    And From home page hover on <PromoName> promo card and close the player
+    Then Verify the disliked promo from my gudpromos row <PromoName>
+
+    Examples: 
+      | PromoName                                         |
+      | Two Years Of Kaala - The Masterpiece _ Rajinikant |

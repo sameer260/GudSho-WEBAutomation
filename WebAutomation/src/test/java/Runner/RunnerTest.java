@@ -23,9 +23,9 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features= "src/test/resources/Features",
+	@CucumberOptions(features= "src/test/resources/Features/AuthUser/Homepage.feature",
 	glue={"steps"}
-	//, tags=""
+	, tags="@test"
 	)
 
 

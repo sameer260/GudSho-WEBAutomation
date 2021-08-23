@@ -157,6 +157,21 @@ public class homepage extends BaseSetup {
 		return Promonameoncard;
 
 	}
+	
+	public static String mygudpromosdislike(String promoname) {
+		String Promonameoncard = null;
+		WebElement gudpromorow = MyGudPromosRow;
+		for (int i = 0; i < gudpromorow.findElements(MyGudPromoCards).size(); i++) {
+
+			if (!gudpromorow.findElements(PromoNameonGudPromos).get(i).getText().equalsIgnoreCase(promoname)) {
+				Promonameoncard = gudpromorow.findElements(PromoNameonGudPromos).get(i).getText();
+				break;
+			}
+
+		}
+		return Promonameoncard;
+
+	}
 
 	@FindBy(xpath = "//*[starts-with(@class,'mat-ripple card-img cursor auto-image')]//child::img")
 	public static List<WebElement> allTitles;
@@ -189,4 +204,45 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//img[@id='studio']")
 	public static List<WebElement> studioCards;
 
+	@FindBy(xpath = "//*[starts-with(@class,'card-badge ng-tns')]")
+	public static WebElement shoTypeLabelOnTitleCard;
+
+	@FindBy(xpath = "//*[starts-with(@class,'card-badge ng-tns')]//following::span[1]")
+	public static WebElement priceOnTitleCard;
+
+	@FindBy(xpath = "//*[starts-with(@class,'hover-sho-detail ng-tns')]//*[@class='ng-star-inserted']//child::li")
+	public static List<WebElement> titleCardInfo;
+
+	@FindBy(xpath = "//ul[@class='clearfix']//child::li")
+	public static List<WebElement> titleCardInfoShodetail;
+
+	@FindBy(xpath = "//*[starts-with(@class, 'close flex align-items-center justify-content-center ng-tns-')]")
+	public static List<WebElement> continueWatchingCloseButton;
+
+	@FindBy(xpath = "//h4[@mattooltipposition='below']")
+	public static List<WebElement> allPromoNames;
+	
+	@FindBy(xpath = "//p[@mattooltipposition='below']")
+	public static List<WebElement> allStudioFollowersCount;
+
+	/*
+	 * public static String getShoTypeLableText(String shoTypelable) { shoTypelable
+	 * = homepage.shoTypeLabelOnTitleCard.getText(); return shoTypelable;
+	 */
+
 }
+
+/*
+ * public static String getShoCardPriceAmmountt() {
+ * 
+ * homepage.priceOnTitleCard.getText(); return null;
+ * 
+ * }
+ * 
+ * public static String[] getDurationGenerLang(String[] shoPrice) { shoPrice[0]
+ * = homepage.titleCardInfo.get(0).getText(); shoPrice[1] =
+ * homepage.titleCardInfo.get(1).getText(); shoPrice[2] =
+ * homepage.titleCardInfo.get(1).getText(); return shoPrice;
+ * 
+ * }
+ */

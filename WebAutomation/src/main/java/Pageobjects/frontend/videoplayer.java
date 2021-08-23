@@ -1,12 +1,16 @@
 package Pageobjects.frontend;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import Resources.BaseSetup;
+import steps.frontend.videoplayersteps;
+
 
 
 public class videoplayer extends BaseSetup{
@@ -27,7 +31,7 @@ public class videoplayer extends BaseSetup{
 	@FindBy(xpath="//div[@class='next-promo ng-star-inserted']/span")
 	public static WebElement PromosandExtrasText;
 	
-	@FindBy(xpath="//div[@class='player-clap singup-pops-player']")
+	@FindBy(xpath="//div[starts-with(@class,'promo-player-details ng-tns-')]/app-player-gud/button")
 	public static WebElement PlayerGudICon;
 	
 	@FindBy(xpath="//div[@class='sign-popup ng-star-inserted']")
@@ -125,6 +129,7 @@ public class videoplayer extends BaseSetup{
 	
 	public static String forwardm(String forward) throws InterruptedException
 	{
+		
 		while(!CurrentDuration.getText().equals(forward))
 		{
 			
@@ -186,26 +191,183 @@ public class videoplayer extends BaseSetup{
 	}*/
 	
 	
+	@FindBy(xpath="//div[@class='center_left']/div[2]")
+	public static WebElement RunningDuration;
+	
+	@FindBy(xpath="//div[@class='center_left']/div[1]")
+	public static WebElement TotalDuration;
+	
+	@FindBy(xpath="//input[@data-plyr='seek']")
+	public static WebElement SeekBar;
 	
 	
+	public static String ForwardTillToCheckTimeLeft() throws InterruptedException
+	{
+		Actions a=new Actions(driver);
+		
+		for(int i=0;i<=5;i++)
+		{
+			
+			playerforwardbutton.click();
+			
+		}
+		PlayerPauseandPlayButton.click();
+		String currentdurationafterbackward=CurrentDuration.getText();
+		log.info(currentdurationafterbackward);
+		System.out.println(currentdurationafterbackward);
+		return currentdurationafterbackward;
+		
+	}
+	
+
+	public static int TimeLeftCal(String afterduration) throws InterruptedException
+	{
+		// Total Duration changing in to the Minutes and RoundOff
+		
+		String TotalDurationofvideo=TotalDuration.getText();
+        String TotalDurationMinutesSplit=TotalDurationofvideo.substring(0,2);
+        double ChangingStringtodouble=Integer.parseInt(TotalDurationMinutesSplit);
+        String SecondsSepartion=TotalDurationofvideo.substring(3); 
+        double Stringtodouble=Integer.parseInt(SecondsSepartion);
+        double secondstominutes=Stringtodouble/60;
+        double MinandSecondsadd=secondstominutes+ChangingStringtodouble;
+        
+        
+       
+        // Forward Video
+        
+       // String Forwardthevideo=ForwardTillToCheckTimeLeft();   
+        String Forwardthevideo=SeekBarAttribute(afterduration);  
+        log.info(Forwardthevideo);
+        
+        //Current Duration Changing in to Minutes and RoundOff
+        
+        String TotalDurationMinutesSplitInMinutes=Forwardthevideo.substring(0,2);
+        double StringtoInteger=Integer.parseInt(TotalDurationMinutesSplitInMinutes);
+        String DurationInseconds=Forwardthevideo.substring(3); 
+        double secintomin=Integer.parseInt(DurationInseconds);
+        double mintueconversion=secintomin/60;
+        double minandsecondsadition=mintueconversion+StringtoInteger;
+        double finaltime=MinandSecondsadd-minandsecondsadition;
+        
+        //Check the Time Left calculation
+       
+        double finaltimeleftround=Math.ceil(finaltime);
+    	int finaltimeleftint=(int)finaltimeleftround;
+		
+
+		return finaltimeleftint;
+	
+	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public static String SeekBarAttribute(String duration) throws InterruptedException {
+		
+		
+		Actions a =new Actions(driver);
+		while (!(SeekBar.getAttribute("aria-valuetext").substring(0, 5).substring(0, 2).equals(duration.subSequence(0, 2)))) {
+              playerforwardbutton.click();
+              Thread.sleep(500);
+              a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+		}
+		PlayerPauseandPlayButton.click();
+		String currentduration = CurrentDuration.getText();
+		return currentduration;
+	}
 	
 }	
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*static double EntireVideoDurationInMinutesUpperLimit;
+static int SecondsInInteger;
+static double EntireVideoDurationInMinutes;
+public static void TotalDurationInMinutes()
+{
+	// Get total Duration of the Video
+	String TotalDurationFromPlayer=TotalDuration.getText();
+	//Get only Minutes (Separation) from above total duration
+	String MinutesFromDuration=TotalDurationFromPlayer.substring(0,2);
+	//Convert Minutes(String) to Double
+	double MinutesInDoubleFormat=Integer.parseInt(MinutesFromDuration);
+	//Seconds Separation from the Total Duration
+	String SecondsOnTotalDuration=TotalDurationFromPlayer.substring(3);
+	//Changing Seconds In to Integer
+	SecondsInInteger=Integer.parseInt(SecondsOnTotalDuration);
+	//Changing Seconds In to Double
+	double SecondsInDouble=Integer.parseInt(SecondsOnTotalDuration);
+	//Changing SecondsIntoMinutes
+	double SecondsIntoMinutes=SecondsInDouble/60;
+	//Adding Minutes and Seconds(Which is converted in to Minutes)
+	EntireVideoDurationInMinutes=SecondsIntoMinutes+MinutesInDoubleFormat;
+	//Round Of to the Upper Limit
+	EntireVideoDurationInMinutesUpperLimit=Math.ceil(EntireVideoDurationInMinutes);
 	
+}
+
+
+
+public static int getCurrentDurationInMinutes() throws InterruptedException
+{
+	        int timeleft = 0;
+	        //Current Duration of the video
+	        String CurrentDuration=ForwardTillToCheckTimeLeft();
+	        //Get only Minutes (Separation) from above total duration
+			String MinutesFromDuration=CurrentDuration.substring(0,2);
+			//Convert Minutes(String) to Double
+			double MinutesInDoubleFormat=Integer.parseInt(MinutesFromDuration);
+			//Seconds Separation from the Total Duration
+			String SecondsOnTotalDuration=CurrentDuration.substring(3);
+			//Changing Seconds In to Integer
+			int SecondsInIntegerInCurrentDuration=Integer.parseInt(SecondsOnTotalDuration);
+			//Changing Seconds In to Double
+			double SecondsInDouble=Integer.parseInt(SecondsOnTotalDuration);
+			//Changing SecondsIntoMinutes
+			double SecondsIntoMinutes=SecondsInDouble/60;
+			//Adding Minutes and Seconds(Which is converted in to Minutes)
+			double EntireVideoDurationInMinutesInGetDuration=SecondsIntoMinutes+MinutesInDoubleFormat;
+			//Round Of to the Upper Limit
+			double EntireVideoDurationInMinutesUpperLimitInCurrentDuration=Math.ceil(EntireVideoDurationInMinutesInGetDuration);
+			//Time Left on sho detail page should be in double
+			double TimeLeftonShodetailpage=EntireVideoDurationInMinutes-EntireVideoDurationInMinutesInGetDuration;
+			System.out.println(TimeLeftonShodetailpage);
+			int FinalGetDuration=SecondsInInteger-5;
+			if(SecondsInIntegerInCurrentDuration>=FinalGetDuration)
+			{
+				log.info("Watch Now Displayed");
+			}
+			else
+			{
+				double timeleftindouble=Math.ceil(TimeLeftonShodetailpage);
+				timeleft=(int)timeleftindouble;
+				log.info(timeleft);
+				System.out.println(timeleft);
+			}
+			return timeleft;
+}
 
 
 
@@ -217,8 +379,30 @@ public class videoplayer extends BaseSetup{
 
 
 
+/*while(!CurrentDuration.getText().equals(forwardtill))
+{
+	playerforwardbutton.click();
+}
+PlayerPauseandPlayButton.click();
+String currentdurationafterbackward=CurrentDuration.getText();
+log.info(currentdurationafterbackward);
+return currentdurationafterbackward;*/
 
 
+
+
+
+
+
+//int lastfivesecondsduration=doubletointeger-5;
+//int stringtointegermin=Integer.parseInt(DurationInseconds); 
+//System.out.println(Math.ceil(z));
+//int doubletointeger=Integer.parseInt(SecondsSepartion);
+/*if (stringtointegermin >= lastfivesecondsduration) {
+
+log.info("Fully Watched");
+System.out.println("Fully watched");
+}*/
 
 
 

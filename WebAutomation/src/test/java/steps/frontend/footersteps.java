@@ -99,7 +99,7 @@ public class footersteps extends BaseSetup {
 	@Given("^click help&support link and verify it should redirected to correct page$")
 	public void click_helpsupport_link_and_verify_it_should_redirected_to_correct_page() throws Throwable {
 		String ChildUrl="https://www.gudsho.com/support";
-		String Childtitle="GudSho - Watch Unlimited Movies & Web Series Online";	
+		String Childtitle="Help Desk | GudSho";	
 		Footer.WindowhandleforLinks(Footer.helpsupport, ChildUrl, Childtitle);
 	}
 
@@ -146,6 +146,7 @@ public class footersteps extends BaseSetup {
 	}
 	 @Given("^Check App store App redirection$")
 	 public void check_app_store_app_redirection() throws Throwable {
+		 commonlocatorsandmethods.scrolldownm();
 		 String ChildUrl="https://apps.apple.com/in/app/gudsho-ott/id1539371660";
 		 JavascriptExecutor executor = (JavascriptExecutor) driver;
 			String parentWindowHandle = driver.getWindowHandle();
@@ -172,6 +173,7 @@ public class footersteps extends BaseSetup {
 	 
 	    @Given("^Check Facebook redirection$")
 	    public void check_facebook_redirection() throws Throwable {
+	    	commonlocatorsandmethods.scrolldownm();
 	         String ChildUrl="https://www.facebook.com/GudSho.Digital/";
 			 String Childtitle="GudSho - Home | Facebook";	
 			 Footer.WindowhandleforSocialLinks(Footer.ConnectUsSocialLinks.get(0), ChildUrl, Childtitle);
@@ -222,7 +224,7 @@ public class footersteps extends BaseSetup {
 	    	WebDriverWait wait=new WebDriverWait(driver,20);
 	    	wait.until(ExpectedConditions.visibilityOf(homepage.support));
 	    	String ChildUrl="https://qa.gudsho.com/support";
-			String Childtitle="GudSho - Watch Unlimited Movies & Web Series Online";	
+			String Childtitle="Support | GudSho";	
 			homepage.support.click();
 			wait.until(ExpectedConditions.urlMatches(ChildUrl));
 			assertEquals(ChildUrl,driver.getCurrentUrl());

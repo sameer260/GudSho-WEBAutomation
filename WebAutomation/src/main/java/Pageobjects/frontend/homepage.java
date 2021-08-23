@@ -128,6 +128,7 @@ public class homepage extends BaseSetup {
 
 	public static void HomePageSearch(String shoseriesorstudioname) throws InterruptedException {
 		homepage.SearchICon.click();
+		Thread.sleep(1000);
 		homepage.HomePageSearch.sendKeys(shoseriesorstudioname);
 		log.info("Sent Text in the Home Page is " + shoseriesorstudioname);
 		Thread.sleep(3000);

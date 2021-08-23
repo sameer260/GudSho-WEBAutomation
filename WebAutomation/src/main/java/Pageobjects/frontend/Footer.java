@@ -67,8 +67,9 @@ public class Footer extends BaseSetup {
 	@FindBy(xpath="//div[@class='footer-connect footer-sec']/ul/li/a")
 	public static List<WebElement> ConnectUsSocialLinks;
 	
-	
+	commonlocatorsandmethods cm=new commonlocatorsandmethods();
 	public static void WindowhandleforLinks(WebElement element,String ChildUrl,String Childtitle) throws InterruptedException {
+		commonlocatorsandmethods.scrolldownm();
 		JavascriptExecutor executor = (JavascriptExecutor) driver;
 		String parentWindowHandle = driver.getWindowHandle();
 		executor.executeScript("arguments[0].click();", element);

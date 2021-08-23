@@ -1,6 +1,8 @@
 package Pageobjects.frontend;
 
 import java.util.List;
+
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -104,10 +106,10 @@ public class shodetailpage extends BaseSetup {
 	@FindBy(xpath = "//div[starts-with(@class,'card-main promo-card-content sho-promocard ng-tns-')]//child::div[2]/h4")
 	public static List<WebElement> PromoNamesofPromoCards;
 
-	@FindBy(xpath = "//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode']/app-gud-card/div/div/div[2]/div/p")
+	@FindBy(xpath = "//div[starts-with(@class,'guds flex align-items-center ng-tns-')]/p")
 	public static List<WebElement> ViewCountofPromos;
 
-	@FindBy(xpath = "//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-free-mode']/app-gud-card/div/div/div[2]/div/span")
+	@FindBy(xpath = "//div[starts-with(@class,'guds flex align-items-center ng-tns-')]/span")
 	public static List<WebElement> GudCountofPromos;
 
 	@FindBy(xpath = "//div[starts-with(@class,'see-all-image cursor ng-tns-')]")
@@ -197,5 +199,82 @@ public class shodetailpage extends BaseSetup {
 
 	@FindBy(xpath = "//div[starts-with(@class,'hover-share flex align-items-center justify-content-center ng-tns-')]")
 	public static WebElement ShareButtononShoCard;
+	
+	
+	
+	
+	//Header
+	
+	@FindBy(xpath = "//li[starts-with(@class,'watch-lists ng-tns-')]")
+	public static WebElement HeaderWatchlistbutton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'share-play top-fixed ng-tns-')]")
+	public static WebElement HeaderShareButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share top-fixed ng-tns-')]/ul/app-gud-play-button")
+	public static WebElement HeaderWatchButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share animation-bg ng-tns-')]/ul/app-gud-play-button")
+	public static WebElement AnimationWatchButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share animation-bg ng-tns-')]/ul/li[1]")
+	public static WebElement AnimationWatchListButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share animation-bg ng-tns-')]/ul/li[2]")
+	public static WebElement AnimationShareButton;
+	
+	@FindBy(xpath="//div[starts-with(@class,'sho-content animation-bg ng-tns-')]")
+	public static WebElement AnimationElement;
+	
+	@FindBy(xpath="//div[starts-with(@class,'play-share ng-tns-')]/p/span")
+	public static WebElement TimeLeftonShodetailpage;
+	
+	public static int GudCount(String promoname)
+	{
+		//Actions a=new Actions(driver);
+		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		int gudcount = 0;
+		String GudCountStringFormat;;
+		for(int i=0;i<PromoNamesofPromoCards.size();i++)
+		{
+			if(PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname))
+			{
+				String str=GudCountofPromos.get(i).getText();
+				String verifygudtext=str.substring(str.lastIndexOf("G"));
+				if(verifygudtext.equalsIgnoreCase("Gud"))
+				{
+					GudCountStringFormat=str.substring(0,str.lastIndexOf(" Gud"));
+					gudcount=Integer.parseInt(GudCountStringFormat);
+				}
+				else {
+					GudCountStringFormat=str.substring(0,str.lastIndexOf(" Guds"));
+					gudcount=Integer.parseInt(GudCountStringFormat);
+				}
+				break;
+			}
+		}
+		return gudcount;
+	}
+	public static int ViewCount(String promoname)
+	{
+		//Actions a=new Actions(driver);
+		//a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		int viewcount = 0;
+		for(int i=0;i<PromoNamesofPromoCards.size();i++)
+		{
+			if(PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname))
+			{
+				String str=ViewCountofPromos.get(i).getText();
+				
+				String str1=str.substring(0,str.lastIndexOf(" Views"));
+				viewcount=Integer.parseInt(str1);
+				
+				break;
+				
+			}
+		}
+		return viewcount;
+	}
+	
 
 }

@@ -392,14 +392,15 @@ public class shodetailpagesteps extends BaseSetup {
     public void check_right_and_left_arrow_is_working_as_expected() throws Throwable {
     	Actions a=new Actions(driver);
     	a.sendKeys(Keys.END).build().perform();
-        commonlocatorsandmethods.RightLeftArrows();
+        commonlocatorsandmethods.RightLeftArrows(commonlocatorsandmethods.NextArrow,commonlocatorsandmethods.PreviousArrow,0);
     }
 
 	@Then("^verify all lables of the card with sho detail page$")
 	public void verify_all_lables_of_the_card_with_sho_detail_page() throws Throwable {
 		Actions a = new Actions(driver);
 		a.sendKeys(Keys.END).build().perform();
-		wait.until(ExpectedConditions.visibilityOf(shodetailpage.MoreLikeThisEle));
+		Thread.sleep(1500);
+		//wait.until(ExpectedConditions.visibilityOf(shodetailpage.MoreLikeThisEle));
 		a.moveToElement(commonlocatorsandmethods.ShoCards.get(0)).build().perform();
 		wait.until(ExpectedConditions.visibilityOf(commonlocatorsandmethods.ShoSeriesCardLabel));
 		String sholabel = commonlocatorsandmethods.ShoSeriesCardLabel.getText();
@@ -439,6 +440,7 @@ public class shodetailpagesteps extends BaseSetup {
 		String str=commonlocatorsandmethods.PriceLabel();
 		String pricelabelonshocard = str.replace("\n", "").replace("\r", "");
 		a.moveToElement(shodetailpage.ShoCards.get(0)).click().build().perform();
+		Thread.sleep(1200);
 		commonlocatorsandmethods.CheckPriceverification(pricelabelonshocard);
 		
 		

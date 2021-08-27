@@ -128,7 +128,7 @@ public class shodetailpage extends BaseSetup {
 
 			if (PromoNamesofPromoCards.get(i).getText().equalsIgnoreCase(promoname)) {
 				promonameoncard = PromoNamesofPromoCards.get(i).getText();
-				a.moveToElement(PromoCards.get(i)).click().build().perform();
+				a.moveToElement(PromoNamesofPromoCards.get(i)).click().build().perform();
 				break;
 			}
 		}

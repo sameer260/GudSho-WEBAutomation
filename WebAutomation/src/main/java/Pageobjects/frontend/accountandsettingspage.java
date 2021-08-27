@@ -1,11 +1,14 @@
 package Pageobjects.frontend;
 
+import java.util.ArrayList;
 import java.util.List;
 
-
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Resources.BaseSetup;
 
@@ -41,7 +44,9 @@ public class accountandsettingspage extends BaseSetup
 		{
 			if(AccountandSettingsTabs.get(i).getText().equalsIgnoreCase(TabName))
 			{
+				CheckTabSelection.get(i).click();
 				ariaselectedstate=CheckTabSelection.get(i).getAttribute("aria-selected");
+				
 			}
 		}
 		return ariaselectedstate;
@@ -66,5 +71,58 @@ public class accountandsettingspage extends BaseSetup
     public static WebElement PhoneNumber;
     
     
+    // Transaction History
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/thead/tr/th")
+    public static List<WebElement> TableHeaders;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[1]/span[1]")
+    public static List<WebElement> Dateofpurchase;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[1]/span[2]")
+    public static List<WebElement> TimeOfPurchase;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[2]/div/span")
+    public static List<WebElement> ShoNameonGrid;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[3]/div")
+    public static List<WebElement> ShoPrice;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[4]")
+    public static List<WebElement> ModeOfPayment;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[5]")
+    public static List<WebElement> TransactionID;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[6]")
+    public static List<WebElement> PaymentGatewayMode;
+    
+    @FindBy(xpath="//div[@class='ng-scroll-content']/table/tbody/tr/td[7]")
+    public static List<WebElement> PaymentStatus;
+    
+	
+	public static List<String> verifyPayment(String shoname) {
+		WebDriverWait wait = new WebDriverWait(driver, 20);
+		wait.until(ExpectedConditions.visibilityOfAllElements(TableHeaders));
+		List<String> ele = new ArrayList<String>();
+		for (int i = 0; i < ShoNameonGrid.size(); i++) {
+
+			if (ShoNameonGrid.get(i).getText().equalsIgnoreCase(shoname)) {
+				ele.add(Dateofpurchase.get(i).getText());
+				ele.add(TimeOfPurchase.get(i).getText());
+				ele.add(ShoNameonGrid.get(i).getText());
+				ele.add(ShoPrice.get(i).getText());
+				ele.add(ModeOfPayment.get(i).getText());
+				ele.add(TransactionID.get(i).getText());
+				ele.add(PaymentGatewayMode.get(i).getText());
+				ele.add(PaymentStatus.get(i).getText());
+				break;
+			}
+		}
+		return ele;
+
+	}
+
+	
 	
 }

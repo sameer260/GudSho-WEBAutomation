@@ -95,6 +95,7 @@ public class SignUp extends BaseSetup
 	
 	public static void GmailLogin(String UserName,String Password) throws InterruptedException
 	{
+		WebDriverWait wait=new WebDriverWait(driver,20);
 		LoginWithGoogleButton.click();
 	    Thread.sleep(5000);
 		String MainWindow = driver.getWindowHandle();
@@ -104,7 +105,7 @@ public class SignUp extends BaseSetup
 			String ChildWindow = i1.next();
 			if(!MainWindow.equalsIgnoreCase(ChildWindow)) {
 				driver.switchTo().window(ChildWindow);
-				WebDriverWait wait=new WebDriverWait(driver,20);
+				
 			    wait.until(ExpectedConditions.visibilityOf(GmailUserName));
 				GmailUserName.sendKeys(UserName);
 				GmailNextButton.click();

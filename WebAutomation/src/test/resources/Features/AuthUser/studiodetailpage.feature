@@ -132,7 +132,7 @@ Feature: Studio Detail page Scenarios
     |StudioName  |
     |Sameer      | 
     
-    @test
+    
    Scenario Outline: See all sho card Share
     Given Search any studio <StudioName> and verify it should redirected to correct page
     When Click on sho see all link
@@ -207,6 +207,50 @@ Feature: Studio Detail page Scenarios
   |Samme     |Follow    |
   |Samme     |UnFollow  |
   
+  @aa
+  Scenario Outline: To check View and Gud Count
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  And capture view and gud count of <PromoName>
+  When Play <PromoName> and <UserAction> promo
+  Then Search any studio <StudioName> and verify it should redirected to correct page
+  And verify gud and view count of <PromoName> again for <UserAction>
+  Then Check gud and view count of <PromoName> in see all page for <UserAction>
+  
+  Examples:
+  |StudioName|PromoName           |UserAction|
+  |Sameer    |Kung Fu Panda (2008)|Like      |
+  |Sameer    |Kung Fu Panda (2008)|UnLike    |
+  
+ 
+  Scenario Outline: Left and Right Arrows
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  Then Check right and left arrows on sho card rows
+  
+  
+   Examples: 
+      | StudioName|
+      | Sameer    |
+      
+    
+  Scenario Outline: Sho Card Labels verification
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  Then verify all lables of the card with sho detail page
+  Given Search any studio <StudioName> and verify it should redirected to correct page
+  And verify price label 
+  
+   Examples: 
+      | StudioName|
+      | Sameer    |  
+      
+  Scenario Outline: Studio Banner Image Static
+   Given Search any studio <StudioName> and verify it should redirected to correct page
+   Then verify banner static image is displaying
+   
+   
+   Examples: 
+      | StudioName|
+      | Samme    |  
+        
  
  
  

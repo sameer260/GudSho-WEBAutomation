@@ -155,8 +155,8 @@ Feature: GudSho Home Page
       | Salaam Rocky Bhai Song With Lyrics - Kgf Chapter | UnLike     |
 
   Scenario Outline: This test is to verify the dislike promo and availability check on my gud promos
-    ##Given From home page hover on <PromoName> promo card and close the player
-    ##When On home page check liked <PromoName> is showing in my gud promos
+    Given From home page hover on <PromoName> promo card and close the player
+    When On home page check liked <PromoName> is showing in my gud promos
     And From home page hover on <PromoName> promo card and close the player
     Then Verify the disliked promo from my gudpromos row <PromoName>
 

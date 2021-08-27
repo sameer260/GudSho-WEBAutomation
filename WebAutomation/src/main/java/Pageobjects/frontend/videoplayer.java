@@ -64,6 +64,7 @@ public class videoplayer extends BaseSetup{
 	public static String Promoname()
 	{
 		String str=PromoNameonPlayer.getText();
+		log.info(str);
 		return str.substring(17);
 	}
 	

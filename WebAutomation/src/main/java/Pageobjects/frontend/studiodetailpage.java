@@ -124,6 +124,9 @@ public class studiodetailpage extends BaseSetup {
 	@FindBy(xpath="//div[@class='release-card card-slider ng-star-inserted']/div[1]/h3")
 	public static List<WebElement> ShoSeeAllLink;
 	
+	@FindBy(xpath="//div[@class='banner-slider-content placeholder ng-star-inserted']/ul/li/img")
+	public static WebElement StaticBannerImage;
+	
 	public static String Promoclick(String promoname)
 	{
 		Actions a=new Actions(driver);

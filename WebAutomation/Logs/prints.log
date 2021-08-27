@@ -3165,3 +3165,45 @@
 2021-08-19 13:54:06 INFO  shodetailpagesteps:348 - 6
 2021-08-19 13:54:07 INFO  shodetailpagesteps:359 - 6m left
 2021-08-19 13:54:07 INFO  shodetailpagesteps:361 - 6m left
+2021-08-25 19:09:23 INFO  shodetailpagesteps:466 - You liked this promo
+2021-08-25 19:09:25 INFO  videoplayer:67 - You're watching, Salaam Rocky Bhai Song With Lyrics - Kgf Chapter
+2021-08-25 19:09:25 INFO  shodetailpagesteps:479 - Salaam Rocky Bhai Song With Lyrics - Kgf Chapter
+2021-08-25 19:09:35 INFO  Homepagesteps:336 - Salaam Rocky Bhai Song With Lyrics - Kgf Chapter
+2021-08-25 19:10:22 INFO  shodetailpagesteps:466 - You unliked this promo
+2021-08-25 19:10:23 INFO  videoplayer:67 - You're watching, Salaam Rocky Bhai Song With Lyrics - Kgf Chapter
+2021-08-25 19:10:23 INFO  shodetailpagesteps:479 - Salaam Rocky Bhai Song With Lyrics - Kgf Chapter
+2021-08-25 19:11:27 INFO  shodetailpagesteps:134 - Two Years Of Kaala - The Masterpiece _ Rajinikant
+2021-08-25 19:11:53 INFO  Homepagesteps:351 - 
+2021-08-25 19:13:00 INFO  Footer:85 - Support | GudSho
+2021-08-25 19:13:00 INFO  Footer:88 - https://www.gudsho.com/support
+2021-08-25 19:13:25 INFO  homepage:135 - Sent Text in the Home Page is Talent
+2021-08-25 19:13:29 INFO  homepage:141 - The Auto suggestive dropdown shows:Talent
+2021-08-25 19:13:31 INFO  commonSteps:46 - Talent
+2021-08-25 19:14:13 INFO  videoplayer:67 - You're watching, Vakeel Sab Theatrical Trailer
+2021-08-25 19:14:23 INFO  videoplayer:67 - You're watching, Vakeel Sab Theatrical Trailer
+2021-08-25 19:14:51 INFO  homepage:135 - Sent Text in the Home Page is Khaidhi No 150
+2021-08-25 19:14:54 INFO  homepage:141 - The Auto suggestive dropdown shows:Khaidhi No 150
+2021-08-25 19:14:56 INFO  commonSteps:46 - Khaidhi No 150
+2021-08-25 19:15:48 INFO  commonlocatorsandmethods:275 - No.of Cards:119
+2021-08-25 19:15:56 INFO  commonlocatorsandmethods:283 - No.of Cards:119
+2021-08-25 19:16:22 INFO  homepage:135 - Sent Text in the Home Page is Hacking
+2021-08-25 19:16:25 INFO  homepage:141 - The Auto suggestive dropdown shows:Hacking
+2021-08-25 19:16:27 INFO  commonSteps:46 - Hacking
+2021-08-25 19:16:38 INFO  shodetailpagesteps:466 - You liked this promo
+2021-08-25 19:16:38 INFO  videoplayer:67 - You're watching, Kung Fu Panda
+2021-08-25 19:16:38 INFO  shodetailpagesteps:479 - Kung Fu Panda
+2021-08-25 19:17:06 INFO  homepage:135 - Sent Text in the Home Page is Trail Studio
+2021-08-25 19:17:10 INFO  homepage:141 - The Auto suggestive dropdown shows:Trail111
+2021-08-25 19:17:10 INFO  homepage:141 - The Auto suggestive dropdown shows:Trail Studio
+2021-08-25 19:17:12 INFO  commonSteps:36 - Trail Studio
+2021-08-25 19:17:43 INFO  homepage:135 - Sent Text in the Home Page is Sameer
+2021-08-25 19:17:47 INFO  homepage:141 - The Auto suggestive dropdown shows:Sameer2
+2021-08-25 19:17:47 INFO  homepage:141 - The Auto suggestive dropdown shows:Sameer'S
+2021-08-25 19:17:47 INFO  homepage:141 - The Auto suggestive dropdown shows:Sameer Smart
+2021-08-25 19:17:47 INFO  homepage:141 - The Auto suggestive dropdown shows:SameerR
+2021-08-25 19:17:47 INFO  homepage:141 - The Auto suggestive dropdown shows:Sameer
+2021-08-25 19:17:49 INFO  commonSteps:36 - Sameer
+2021-08-25 19:17:54 INFO  studiodetailpagesteps:312 - Test
+2021-08-25 19:17:56 INFO  studiodetailpagesteps:350 - Test
+2021-08-25 19:18:06 INFO  studiodetailpagesteps:354 - Test
+2021-08-25 19:20:11 INFO  homepage:135 - Sent Text in the Home Page is Sameer

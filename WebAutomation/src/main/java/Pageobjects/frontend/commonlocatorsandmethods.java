@@ -249,36 +249,36 @@ public class commonlocatorsandmethods extends BaseSetup {
 	// Next and Previous Arrows
 	
 	@FindBy(xpath="//div[@aria-label='Next slide']")
-	public static WebElement NextArrow;
+	public static List<WebElement> NextArrow;
 	
 	@FindBy(xpath="//div[@aria-label='Previous slide']")
-	public static WebElement PreviousArrow;
+	public static List<WebElement> PreviousArrow;
 	
 	@FindBy(xpath = "//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal']/app-gud-card/div/div/div")
 	public static List<WebElement> ShoCards;
 	
-	public static void RightLeftArrows() throws InterruptedException {
+	public static void RightLeftArrows(List<WebElement> webElement1,List<WebElement> webElement2,int index) throws InterruptedException {
 		int i = 0;
 		int j = 0;
 		Actions a = new Actions(driver);
 
 		if (ShoCards.size() > 6) {
-			a.moveToElement(NextArrow).build().perform();
-			if (NextArrow.getAttribute("aria-disabled").equalsIgnoreCase("false")) {
-				while (!(NextArrow.getAttribute("aria-disabled").equalsIgnoreCase("true"))) {
+			a.moveToElement(webElement1.get(index)).build().perform();
+			if (webElement1.get(index).getAttribute("aria-disabled").equalsIgnoreCase("false")) {
+				while (!(webElement1.get(index).getAttribute("aria-disabled").equalsIgnoreCase("true"))) {
 					i = ShoCards.size();
-					a.moveToElement(NextArrow).build().perform();
-					NextArrow.click();
+					a.moveToElement(webElement1.get(index)).build().perform();
+					webElement1.get(index).click();
 					Thread.sleep(1400);
 
 				}
 				log.info("No.of Cards:" + i);
 
 			}
-			if (PreviousArrow.getAttribute("aria-disabled").equalsIgnoreCase("false")) {
-				while (!(PreviousArrow.getAttribute("aria-disabled").equalsIgnoreCase("true"))) {
+			if (webElement2.get(index).getAttribute("aria-disabled").equalsIgnoreCase("false")) {
+				while (!(webElement2.get(index).getAttribute("aria-disabled").equalsIgnoreCase("true"))) {
 					j = ShoCards.size();
-					PreviousArrow.click();
+					webElement2.get(index).click();
 				}
 				log.info("No.of Cards:" + j);
 
@@ -323,12 +323,20 @@ public class commonlocatorsandmethods extends BaseSetup {
 	}	
 	public static void CheckPriceverification(String pricelabel)
 	{
+
 		
 		if(pricelabel.contains("₹"))
 		{
 			assertTrue(shodetailpage.WatchFreeButton.isDisplayed());
 			log.info(shodetailpage.WatchFreeButton.getText());
+			try {
 			assertEquals(pricelabel,PriceOnShoBannerWatchButton.getText());
+			}
+			catch(Exception e)
+			{
+				assertTrue(shodetailpage.WatchFreeButton.isDisplayed());
+				log.info(" Resume Button is displaying");
+			}
 		}
 		else
 		{

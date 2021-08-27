@@ -107,6 +107,7 @@ public class studiodetailpagesteps extends BaseSetup {
 		String Expectedpromotext = videoplayer.Promoname();
 		log.info(Expectedpromotext);
 		assertEquals(actualpromotext, Expectedpromotext);
+		
 
 	}
 
@@ -269,7 +270,7 @@ public class studiodetailpagesteps extends BaseSetup {
 
 		Actions a = new Actions(driver);
 		a.moveToElement(studiodetailpage.PromoSeeAllLink.get(0)).click().build().perform();
-		;
+		
 		Thread.sleep(3000);
 		wait.until(ExpectedConditions.visibilityOf(studiodetailpage.SeeALLpromoelem));
 
@@ -452,6 +453,63 @@ public class studiodetailpagesteps extends BaseSetup {
 		        int studiofollowercountint=Integer.parseInt(str1);
 		        assertEquals(afterStudiocountonstudiodetail, studiofollowercountint);
 	        }
+	    }
+	    int gudcountbefore;
+	    int viewcountbefore;
+	    @And("^capture view and gud count of (.+)$")
+	    public void capture_view_and_gud_count_of(String promoname) throws Throwable {
+	       gudcountbefore=shodetailpage.GudCount(promoname, shodetailpage.PromoNamesofPromoCards);
+	       viewcountbefore=shodetailpage.ViewCount(promoname, shodetailpage.PromoNamesofPromoCards);
+	        
+	    }
+
+	    @And("^verify gud and view count of (.+) again for (.+)$")
+	    public void verify_gud_and_view_count_of_again_for(String promoname, String useraction) throws Throwable {
+	    	int gudcountafter=shodetailpage.GudCount(promoname, shodetailpage.PromoNamesofPromoCards);
+	        int viewcountafter=shodetailpage.ViewCount(promoname, shodetailpage.PromoNamesofPromoCards);
+	    	if(useraction.equalsIgnoreCase("Like"))
+	    	{
+	        assertEquals(gudcountbefore+1,gudcountafter);
+	        assertEquals(viewcountbefore+1, viewcountafter);
+	    	}
+	    	else if(useraction.equalsIgnoreCase("Unlinke"))
+	    	{
+	    		assertEquals(gudcountbefore-1,gudcountafter);
+		        assertEquals(viewcountbefore+1, viewcountafter);
+	    	}
+	    }
+	    @Then("^Check gud and view count of (.+) in see all page for (.+)$")
+	    public void check_gud_and_view_count_of_in_see_all_page_for(String promoname, String useraction) throws Throwable {
+	    	Actions a = new Actions(driver);
+			a.moveToElement(studiodetailpage.PromoSeeAllLink.get(0)).click().build().perform();
+			Thread.sleep(3000);
+			wait.until(ExpectedConditions.visibilityOf(studiodetailpage.SeeALLpromoelem));
+			int gudcount=shodetailpage.GudCount(promoname, studiodetailpage.verifypromonameonstudiopage);
+			int viewcount=shodetailpage.ViewCount(promoname, studiodetailpage.verifypromonameonstudiopage);
+			if(useraction.equalsIgnoreCase("Like"))
+	    	{
+	        assertEquals(gudcountbefore+1,gudcount);
+	        assertEquals(viewcountbefore+1, viewcount);
+	    	}
+	    	else if(useraction.equalsIgnoreCase("Unlinke"))
+	    	{
+	    		assertEquals(gudcountbefore-1,gudcount);
+		        assertEquals(viewcountbefore+1,viewcount);
+	    	}
+			
+			
+	    }
+	    @Then("^Check right and left arrows on sho card rows$")
+	    public void check_right_and_left_arrows_on_sho_card_rows() throws Throwable {
+	    	Actions a=new Actions(driver);
+	    	a.sendKeys(Keys.END).build().perform();
+	        commonlocatorsandmethods.RightLeftArrows(commonlocatorsandmethods.NextArrow,commonlocatorsandmethods.PreviousArrow,3);
+	    }
+	    @Then("^verify banner static image is displaying$")
+	    public void verify_banner_static_image_is_displaying() throws Throwable {
+	       String stsicbannerimageURL= studiodetailpage.StaticBannerImage.getAttribute("src");
+	       assertEquals("https://gudsho-static.akamaized-staging.net/Images/static/studio-placeholder.png",stsicbannerimageURL);
+	        
 	    }
 	    
 	    

@@ -3,6 +3,8 @@ package steps.frontend;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import Pageobjects.frontend.ShareFeature;
 import Pageobjects.frontend.ToastandErrormessages;
+import Pageobjects.frontend.accountandsettingspage;
 import Pageobjects.frontend.commonlocatorsandmethods;
 import Pageobjects.frontend.homepage;
 import Pageobjects.frontend.paymentpage;
@@ -18,6 +21,7 @@ import Pageobjects.frontend.studiodetailpage;
 import Pageobjects.frontend.videoplayer;
 import Resources.BaseSetup;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -30,10 +34,12 @@ public class studiodetailpagesteps  extends BaseSetup{
 	commonlocatorsandmethods cm=new commonlocatorsandmethods();
 	ShareFeature share=new ShareFeature();
 	studiodetailpage studio=new studiodetailpage();
+	commonSteps commonsteps=new commonSteps();
 	public static Logger log=Logger.getLogger(studiodetailpagesteps.class.getName());
 	videoplayer video=new videoplayer();
 	WebDriverWait wait=new WebDriverWait(driver,30);
-	
+    JavascriptExecutor js = (JavascriptExecutor)driver;		
+    accountandsettingspage accountsts=new accountandsettingspage();
 	
 	 @Then("^Share studio with all share icons$")
 	    public void share_studio_with_all_share_icons() throws Throwable {
@@ -389,9 +395,167 @@ public class studiodetailpagesteps  extends BaseSetup{
 			 }
 	    }
 	    
+	    @Then("^click followers link in studio page and verify it displays popup of followers list$")
+	    public void click_followers_link_in_studio_page_and_verify_it_displays_popup_of_followers_list() throws Throwable {
 
+	    	Actions a=new Actions(driver);
+	    	studiodetailpage.profile.click();
+	    	studiodetailpage.profilename.click();
+	    	String uname=studiodetailpage.profilename.getText();
+	    	System.out.println(uname);
+
+	    	Thread.sleep(3000);
+                    
+	    	    	for(int i=0;i<studiodetailpage.followerslink.size();i++) {
+	   				 if(studiodetailpage.followerslink.get(i).getText().equalsIgnoreCase(uname)) {
+	   					 assertEquals(uname, studiodetailpage.followerslink.get(i).getText());
+
+						 break;
+
+	    	    	}else {
+		    	    	studiodetailpage.FollowButton.click();
+		    	    	studiodetailpage.followyes.click();
+		    	    	
+			    		if(studiodetailpage.followerslink.get(i).getText() != null)
+			    		{
+			    			studiodetailpage.followerslink.get(i).click();
+			    			
+			    			String flist= studiodetailpage.followerslink.get(i).getText();
+			    			
+			    			System.out.println(flist);
+
+			    			break;
+			    		}
+	  					 assertEquals(uname, studiodetailpage.followerslink.get(i).getText());
+
+
+	    	    	}
+	    	    	}
+	    	    	Thread.sleep(3000);
+
+	    	    	String actual=studiodetailpage.verifyfollowerstext.getText();
+	    	    	System.out.println(actual);
+	    	    	String Expected="Followers";
+	    	    	System.out.println(actual);
+
+	    	    	assertEquals(Expected, actual);
+	    	    	commonlocatorsandmethods.scrolldownm();
+
+	    	a.moveToElement(studiodetailpage.studiofollowersclose).click().build().perform();
+	    	assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
+
+	    	String actualstudio=studiodetailpage.StudioNameInStudioPage.getText();
+
+	    	System.out.println(actualstudio);
+	    }	  
+
+	    @Then("^click followers link and verify it should display  followers list pop up$")
+	    public void click_followers_link_and_verify_it_should_display_followers_list_pop_up() throws Throwable {
+	    	Actions a=new Actions(driver);
+	    	for(int i=0;i<studiodetailpage.followerslink.size();i++) {
+
+    		if(studiodetailpage.followerslink.get(i).getText() != null)
+    		{
+    			studiodetailpage.followerslink.get(i).click();
+
+    			
+    			String flist= studiodetailpage.followerslink.get(i).getText();
+    			
+    			System.out.println(flist);
+
+    			break;
+    		}
+    		Thread.sleep(4000);
+	    	commonlocatorsandmethods.scrolldownm();
+
+	    	a.moveToElement(studiodetailpage.studiofollowersclose).click().build().perform();
+
+	    	String actualstudio1=studiodetailpage.StudioNameInStudioPage.getText();
+	    	System.out.println(actualstudio1);
+
+	    	assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
+
+	    }
+	    }
 	    
 
+	    @Then("^click report studio  button in studio page and verify it displays popup of report studio list$")
+	    public void click_report_studio_button_in_studio_page_and_verify_it_displays_popup_of_report_studio_list() throws Throwable {
+	    	Actions a=new Actions(driver);
+	       studiodetailpage.reportstudio.click();
+	       Thread.sleep(3000);
+	    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+
+	    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
+			 {
+				 if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
+				 {
+					 studiodetailpage.reportstudiopopup.get(i).click();
+					String reportpopup= studiodetailpage.reportstudiopopup.get(i).getText();
+                    System.out.println(reportpopup);
+					 break;
+				 }
+			 }
+	    	
+	    	Thread.sleep(3000);
+	    	a.moveToElement(studiodetailpage.reportbutton).click().build().perform();
+	    	Thread.sleep(4000);
+	    	a.moveToElement(studiodetailpage.reportclose).click().build().perform();
+
+
+	    	
+	    }
+
+	    
+	    @Then("^click report studio  cancel button in studio page and verify it should redirected to studio detail page$")
+	    public void click_report_studio_cancel_button_in_studio_page_and_verify_it_should_redirected_to_studio_detail_page() throws Throwable {
+	    	Actions a=new Actions(driver);
+		       studiodetailpage.reportstudio.click();
+		       Thread.sleep(3000);
+		    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+
+		    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
+				 {
+					 if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
+					 {
+						 studiodetailpage.reportstudiopopup.get(i).click();
+						String reportpopup= studiodetailpage.reportstudiopopup.get(i).getText();
+	                    System.out.println(reportpopup);
+						 break;
+					 }
+				 }
+		    	
+		    	Thread.sleep(3000);
+		    	a.moveToElement(studiodetailpage.reportcancel).click().build().perform();
+		    	String acutalstdname=studiodetailpage.StudioNameInStudioPage.getText();
+		    	System.out.println(acutalstdname);
+
+	    }
+
+	    @Then("^click report studio  close button in studio page and verify it should redirected to studio detail page$")
+	    public void click_report_studio_close_button_in_studio_page_and_verify_it_should_redirected_to_studio_detail_page() throws Throwable {
+	    	Actions a=new Actions(driver);
+		       studiodetailpage.reportstudio.click();
+		       Thread.sleep(3000);
+		    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+
+		    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
+				 {
+					 if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
+					 {
+						 studiodetailpage.reportstudiopopup.get(i).click();
+						String reportpopup= studiodetailpage.reportstudiopopup.get(i).getText();
+	                    System.out.println(reportpopup);
+						 break;
+					 }
+				 }
+		    	
+		    	Thread.sleep(3000);
+		    	studiodetailpage.studiofollowersclose.click();
+		    	String acutalstdname=studiodetailpage.StudioNameInStudioPage.getText();
+		    	System.out.println(acutalstdname);
+
+	    }
 
 	    
 

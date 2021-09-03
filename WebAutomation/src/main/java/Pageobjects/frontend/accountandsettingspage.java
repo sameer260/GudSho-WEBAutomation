@@ -28,11 +28,13 @@ public class accountandsettingspage extends BaseSetup
 	@FindBy(xpath="//div[@class='notify-wrapper']")
 	public static WebElement NotificationElements;
 	
-//	@FindBy(xpath="//div[@role='tab']/div[1]")
-//	public static List<WebElement> AccountandSettingsTabs;
+	
+	
+	@FindBy(xpath="//div[@role='tab']/div[1]")
+	public static List<WebElement> AccountandSettingsTabs;
 	
 	@FindBy(xpath="//header/div[1]/div[2]/div[3]")
-	public static List<WebElement> AccountandSettingsTabs;
+	public static WebElement AccountandSettingsTabs1;
 
 	
 //	@FindBy(xpath="//div[@role='tab']")
@@ -72,7 +74,7 @@ public class accountandsettingspage extends BaseSetup
 //    @FindBy(xpath="//div[text()='My Profile']")
 //   public static WebElement MyProfileTab;
     
-    @FindBy(xpath="//a[routerlink='/profile']")
+    @FindBy(partialLinkText="Account & Settin")
     public static WebElement MyProfileTab;
     
     @FindBy(xpath="//div[contains(text(),'My Watch History')]")
@@ -95,19 +97,48 @@ public class accountandsettingspage extends BaseSetup
     public static WebElement PhoneNumber;
     
   
+
+
+    
+
+
+	//ramya code
+	
+    @FindBy(xpath="//div[@id='mat-tab-label-0-1']")
+    public static WebElement insidefriendstab;
+
     @FindBy(xpath="//input[@id='email']")
     public static WebElement inviteemail;
     
     @FindBy(xpath="//span[contains(text(),'Invite')]")
     public static WebElement invitebutton;
+    
+    @FindBy(xpath="//div[@id='mat-tab-label-0-2']")
+    public static WebElement notifications;
 
-	public static String invitenewemail(String emailid) {
-	accountandsettingspage.inviteemail.sendKeys(emailid);
-		
-		
-		return emailid;
-		
-	}
+    @FindBy(xpath="//div[@class='mat-slide-toggle-bar mat-slide-toggle-bar-no-side-margin']/input")
+    public static List<WebElement> inapptoggle;
+    
+    @FindBy(xpath="//mat-slide-toggle[@id='mat-slide-toggle-4']")
+    public static WebElement pushtoggle;
+    
 
-	
+    @FindBy(xpath="//input[@id='profile-firstname']")
+    public static WebElement profilename;
+    
+    @FindBy(xpath="//input[@id='dob']")
+    public static WebElement dob;
+      
+
+    @FindBy(xpath="//small[contains(text(),'Please enter valid email address')]")
+    public static WebElement emailvalidation;
+
+    @FindBy(xpath="//div[@class='mat-tab-label-content']")
+    public static WebElement privacypolicy;
+    
+    @FindBy(xpath="//div{@class='privacy-section']/h3")
+    public static WebElement verifyprivacypolicy;
+
+
+  
 }

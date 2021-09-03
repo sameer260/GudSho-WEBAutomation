@@ -97,7 +97,7 @@ public class SignUp extends BaseSetup
 	{
 		WebDriverWait wait=new WebDriverWait(driver,20);
 		LoginWithGoogleButton.click();
-	    Thread.sleep(5000);
+	    Thread.sleep(7000);
 		String MainWindow = driver.getWindowHandle();
 		Set<String> s1 = driver.getWindowHandles();
 		Iterator<String> i1 = s1.iterator();

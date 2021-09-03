@@ -73,7 +73,7 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//a[@class='fill-profile']")
 	public static WebElement Headderprofileicon;
 
-	@FindBy(xpath = "//a[text()='Account & Settings']")
+	@FindBy(xpath = "//*[text()='Account & Settings']")
 	public static WebElement accountsettings;
 
 	@FindBy(xpath = "//a[text()='Friends']")

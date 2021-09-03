@@ -73,13 +73,13 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//a[@class='fill-profile']")
 	public static WebElement Headderprofileicon;
 
-	@FindBy(xpath = "//a[text()='Account & Settings']")
+	@FindBy(xpath = "//div[@class='accout-lists menus']/ul/li[1]")
 	public static WebElement accountsettings;
 
-	@FindBy(xpath = "//a[text()='Friends']")
+	@FindBy(xpath = "//div[@class='accout-lists menus']/ul/li[2]")
 	public static WebElement friends;
 
-	@FindBy(xpath = "//a[text()='Support']")
+	@FindBy(xpath = "//div[@class='accout-lists menus']/ul/li[3]")
 	public static WebElement support;
 
 	@FindBy(xpath = "//div[@class='settings-box ng-star-inserted']")
@@ -106,7 +106,7 @@ public class homepage extends BaseSetup {
 	@FindBy(xpath = "//div[@class='home-slider studios-swiper ng-star-inserted']/app-gud-slider/div/div[2]/swiper/div/app-gud-card/div")
 	public static List<WebElement> StudioCards;
 
-	@FindBy(xpath = "//div[@class='home-slider studios-swiper ng-star-inserted']/app-gud-slider/div/div[2]/swiper/div/app-gud-card/div/div/div/div[2]/div/a/h6")
+	@FindBy(xpath = "//div[@class='home-slider studios-swiper ng-star-inserted']/app-gud-slider/div/div[2]/swiper/div/app-gud-card/div/div/div/div[2]/div/span/h6")
 	public static List<WebElement> RowStudioNameonCard;
 
 	@FindBy(xpath = "//div[@class='swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-multirow']/app-gud-card/div/div/div/a/app-gud-image/div/div/img")

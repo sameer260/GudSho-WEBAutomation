@@ -23,14 +23,15 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 
 
 	@RunWith(Cucumber.class)
-	@CucumberOptions(features= "src/test/resources/Features/AuthUser",
+	@CucumberOptions(features= "src/test/resources/Features/AuthUser/accountandsettings.feature",
 	glue={"steps"},
-	tags="@aa"
+	tags="@test")
+	
 	
 	
 	 
 
-	)
+	
 
 
 		
@@ -38,10 +39,9 @@ import net.masterthought.cucumber.sorting.SortingMethod;
 	{	
 		
 		
-		
-	}
 	
 	
+}	
 	
 	
 	

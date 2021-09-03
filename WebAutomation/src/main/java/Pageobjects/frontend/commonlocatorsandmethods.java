@@ -202,6 +202,7 @@ public class commonlocatorsandmethods extends BaseSetup {
 	public static String WatchlistRowonHomePage(String shoname) throws InterruptedException {
 		int rowsize = driver.findElements(WatchListRowHomepage).size();
 		String Shonameonshocard = null;
+		try {
 		WebElement watchlist = driver.findElement(WatchListRowHomepage);
 		for (int i = 0; i < watchlist
 				.findElements(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider[" + rowsize
@@ -225,6 +226,12 @@ public class commonlocatorsandmethods extends BaseSetup {
 			}
 
 		}
+		
+		   }catch(Exception e)
+		     {
+			   Shonameonshocard=null;
+			   log.info("No WatchList Row");
+		     }
 		return Shonameonshocard;
 
 	}
@@ -316,6 +323,12 @@ public class commonlocatorsandmethods extends BaseSetup {
 	@FindBy(xpath="//span[@class='gud-value']")
 	public static WebElement PriceOnShoBannerWatchButton;
 	
+	public static String ShoPrice()
+	{
+		return commonlocatorsandmethods.PriceOnShoBannerWatchButton.getText();
+		
+	}
+	
 	public static String PriceLabel()
 	{
 	
@@ -380,7 +393,15 @@ public class commonlocatorsandmethods extends BaseSetup {
 			if (watchlist.findElement(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]//following::a[1]//child::img")).getAttribute("alt").equalsIgnoreCase(shoname)) {
 				a.moveToElement(watchlist.findElement(ShoCardWatchListButton)).click().build().perform();
 				wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+				try {
 				Shonameonshocard = watchlist.findElement(By.xpath("//app-gud-shocial[@class='ng-star-inserted']/div/div/app-gud-slider["+rowsize+"]/div/div[2]//following::a[1]//child::img")).getAttribute("alt");
+				}
+				catch(Exception e)
+				{
+					Shonameonshocard=null;
+					log.info("No WatchList Row");
+					
+				}
 				break;
 			}
 

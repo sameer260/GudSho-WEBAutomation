@@ -98,7 +98,7 @@ public class footersteps extends BaseSetup {
 
 	@Given("^click help&support link and verify it should redirected to correct page$")
 	public void click_helpsupport_link_and_verify_it_should_redirected_to_correct_page() throws Throwable {
-		String ChildUrl="https://www.gudsho.com/support";
+		String ChildUrl="https://qa.gudsho.com/support";
 		String Childtitle="Support | GudSho";	
 		Footer.WindowhandleforLinks(Footer.helpsupport, ChildUrl, Childtitle);
 	}

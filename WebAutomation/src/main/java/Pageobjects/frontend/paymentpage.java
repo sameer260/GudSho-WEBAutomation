@@ -1,17 +1,24 @@
 package Pageobjects.frontend;
 
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import Resources.BaseSetup;
+import steps.frontend.shodetailpagesteps;
 
 public class paymentpage extends BaseSetup {
-	
+	public static Logger log = Logger.getLogger(paymentpage.class.getName());
 	public paymentpage()
 	{
 		 PageFactory.initElements(driver,this);
@@ -100,7 +107,7 @@ public class paymentpage extends BaseSetup {
 	@FindBy(id="vpa-upi")
 	public static WebElement UPIIdField;
 	
-	@FindBy(id="bank-item-SBIN")
+	@FindBy(xpath="//div[@id='netb-banks']/div")
 	public static WebElement SBIBankNetBanking;
 	
 	@FindBy(xpath="//iframe[@class='razorpay-checkout-frame']")
@@ -108,6 +115,21 @@ public class paymentpage extends BaseSetup {
 	
 	@FindBy(id="otp-sec")
 	public static WebElement SkipOTP;
+	
+	@FindBy(id="header")
+	public static WebElement RazorPayHeader;
+	
+	@FindBy(id="modal-close")
+	public static WebElement RozarPaypopupclose;
+	
+	@FindBy(xpath="//button[@type='button']")
+	public static WebElement TryAgainButton;
+	
+	@FindBy(xpath="//a[@class='back-link']")
+	public static WebElement BackToShoPageLink;
+	
+	@FindBy(xpath="//div[@class='title-section']")
+	public static WebElement ImageSection;
 	
 	
 	public static void PaymentviaCard()
@@ -128,6 +150,10 @@ public class paymentpage extends BaseSetup {
 	
 	public static void SelectPaymentMode(String PaymentMode) throws InterruptedException
 	{
+		WebDriverWait wait=new WebDriverWait(driver,20);
+		wait.until(ExpectedConditions.visibilityOf(RazorPayHeader));
+		
+		
 			
 		if(PaymentMode.equalsIgnoreCase("Card"))
 		{
@@ -152,12 +178,13 @@ public class paymentpage extends BaseSetup {
 			Thread.sleep(5000);
 			
 		}
-		else if(PaymentMode.equalsIgnoreCase("NetBanking"))
+		else if(PaymentMode.equalsIgnoreCase("Net Banking"))
 		{
 			RazorPayPaymentModes.get(2).click();
 			Thread.sleep(1000);
 			SBIBankNetBanking.click();
 			PayButton.click();
+			Thread.sleep(3000);
 		}
 	}
 	
@@ -180,12 +207,53 @@ public class paymentpage extends BaseSetup {
 			wait.until(ExpectedConditions.visibilityOf(RazorPaySuccessButton));
 			RazorPaySuccessButton.click();
 		}
-		else if(paymentscenario.equalsIgnoreCase("Failure"))
+		else if(paymentscenario.equalsIgnoreCase("Failed"))
 		{
 			wait.until(ExpectedConditions.visibilityOf(RazorPayFailureButton));
 			RazorPayFailureButton.click();
 		}
 	  }
+	}
+	
+	@FindBy(xpath="//mat-dialog-container[@role='dialog']")
+	public static WebElement PaymentFailurePopup;
+	
+	@FindBy(xpath="//div[@class='transaction-id flex justify-content-center flex-column align-items-center']/h4")
+	public static WebElement TransactionFailedTextonPopup;
+	
+	@FindBy(xpath="//div[@class='transaction-id flex justify-content-center flex-column align-items-center']/p")
+	public static WebElement TransactionId;
+	
+	@FindBy(xpath="//div[@class='payment-footer']/div/button")
+	public static WebElement CancelButtonOnFailurePopup;
+	
+	
+	
+	public static String paymentStatus(String paymentscenario,String shoname)
+	{
+		WebDriverWait wait=new WebDriverWait(driver,20);
+		Actions a=new Actions(driver);
+		String transactionid=null;
+		
+		if(paymentscenario.equalsIgnoreCase("Success"))
+		{
+			a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
+	        wait.until(ExpectedConditions.visibilityOf(videoplayer.ShoNameOnPlayer));
+	        String ShonameonPlayer=videoplayer.ShoNameOnPlayer.getText();
+	        assertTrue(ShonameonPlayer.equalsIgnoreCase(shoname));
+	        videoplayer.CloseButtonforSho.click();
+	        wait.until(ExpectedConditions.visibilityOf(videoplayer.RateCloseButton));
+	        videoplayer.RateCloseButton.click();
+		}
+		else if(paymentscenario.equalsIgnoreCase("Failed"))
+		{
+			wait.until(ExpectedConditions.visibilityOf(PaymentFailurePopup));
+			assertEquals(TransactionFailedTextonPopup.getText(),"Transaction Failed");
+			transactionid=TransactionId.getText();
+			log.info(transactionid);
+			CancelButtonOnFailurePopup.click();
+		}
+		return transactionid;
 	}
 	
 	

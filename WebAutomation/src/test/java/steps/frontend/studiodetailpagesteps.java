@@ -462,7 +462,10 @@ public class studiodetailpagesteps extends BaseSetup {
 	       viewcountbefore=shodetailpage.ViewCount(promoname, shodetailpage.PromoNamesofPromoCards);
 	        
 	    }
-
+	    @Then("^Wait till studio page load$")
+	    public void wait_till_studio_page_load() throws Throwable {
+	       wait.until(ExpectedConditions.visibilityOf(studiodetailpage.StudioNameInStudioPage));
+	    }
 	    @And("^verify gud and view count of (.+) again for (.+)$")
 	    public void verify_gud_and_view_count_of_again_for(String promoname, String useraction) throws Throwable {
 	    	int gudcountafter=shodetailpage.GudCount(promoname, shodetailpage.PromoNamesofPromoCards);
@@ -511,6 +514,68 @@ public class studiodetailpagesteps extends BaseSetup {
 	       assertEquals("https://gudsho-static.akamaized-staging.net/Images/static/studio-placeholder.png",stsicbannerimageURL);
 	        
 	    }
+	    
+	    
+	    
+	    
+	//Ramya Count
+	    
+	    @Then("^click followers link and verify it should display  followers list pop up$")
+	    public void click_followers_link_and_verify_it_should_display_followers_list_pop_up() throws Throwable {
+	    	    Actions a=new Actions(driver);
+	    	    studiodetailpage.followers();
+	    		a.moveToElement(studiodetailpage.studiofollowersclose).click().build().perform();
+	    		assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
+	    	}
+    
+	    
+	    
+	    @Then("^click report studio  button in studio page and verify it displays popup of report studio list and check success  message$")
+        public void click_report_studio_button_in_studio_page_and_verify_it_displays_popup_of_report_studio_list_and_check_success_message() throws Throwable {
+	    	Actions a=new Actions(driver);
+	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.reportstudio)).click();
+	    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+	    	studiodetailpage.reportstudio();
+	    	a.moveToElement(studiodetailpage.reportbutton).click().build().perform();
+	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.ReportThankYouText));
+	    	String thankyoutext=studiodetailpage.ReportThankYouText.getText();
+	    	assertEquals(thankyoutext, "Thank you, for letting us know");
+	    	a.moveToElement(studiodetailpage.reportclose).click().build().perform();
+	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.StudioNameInStudioPage));
+	    	assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
+	    }
+
+	    
+
+	    @Then("^click report studio  button in studio page and verify it displays popup of report studio list and check cancel scenario also$")
+	    public void click_report_studio_button_in_studio_page_and_verify_it_displays_popup_of_report_studio_list_and_check_cancel_scenario_also() throws Throwable {
+	    	Actions a=new Actions(driver);
+	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.reportstudio)).click();
+	    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+	    	studiodetailpage.reportstudio();
+	    	a.moveToElement(studiodetailpage.reportbutton).click().build().perform();
+	    	wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+	    	String toast=ToastandErrormessages.ToastMessageText.getText();
+	    	assertTrue(toast.equalsIgnoreCase("You already reported this studio"));
+	    	ToastandErrormessages.ToastMessageClose.click();
+	    	a.moveToElement(studiodetailpage.reportcancel).click().build().perform();
+	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.StudioNameInStudioPage));
+	    	assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
+	    }
+
+	    @Then("^click report studio  close button in studio page and verify it should redirected to studio detail page$")
+	    public void click_report_studio_close_button_in_studio_page_and_verify_it_should_redirected_to_studio_detail_page() throws Throwable {
+	    	Actions a=new Actions(driver);
+	    	studiodetailpage.reportstudio.click();
+	    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+	    	studiodetailpage.reportstudio();
+	    	studiodetailpage.studiofollowersclose.click();
+	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.StudioNameInStudioPage));
+	    	assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
+
+	    }
+
+	    
 	    
 	    
 

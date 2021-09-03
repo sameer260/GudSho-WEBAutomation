@@ -100,7 +100,7 @@ public class videoplayer extends BaseSetup{
 	@FindBy(xpath="//div[@class='center_control']/button[2]")
 	public static WebElement playerbackwordbutton;
 	
-	@FindBy(xpath="//div[@class='close add-coins-temp']")
+	@FindBy(xpath="//div[starts-with(@class,'close add-coins-temp')]")
 	public static WebElement RateCloseButton;
 	
 	

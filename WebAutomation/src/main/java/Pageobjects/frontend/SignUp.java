@@ -105,7 +105,6 @@ public class SignUp extends BaseSetup
 			String ChildWindow = i1.next();
 			if(!MainWindow.equalsIgnoreCase(ChildWindow)) {
 				driver.switchTo().window(ChildWindow);
-				
 			    wait.until(ExpectedConditions.visibilityOf(GmailUserName));
 				GmailUserName.sendKeys(UserName);
 				GmailNextButton.click();

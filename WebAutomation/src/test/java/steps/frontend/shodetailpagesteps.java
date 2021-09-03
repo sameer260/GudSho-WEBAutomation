@@ -43,9 +43,10 @@ public class shodetailpagesteps extends BaseSetup {
 	public static Logger log = Logger.getLogger(shodetailpagesteps.class.getName());
 	videoplayer video = new videoplayer();
 	WebDriverWait wait = new WebDriverWait(driver, 30);
-
+	static String shopriceonshodetail;
 	@When("^Buy the sho using (.+) with (.+)$")
 	public void buy_the_sho_using_with(String paymentmode, String paymentscenario) throws Throwable {
+		shopriceonshodetail=commonlocatorsandmethods.ShoPrice();
 		shodetailpage.BuyButton.click();
 		wait.until(ExpectedConditions.visibilityOf(paymentpage.PopupContinueButton));
 		paymentpage.PopupContinueButton.click();
@@ -91,7 +92,7 @@ public class shodetailpagesteps extends BaseSetup {
         wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
         log.info(ToastandErrormessages.ToastMessageText.getText());
         assertEquals(ToastandErrormessages.ToastMessageText.getText(),"Payment Processed");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
         wait.until(ExpectedConditions.visibilityOf(videoplayer.ShoNameOnPlayer));
         String ShonameonPlayer=videoplayer.ShoNameOnPlayer.getText();
@@ -456,7 +457,7 @@ public class shodetailpagesteps extends BaseSetup {
 	    @When("^Play (.+) and (.+) promo$")
 	    public void play_and_promo(String promoname, String useraction) throws Throwable {
 	    	shodetailpage.PromoCardClick(promoname);
-	    	Thread.sleep(8000);
+	    	Thread.sleep(10000);
 	        Actions a=new Actions(driver);
 	        a.moveToElement(videoplayer.HoverOnPlayer).build().perform();
 	        Thread.sleep(700);

@@ -142,8 +142,8 @@ Feature: GudSho Home Page
     And Check from gud and view Count from my gud promos for <PromoName>
 
     Examples: 
-      | PromoName                                        | UserAction |
-      | Salaam Rocky Bhai Song With Lyrics - Kgf Chapter | Like       |
+      | PromoName           | UserAction |
+      | KGF Chapter2 TEASER | Like       |
 
   Scenario Outline: Gud And View Count Decrement
     Given From home get the gud count and view count of the promo <PromoName>
@@ -151,8 +151,8 @@ Feature: GudSho Home Page
     Then After unlike verify view and gud count of <PromoName>
 
     Examples: 
-      | PromoName                                        | UserAction |
-      | Salaam Rocky Bhai Song With Lyrics - Kgf Chapter | UnLike     |
+      | PromoName           | UserAction |
+      | KGF Chapter2 TEASER | UnLike     |
 
   Scenario Outline: This test is to verify the dislike promo and availability check on my gud promos
     Given From home page hover on <PromoName> promo card and close the player

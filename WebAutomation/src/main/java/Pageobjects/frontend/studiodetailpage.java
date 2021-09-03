@@ -144,5 +144,72 @@ public class studiodetailpage extends BaseSetup {
 		return promonameonstudiopage;
 	}
 	
+	@FindBy(xpath="//span[contains(text(),'others')]")
+	public static List<WebElement> followerslink;
+	
+	@FindBy(xpath="//h5[contains(text(),'Followers')]")
+	public static WebElement verifyfollowerstext;
 
+	@FindBy(xpath="//span[@class='studio-followers-close']")
+	public static WebElement studiofollowersclose;
+	
+
+	@FindBy(xpath="//body/app-root[1]/div[1]/app-gud-studios[1]/div[2]/div[1]/div[2]/ng-scrollbar[1]/div[1]/div[1]/div[1]/div[1]/ul[1]/li[7]/div[2]")
+	public static WebElement followername;
+
+	@FindBy(xpath="//body/app-root[1]/div[1]/app-gud-studios[1]/div[1]/div[1]/div[3]/div[1]/div[2]/ul[1]/li[1]")
+	public static WebElement reportstudio;
+	
+	@FindBy(xpath="//*[@role='menuitem']")
+	public static WebElement reportstudiobutton;
+
+	
+	@FindBy(xpath="//body/app-root[1]/div[1]/app-gud-studios[1]/div[2]/div[1]/div[2]/mat-radio-group[1]")
+	public static List<WebElement> reportstudiopopup;
+
+	
+	@FindBy(xpath="//body/app-root[1]/div[1]/app-gud-studios[1]/div[2]/div[1]/div[2]/div[1]/button[1]")
+	public static WebElement reportbutton;
+	
+	@FindBy(xpath="//span[contains(text(),'Close')]")
+	public static WebElement reportclose;
+
+	@FindBy(xpath="//span[contains(text(),'Cancel')]")
+	public static WebElement reportcancel;
+
+	@FindBy(xpath="//span[contains(text(),'Yes')]")
+	public static WebElement followyes;
+	
+	@FindBy(xpath="//header/div[1]/div[2]/div[3]")
+	public static WebElement profile;
+	
+	@FindBy(xpath="//app-header-menu/div[1]/div[1]/div[1]/div[1]")
+	public static WebElement profilename;
+	
+	@FindBy(xpath="//div[@class='studio-followers-content']/p")
+	public static WebElement ReportThankYouText;
+	
+	public static void followers() {
+    	for(int i=0;i<studiodetailpage.followerslink.size();i++) {
+    		if(studiodetailpage.followerslink.get(i).getText() != null)
+    		{
+    			studiodetailpage.followerslink.get(i).click();
+    			String flist= studiodetailpage.followerslink.get(i).getText();
+    			System.out.println(flist);
+    			break;
+    		}
+
+ }
+ }
+ public static void reportstudio() {
+    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
+    	{
+    		if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
+    		{
+    			studiodetailpage.reportstudiopopup.get(i).click();
+    			break;
+    		}
+    	}
+
+ }
 }

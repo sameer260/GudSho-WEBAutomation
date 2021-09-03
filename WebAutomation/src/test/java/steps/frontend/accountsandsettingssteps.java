@@ -2,6 +2,9 @@ package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.util.concurrent.TimeUnit;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -108,13 +111,14 @@ public class accountsandsettingssteps extends BaseSetup {
     public void click_privacy_policy_tab_and_verify_it_should_navigate_to_correct_page() throws Throwable {
         	Actions a= new Actions(driver);
 
-       	wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.AccountandSettingsTabs1)).click();
-       	
-       	wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.privacypolicy)).click();
-        String errormes2="GudSho Privacy Policy";
-        String actualemailvalidation2=accountandsettingspage.verifyprivacypolicy.getText();
-        assertEquals(errormes2, actualemailvalidation2);
+         a.moveToElement(accountandsettingspage.AccountandSettingsTabs1).click().build().perform();
 
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.MyProfileTab)).click();
+       	
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.privacypolicy)).click();
+        String errormes2="GudSho Privacy Policy";
+       wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.verifyprivacypolicy));
+       assertTrue(accountandsettingspage.verifyprivacypolicy.isDisplayed());
        	
     }
 

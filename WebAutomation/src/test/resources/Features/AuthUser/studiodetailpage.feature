@@ -202,17 +202,10 @@ Feature: Studio Detail page Scenarios
   Then Click on Signout and check toaster
   And Clear cookies
   
-   @ramya
-   Scenario Outline: Verify followers list
-    Given Search any studio <StudioName> and verify it should redirected to correct page
-    Then click followers link in studio page and verify it displays popup of followers list
-   
-   Examples:
-  |StudioName|
-  |Trail studio|
+  
 
-      
-      Scenario Outline: Verify followers link
+  @ramya
+  Scenario Outline: Verify followers link
     Given Search any studio <StudioName> and verify it should redirected to correct page
     Then click followers link and verify it should display  followers list pop up
    
@@ -221,27 +214,28 @@ Feature: Studio Detail page Scenarios
   |Trail studio|
 
 
+    @ramya
+     Scenario Outline: Verify report studio page
+    Given Search any studio <StudioName> and verify it should redirected to correct page
+    Then click report studio  button in studio page and verify it displays popup of report studio list and check success  message 
+    
+    Examples:
+  |StudioName|
+  |Trail studio|
+
+  @ramya
+  Scenario Outline: Verify report studio 
+    Given Search any studio <StudioName> and verify it should redirected to correct page
+    Then click report studio  button in studio page and verify it displays popup of report studio list and check cancel scenario also
+    
+    Examples:
+  |StudioName|
+  |Trail studio|
+    
      
-     Scenario Outline: Verify report studio 
-    Given Search any studio <StudioName> and verify it should redirected to correct page
-    Then click report studio  button in studio page and verify it displays popup of report studio list
     
-    Examples:
-  |StudioName|
-  |Trail studio|
-    
-       
-       Scenario Outline: Verify report studio cancel button
-    Given Search any studio <StudioName> and verify it should redirected to correct page
-    Then click report studio  cancel button in studio page and verify it should redirected to studio detail page
-    
-    Examples:
-  |StudioName|
-  |Trail studio|
-  
-  
-       
-    Scenario Outline: Verify report studio close button
+   @ramya
+   Scenario Outline: Verify report studio close button
     Given Search any studio <StudioName> and verify it should redirected to correct page
     Then click report studio  close button in studio page and verify it should redirected to studio detail page
     

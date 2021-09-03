@@ -395,165 +395,62 @@ public class studiodetailpagesteps  extends BaseSetup{
 			 }
 	    }
 	    
-	    @Then("^click followers link in studio page and verify it displays popup of followers list$")
-	    public void click_followers_link_in_studio_page_and_verify_it_displays_popup_of_followers_list() throws Throwable {
-
-	    	Actions a=new Actions(driver);
-	    	studiodetailpage.profile.click();
-	    	studiodetailpage.profilename.click();
-	    	String uname=studiodetailpage.profilename.getText();
-	    	System.out.println(uname);
-
-	    	Thread.sleep(3000);
-                    
-	    	    	for(int i=0;i<studiodetailpage.followerslink.size();i++) {
-	   				 if(studiodetailpage.followerslink.get(i).getText().equalsIgnoreCase(uname)) {
-	   					 assertEquals(uname, studiodetailpage.followerslink.get(i).getText());
-
-						 break;
-
-	    	    	}else {
-		    	    	studiodetailpage.FollowButton.click();
-		    	    	studiodetailpage.followyes.click();
-		    	    	
-			    		if(studiodetailpage.followerslink.get(i).getText() != null)
-			    		{
-			    			studiodetailpage.followerslink.get(i).click();
-			    			
-			    			String flist= studiodetailpage.followerslink.get(i).getText();
-			    			
-			    			System.out.println(flist);
-
-			    			break;
-			    		}
-	  					 assertEquals(uname, studiodetailpage.followerslink.get(i).getText());
-
-
-	    	    	}
-	    	    	}
-	    	    	Thread.sleep(3000);
-
-	    	    	String actual=studiodetailpage.verifyfollowerstext.getText();
-	    	    	System.out.println(actual);
-	    	    	String Expected="Followers";
-	    	    	System.out.println(actual);
-
-	    	    	assertEquals(Expected, actual);
-	    	    	commonlocatorsandmethods.scrolldownm();
-
-	    	a.moveToElement(studiodetailpage.studiofollowersclose).click().build().perform();
-	    	assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
-
-	    	String actualstudio=studiodetailpage.StudioNameInStudioPage.getText();
-
-	    	System.out.println(actualstudio);
-	    }	  
 
 	    @Then("^click followers link and verify it should display  followers list pop up$")
 	    public void click_followers_link_and_verify_it_should_display_followers_list_pop_up() throws Throwable {
 	    	Actions a=new Actions(driver);
-	    	for(int i=0;i<studiodetailpage.followerslink.size();i++) {
+	    	studiodetailpage.followers();
+	    		commonlocatorsandmethods.scrolldownm();
+	    		a.moveToElement(studiodetailpage.studiofollowersclose).click().build().perform();
+	    		String actualstudio1=studiodetailpage.StudioNameInStudioPage.getText();
+	    		System.out.println(actualstudio1);
+	    		assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
+	    	}
+    
+	    
+	    
+//	    @Then("^click report studio  button in studio page and verify it displays popup of report studio list and check success  message $")
+//	    public void click_report_studio_button_in_studio_page_and_verify_it_displays_popup_of_report_studio_list_and_check_success_message() throws Throwable {
+//	    	Actions a=new Actions(driver);
+//	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.reportstudio)).click();
+//	    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+//	    	studiodetailpage.reportstudio();
+//	    	a.moveToElement(studiodetailpage.reportbutton).click().build().perform();
+//	    	wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+//	    	String toast=ToastandErrormessages.ToastMessageText.getText();
+//	    	assertTrue(toast.equalsIgnoreCase("You successfully reported this studio"));
+//	    	ToastandErrormessages.ToastMessageClose.click();
+//	    	a.moveToElement(studiodetailpage.reportclose).click().build().perform();
+//
+//	    }
 
-    		if(studiodetailpage.followerslink.get(i).getText() != null)
-    		{
-    			studiodetailpage.followerslink.get(i).click();
-
-    			
-    			String flist= studiodetailpage.followerslink.get(i).getText();
-    			
-    			System.out.println(flist);
-
-    			break;
-    		}
-    		Thread.sleep(4000);
-	    	commonlocatorsandmethods.scrolldownm();
-
-	    	a.moveToElement(studiodetailpage.studiofollowersclose).click().build().perform();
-
-	    	String actualstudio1=studiodetailpage.StudioNameInStudioPage.getText();
-	    	System.out.println(actualstudio1);
-
-	    	assertTrue(studiodetailpage.StudioNameInStudioPage.isDisplayed());
-
-	    }
-	    }
 	    
 
-	    @Then("^click report studio  button in studio page and verify it displays popup of report studio list$")
-	    public void click_report_studio_button_in_studio_page_and_verify_it_displays_popup_of_report_studio_list() throws Throwable {
+	    @Then("^click report studio  button in studio page and verify it displays popup of report studio list and check cancel scenario also$")
+	    public void click_report_studio_button_in_studio_page_and_verify_it_displays_popup_of_report_studio_list_and_check_cancel_scenario_also() throws Throwable {
 	    	Actions a=new Actions(driver);
-	       studiodetailpage.reportstudio.click();
-	       Thread.sleep(3000);
+	    	wait.until(ExpectedConditions.visibilityOf(studiodetailpage.reportstudio)).click();
 	    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
-
-	    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
-			 {
-				 if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
-				 {
-					 studiodetailpage.reportstudiopopup.get(i).click();
-					String reportpopup= studiodetailpage.reportstudiopopup.get(i).getText();
-                    System.out.println(reportpopup);
-					 break;
-				 }
-			 }
-	    	
-	    	Thread.sleep(3000);
+	    	studiodetailpage.reportstudio();
 	    	a.moveToElement(studiodetailpage.reportbutton).click().build().perform();
-	    	Thread.sleep(4000);
-	    	a.moveToElement(studiodetailpage.reportclose).click().build().perform();
-
-
-	    	
-	    }
-
-	    
-	    @Then("^click report studio  cancel button in studio page and verify it should redirected to studio detail page$")
-	    public void click_report_studio_cancel_button_in_studio_page_and_verify_it_should_redirected_to_studio_detail_page() throws Throwable {
-	    	Actions a=new Actions(driver);
-		       studiodetailpage.reportstudio.click();
-		       Thread.sleep(3000);
-		    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
-
-		    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
-				 {
-					 if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
-					 {
-						 studiodetailpage.reportstudiopopup.get(i).click();
-						String reportpopup= studiodetailpage.reportstudiopopup.get(i).getText();
-	                    System.out.println(reportpopup);
-						 break;
-					 }
-				 }
-		    	
-		    	Thread.sleep(3000);
-		    	a.moveToElement(studiodetailpage.reportcancel).click().build().perform();
-		    	String acutalstdname=studiodetailpage.StudioNameInStudioPage.getText();
-		    	System.out.println(acutalstdname);
-
+	    	wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+	    	String toast=ToastandErrormessages.ToastMessageText.getText();
+	    	assertTrue(toast.equalsIgnoreCase("You already reported this studio"));
+	    	ToastandErrormessages.ToastMessageClose.click();
+	    	a.moveToElement(studiodetailpage.reportcancel).click().build().perform();
+	    	String acutalstdname=studiodetailpage.StudioNameInStudioPage.getText();
+	    	System.out.println(acutalstdname);
 	    }
 
 	    @Then("^click report studio  close button in studio page and verify it should redirected to studio detail page$")
 	    public void click_report_studio_close_button_in_studio_page_and_verify_it_should_redirected_to_studio_detail_page() throws Throwable {
 	    	Actions a=new Actions(driver);
-		       studiodetailpage.reportstudio.click();
-		       Thread.sleep(3000);
-		    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
-
-		    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
-				 {
-					 if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
-					 {
-						 studiodetailpage.reportstudiopopup.get(i).click();
-						String reportpopup= studiodetailpage.reportstudiopopup.get(i).getText();
-	                    System.out.println(reportpopup);
-						 break;
-					 }
-				 }
-		    	
-		    	Thread.sleep(3000);
-		    	studiodetailpage.studiofollowersclose.click();
-		    	String acutalstdname=studiodetailpage.StudioNameInStudioPage.getText();
-		    	System.out.println(acutalstdname);
+	    	studiodetailpage.reportstudio.click();
+	    	a.moveToElement(studiodetailpage.reportstudiobutton).click().build().perform();
+	    	studiodetailpage.reportstudio();
+	    	studiodetailpage.studiofollowersclose.click();
+	    	String acutalstdname=studiodetailpage.StudioNameInStudioPage.getText();
+	    	System.out.println(acutalstdname);
 
 	    }
 

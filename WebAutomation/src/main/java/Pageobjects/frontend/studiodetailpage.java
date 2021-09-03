@@ -185,5 +185,29 @@ public class studiodetailpage extends BaseSetup {
 		return promonameonstudiopage;
 	}
 	
+     public static void followers() {
+	    	for(int i=0;i<studiodetailpage.followerslink.size();i++) {
+	    		if(studiodetailpage.followerslink.get(i).getText() != null)
+	    		{
+	    			studiodetailpage.followerslink.get(i).click();
+	    			String flist= studiodetailpage.followerslink.get(i).getText();
+	    			System.out.println(flist);
+	    			break;
+	    		}
 
+     }
+     }
+     public static void reportstudio() {
+	    	for(int i=0;i<studiodetailpage.reportstudiopopup.size();i++)
+	    	{
+	    		if(studiodetailpage.reportstudiopopup.get(i).getText() != null)
+	    		{
+	    			studiodetailpage.reportstudiopopup.get(i).click();
+	    			String reportpopup= studiodetailpage.reportstudiopopup.get(i).getText();
+	    			System.out.println(reportpopup);
+	    			break;
+	    		}
+	    	}
+
+     }
 }

@@ -5,7 +5,7 @@ Feature: my watch history phase 3 scenarios
     Given navigate to my watch history
     Then Verify deletion on the watch history
 
-  @test
+
   Scenario: play from watch history and verify
     Given navigate to my watch history
     Then Verify player redirection from watch history
@@ -25,3 +25,8 @@ Feature: my watch history phase 3 scenarios
     Examples: 
       | ShoName | PaymentMode | PaymentScenario |
       | Narappa | Card        | Success         |
+      
+   @test   
+ 	  Scenario: upload profile picture and verify
+    Given navigate to accounts and settings
+    Then upload profile picture

@@ -2,9 +2,16 @@ package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -61,6 +68,12 @@ public class AccountsAndSettings_santhosh extends BaseSetup {
 	@FindBy(xpath = "//*[@class='history-date']")
 	public static WebElement watchHistoryPlaydate;
 
+	@FindBy(xpath = "//*[@class='file-choose']")
+	public static WebElement fileUploadButton;
+
+	@FindBy(xpath = "//*[text()=' Save ']")
+	public static WebElement uploadSaveButton;
+
 	WebDriverWait wait = new WebDriverWait(driver, 30);
 
 	@Given("^navigate to my watch history$")
@@ -71,6 +84,17 @@ public class AccountsAndSettings_santhosh extends BaseSetup {
 		wait.until(ExpectedConditions.visibilityOf(homepage.accountsettings));
 		homepage.accountsettings.click();
 		myWatchHistory.click();
+		Thread.sleep(1000);
+
+	}
+
+	@Given("^navigate to accounts and settings$")
+	public void navigate_to_accounts_and_settings() throws Throwable {
+		Actions actions = new Actions(driver);
+		wait.until(ExpectedConditions.visibilityOf(hoverOnMyProfile));
+		actions.moveToElement(hoverOnMyProfile).build().perform();
+		wait.until(ExpectedConditions.visibilityOf(homepage.accountsettings));
+		homepage.accountsettings.click();
 		Thread.sleep(1000);
 
 	}
@@ -124,6 +148,32 @@ public class AccountsAndSettings_santhosh extends BaseSetup {
 		Date dateFormat = new Date();
 		String Systemdate = DateFormat.format(dateFormat);
 		assertEquals(Systemdate, playDate);
+	}
+
+	@Then("^upload profile picture$")
+	public void upload_profile_picture() throws Throwable {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", fileUploadButton);
+		StringSelection ss = new StringSelection(
+				"C:\\Users\\user\\git\\GudSho-WEBAutomation\\WebAutomation\\profilePictureUpload.jpg");
+		Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+		Robot robot = new Robot();
+		robot.delay(250);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		robot.keyPress(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_V);
+		robot.keyRelease(KeyEvent.VK_CONTROL);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.delay(50);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+		uploadSaveButton.click();
+		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+		assertEquals("Your profile picture has been updated successfully",
+				ToastandErrormessages.ToastMessageText.getText());
+
 	}
 
 }

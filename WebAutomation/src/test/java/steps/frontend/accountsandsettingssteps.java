@@ -123,53 +123,73 @@ public class accountsandsettingssteps extends BaseSetup {
     }
 
     
+    @Given("^enter (.+) and (.+) and (.+) details  and click save button and verify toast message$")
+    public void enter_and_and_details_and_click_save_button_and_verify_toast_message(String name, String dob, String gendar) throws Throwable {
+    	Actions a= new Actions(driver);
+
+    	a.moveToElement(accountandsettingspage.AccountandSettingsTabs1).click().build().perform();
+
+      	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.MyProfileTab)).click();
+      	
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.profilename)).clear();
+   	
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.profilename)).sendKeys(name);
+   	
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.dob)).clear();
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.dob)).sendKeys(dob);
+       	
+
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.gendar1)).click();
+
+    	js.executeScript("arguments[0].click();", accountandsettingspage.gendar1);
+
+       	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.profilesavebutton)).click();
+
+    	wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
+        String toast=ToastandErrormessages.ToastMessageText.getText();
+        assertTrue(toast.equalsIgnoreCase("Your profile has been updated successfully"));
+        ToastandErrormessages.ToastMessageClose.click();
+
+    }
     
+    @Given("^enter (.+) and (.+) and (.+) details  and click save button and verify name error message$")
+    public void enter_and_and_details_and_click_save_button_and_verify_name_error_message(String name, String dob, String gendar) throws Throwable {
     
+    Actions a=new Actions(driver);
 
 
-//    @Given("^click notification tab and verify in-app toggle button$")
-//    public void click_notification_tab_and_verify_inapp_toggle_button() throws Throwable {
-//
-//    	Actions a =new Actions(driver);
-//    	accountandsettingspage.AccountandSettingsTabs1.click();
-//    	accountandsettingspage.MyProfileTab.click();
-//    	accountandsettingspage.notifications.click();
-//    	wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.inapptoggle.get(2)));
-//    	accountandsettingspage.inapptoggle.get(2).getAttribute("aria-checked");
-////	    String togglebuttoff1=accountandsettingspage.inapptoggle.get(2).getAttribute("aria-checked");
-////	    System.out.println(togglebuttoff1);
-////        boolean b1=Boolean.parseBoolean(togglebuttoff1);  
-//      
-//    	if(accountandsettingspage.inapptoggle.get(2).getAttribute("aria-checked").equalsIgnoreCase("false")) {  
-//    	
-//    		wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.inapptoggle.get(2))).click();
-//    		String togglebuttoff=accountandsettingspage.inapptoggle.get(2).getAttribute("aria-checked");
-//
-//    		assertEquals("true", togglebuttoff);
-//    	}
-//    	else if(accountandsettingspage.inapptoggle.get(2).getAttribute("aria-checked").equalsIgnoreCase("true")) {  
-//    		
-//    		wait.until(ExpectedConditions.visibilityOf(accountandsettingspage.inapptoggle.get(2))).click();
-//    		String togglebuttoff=accountandsettingspage.inapptoggle.get(2).getAttribute("aria-checked");
-//
-//    		assertEquals("false", togglebuttoff);
-//
-//    	}
-//    	else {
-//    		System.out.println("toggle button is not working");
-//    	}
-//    }
-    
-    
-    
-    
+	a.moveToElement(accountandsettingspage.AccountandSettingsTabs1).click().build().perform();
+
+  	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.MyProfileTab)).click();
+  	
+   	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.profilename)).clear();
+	
+   	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.profilename)).sendKeys(name);
+	
+   	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.dob)).clear();
+   	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.dob)).sendKeys(dob);
+   	
+
+  	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.gendar1)).click();
+
+	js.executeScript("arguments[0].click();", accountandsettingspage.gendar1);
+
+   	wait.until(ExpectedConditions.elementToBeClickable(accountandsettingspage.profilesavebutton)).click();
+
+    String errormesforname="Only characters allowed";
+    String actualnamevalidation=accountandsettingspage.profilenamevalidation.getText();
+    assertEquals(errormesforname, actualnamevalidation);
+    String errormesfordate="Please enter a valid date";
+    String actualdatevalidation=accountandsettingspage.profiledatevalidation.getText();
+    assertEquals(errormesfordate, actualdatevalidation);
 
 
-        
+    
     
 
     	
    }
+    
 
-
+}
 

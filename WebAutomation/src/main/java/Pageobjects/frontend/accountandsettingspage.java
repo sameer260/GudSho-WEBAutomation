@@ -130,7 +130,36 @@ public class accountandsettingspage extends BaseSetup
 
 	@FindBy(xpath="//h3[contains(text(),'GudSho Privacy Policy')]")
 	public static WebElement verifyprivacypolicy;
+	
+	@FindBy(xpath="//mat-radio-group[@class='mat-radio-group ng-pristine ng-valid ng-touched']")
+	public static List<WebElement> gendar;
+	
+	@FindBy(xpath="//span[contains(text(),'Save')]")
+	public static WebElement profilesavebutton;
+	
+	@FindBy(xpath="//mat-radio-button[@id='mat-radio-2']")
+	public static WebElement gendar1;
 
+	@FindBy(xpath="//div[contains(text(),'Only characters allowed')]")
+	public static WebElement profilenamevalidation;
+
+	@FindBy(xpath="//div[contains(text(),'Please enter a valid date')]")
+	public static WebElement profiledatevalidation;
+
+	
+
+//    public static int click_on_anygendar(String selectgendar) throws Throwable {
+//    	for(int i=0;i<accountandsettingspage.gendar.size();i++)
+//		 {
+//			 if(accountandsettingspage.gendar.get(i).getText().equalsIgnoreCase(selectgendar))
+//			 {
+//				 accountandsettingspage.gendar.get(i).click();
+//				 break;
+//			 }
+//		 }
+//		return 0;
+//		
+//    }
 
 
 }

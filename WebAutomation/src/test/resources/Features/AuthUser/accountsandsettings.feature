@@ -32,23 +32,28 @@ Feature: Account and settings  page Scenarios
       |dummyemail|
       |ramya|
       
-     @ramya  
+     
     Scenario: verify privacy policy
     Given click privacy policy tab and verify it should navigate to correct page
       
-    
-    Scenario: Notification functionality
-    Given click notification tab and verify in-app toggle button
-    
-       
-    
-    
-    
-    
-    Scenario Outline: My profile functionality
+     
+   
+    @ramya
+    Scenario Outline: My profile  basic details functionality
     Given enter <name> and <dob> and <gendar> details  and click save button and verify toast message
 
     Examples: 
-      |email|dob|gendar|
-      |vramyagnk@gmail.com|9/10/1991|F|
+      |name|dob|gendar|
+      |ramya kakuturi|09/10/1991|F|
+    
+    @ramya
+    Scenario Outline: My profile name and date validation functionality
+    Given enter <name> and <dob> and <gendar> details  and click save button and verify name error message
+
+    Examples: 
+      |name|dob|gendar|
+      |ramya123 kakuturi|9/10/1456|F|
+      
+      
+      
     

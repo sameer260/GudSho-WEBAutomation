@@ -30,7 +30,7 @@ public class BaseSetup
     String url=prop.getProperty("baseurl");
     if(browsername.contains("chrome"))
     {
-    	System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\BrowserDrivers\\chromedriver.exe");
+    	System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"\\BrowserDrivers\\chromedriver1.exe");
     	 options=new ChromeOptions();
     	
     	if(browsername.contains("headless"))

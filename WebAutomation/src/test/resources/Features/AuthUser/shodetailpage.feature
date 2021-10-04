@@ -16,8 +16,8 @@ Feature: Sho Detail Page Scenarios
     Then On home page check liked <PromoName> is showing in my gud promos
 
     Examples: 
-      | ShoName | PromoName                     |UserAction|
-      | Talent  | Vakeel Sab Theatrical Trailer |Like      |
+      | ShoName | PromoName                     | UserAction |
+      | Talent  | Vakeel Sab Theatrical Trailer | Like       |
 
   Scenario Outline: Sho Watchlist
     Given Search any <ShoName> and verfiy its redirected to correct page
@@ -58,19 +58,18 @@ Feature: Sho Detail Page Scenarios
     When Play watch free content and close the player
     And On sho detail page verify watch now button should change to resume
     Then On Home Page check continue wathing is showing <ShoName>
-    
-    
+
     Examples: 
       | ShoName |
       | Paytm   |
-      
+
   Scenario Outline: Remove Continue Watching
-  Given Remove <ShoName> from continue watching
-  Then verify toaster message is displayed with <ShoName>  
-  
-   Examples: 
+    Given Remove <ShoName> from continue watching
+    Then verify toaster message is displayed with <ShoName>
+
+    Examples: 
       | ShoName |
-      | Paytm   |     
+      | Paytm   |
 
   Scenario Outline: Sho detail info
     Given Search any <ShoName> and verfiy its redirected to correct page
@@ -86,12 +85,11 @@ Feature: Sho Detail Page Scenarios
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Check redirection of card and watchlist functionality of sho card on home page
 
-
     Examples: 
       | ShoName |
       | narappa |
 
-   Scenario Outline: More like this Share popup
+  Scenario Outline: More like this Share popup
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Click on shareicon from shocard and verify share popup
 
@@ -109,122 +107,94 @@ Feature: Sho Detail Page Scenarios
       | narappa |
 
   Scenario Outline: Header Watchlist
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  When Scroll down page and click on watchlist button
-  Then On home page check the added watchlist <ShoName> 
-  
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Scroll down page and click on watchlist button
+    Then On home page check the added watchlist <ShoName>
+
     Examples: 
       | ShoName |
       | narappa |
-       
-   Scenario Outline: Header Share
+
+  Scenario Outline: Header Share
     Given Search any <ShoName> and verfiy its redirected to correct page
     Then Click header share icon and verify share popup
 
     Examples: 
       | ShoName |
-      | narappa |   
-      
-      
+      | narappa |
+
   Scenario Outline: Header Watch Now-PriceButton
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  When click header watch now button
-  Then verify payment continue popup dislayed
-  
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When click header watch now button
+    Then verify payment continue popup dislayed
+
     Examples: 
       | ShoName |
-      | narappa | 
-      
-   
+      | narappa |
+
   Scenario Outline: Header Watch FreeButton
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  When click header watch now button
-  Then verify sho is playing and close player and verify resume button
-  And On sho detail page verify watch now button should change to resume
-  Then On Home Page check continue wathing is showing <ShoName>
-  
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When click header watch now button
+    Then verify sho is playing and close player and verify resume button
+    And On sho detail page verify watch now button should change to resume
+    Then On Home Page check continue wathing is showing <ShoName>
+
     Examples: 
-      |ShoName         |
-      |Check Transacode| 
-      
-     
+      | ShoName          |
+      | Check Transacode |
+
   Scenario Outline: Animation Buttons verification
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  When Wait for Animation buttons and Verify its displaying all button
-  Then hover on banner check the sho detail element is retained
-  
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Wait for Animation buttons and Verify its displaying all button
+    Then hover on banner check the sho detail element is retained
+
     Examples: 
       | ShoName |
       | Kaithi  |
-      
-  
+
   Scenario Outline: Play Left time verification
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  When Play video till <time> and close player
-  Then verify time left on sho detail page
-  And veirfy time left on continue watching <ShoName> on home page
-  
-  Examples: 
-      | ShoName         |time |
-      | Khaidhi No 150  |05:20|
-      
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    When Play video till <time> and close player
+    Then verify time left on sho detail page
+    And veirfy time left on continue watching <ShoName> on home page
+
+    Examples: 
+      | ShoName        | time  |
+      | Khaidhi No 150 | 05:20 |
+
   Scenario Outline: Left and Right Arrows
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  Then Check right and left arrow is working as expected
-  
-  
-   Examples: 
-      | ShoName         |
-      | Khaidhi No 150  |
-      
-    
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then Check right and left arrow is working as expected
+
+    Examples: 
+      | ShoName        |
+      | Khaidhi No 150 |
+
   Scenario Outline: Sho Card Labels verification
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  Then verify all lables of the card with sho detail page
-  And verify price label 
-  
-   Examples: 
-      | ShoName  |
-      | Hacking  |
-  
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    Then verify all lables of the card with sho detail page
+    And verify price label
+
+    Examples: 
+      | ShoName |
+      | Hacking |
+
   Scenario Outline: Gud count Increament and View Count check
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  And Take a gud and view count of <PromoName>
-  When Play <PromoName> and <UserAction> promo
-  Then verify view and gudcount of <PromoName> for <UserAction> 
-  
-   Examples: 
-      | ShoName  |PromoName    |UserAction|
-      | Hacking  |Kung Fu Panda|Like      |   
-      
-  
-   
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    And Take a gud and view count of <PromoName>
+    When Play <PromoName> and <UserAction> promo
+    Then verify view and gudcount of <PromoName> for <UserAction>
+
+    Examples: 
+      | ShoName | PromoName     | UserAction |
+      | Hacking | Kung Fu Panda | Like       |
+
   Scenario Outline: Gud count Decrement and View Count check
-  Given Search any <ShoName> and verfiy its redirected to correct page
-  And Take a gud and view count of <PromoName>
-  When Play <PromoName> and <UserAction> promo
-  Then verify view and gudcount of <PromoName> for <UserAction>  
-  
-   Examples: 
-      | ShoName  |PromoName    |UserAction|
-      | Hacking  |Kung Fu Panda|Unlike    |    
-      
-      
+    Given Search any <ShoName> and verfiy its redirected to correct page
+    And Take a gud and view count of <PromoName>
+    When Play <PromoName> and <UserAction> promo
+    Then verify view and gudcount of <PromoName> for <UserAction>
 
-
- 
-      
-      
-  
- 
-          
-      
-      
-         
-      
-      
-      
-      
-    
-              
-      
+    Examples: 
+      | ShoName | PromoName     | UserAction |
+      | Hacking | Kung Fu Panda | Unlike     |

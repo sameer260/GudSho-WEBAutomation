@@ -2,7 +2,6 @@ package steps.frontend;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
 import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
@@ -10,7 +9,6 @@ import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -29,8 +27,6 @@ public class AccountsAndSettings_santhosh extends BaseSetup {
 	public AccountsAndSettings_santhosh() {
 		PageFactory.initElements(driver, this);
 	}
-
-	// my watch history related page objects
 
 	@FindBy(xpath = "//div[@class='user-details ng-star-inserted']")
 	public static WebElement hoverOnMyProfile;
@@ -170,6 +166,7 @@ public class AccountsAndSettings_santhosh extends BaseSetup {
 		robot.delay(50);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 		uploadSaveButton.click();
+		robot.delay(3000);
 		wait.until(ExpectedConditions.visibilityOf(ToastandErrormessages.ToastMessageText));
 		assertEquals("Your profile picture has been updated successfully",
 				ToastandErrormessages.ToastMessageText.getText());
